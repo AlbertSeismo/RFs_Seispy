@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>seispy.io &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/_modules/seispy/io.html" />
+    <link rel="shortcut icon" href="../../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for seispy.io</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">obspy</span> <span class="kn">import</span> <span class="n">UTCDateTime</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">obspy.clients.fdsn</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="c1"># from netCDF4 import Dataset</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">def</span> <span class="nf">_cat2df</span><span class="p">(</span><span class="n">cat</span><span class="p">):</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;evla&#39;</span><span class="p">,</span> <span class="s1">&#39;evlo&#39;</span><span class="p">,</span> <span class="s1">&#39;evdp&#39;</span><span class="p">,</span> <span class="s1">&#39;mag&#39;</span><span class="p">,</span> <span class="s1">&#39;magtype&#39;</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="n">evt</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">depth</span><span class="o">*</span><span class="mf">0.001</span><span class="p">,</span>
+             <span class="n">evt</span><span class="o">.</span><span class="n">magnitudes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mag</span><span class="p">,</span> <span class="n">evt</span><span class="o">.</span><span class="n">magnitudes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">magnitude_type</span><span class="p">]</span> <span class="k">for</span> <span class="n">evt</span> <span class="ow">in</span> <span class="n">cat</span> <span class="k">if</span> <span class="n">evt</span><span class="o">.</span><span class="n">origins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">depth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wsfetch"><a class="viewcode-back" href="../../seispy.html#seispy.io.wsfetch">[docs]</a><span class="k">def</span> <span class="nf">wsfetch</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">starttime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">endtime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minlatitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">maxlatitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minlongitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxlongitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">latitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minradius</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">maxradius</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mindepth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxdepth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">minmagnitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxmagnitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">magnitudetype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">includeallorigins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">includeallmagnitudes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">includearrivals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eventid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">orderby</span><span class="o">=</span><span class="s1">&#39;time-asc&#39;</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">contributor</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;server name should be </span><span class="se">\&#39;</span><span class="s1">str</span><span class="se">\&#39;</span><span class="s1"> type&#39;</span><span class="p">)</span>
+    <span class="n">locs</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+    <span class="n">locs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">)</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_events</span><span class="p">(</span><span class="o">**</span><span class="n">locs</span><span class="p">)</span>
+    <span class="n">cat_df</span> <span class="o">=</span> <span class="n">_cat2df</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cat_df</span></div>
+
+
+<div class="viewcode-block" id="nc2npz"><a class="viewcode-back" href="../../seispy.html#seispy.io.nc2npz">[docs]</a><span class="k">def</span> <span class="nf">nc2npz</span><span class="p">(</span><span class="n">ncdata</span><span class="p">,</span> <span class="n">minlat</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">maxlat</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">minlon</span><span class="o">=-</span><span class="mi">180</span><span class="p">,</span> <span class="n">maxlon</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">mindep</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxdep</span><span class="o">=</span><span class="mi">6371</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;dvs&#39;</span><span class="p">):</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">ncdata</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">ncdata</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">dep</span> <span class="o">=</span> <span class="n">ncdata</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;depth&#39;</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ncdata</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">key</span><span class="p">][:]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">idx_lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">lat</span> <span class="o">&gt;=</span> <span class="n">minlat</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lat</span> <span class="o">&lt;=</span> <span class="n">maxlat</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">idx_lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">lon</span> <span class="o">&gt;=</span> <span class="n">minlon</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lon</span> <span class="o">&lt;=</span> <span class="n">maxlon</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">idx_dep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">dep</span> <span class="o">&gt;=</span> <span class="n">mindep</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dep</span> <span class="o">&lt;=</span> <span class="n">maxdep</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cut_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">idx_dep</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">idx_dep</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">idx_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">idx_lat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">idx_lon</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">idx_lon</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">cut_lat</span> <span class="o">=</span> <span class="n">lat</span><span class="p">[</span><span class="n">idx_lat</span><span class="p">]</span>
+    <span class="n">cut_lon</span> <span class="o">=</span> <span class="n">lon</span><span class="p">[</span><span class="n">idx_lon</span><span class="p">]</span>
+    <span class="n">cut_dep</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">idx_dep</span><span class="p">]</span>
+    <span class="c1"># new_lat, new_dep, new_lon = np.meshgrid(cut_lat, cut_dep, cut_lon)</span>
+    <span class="k">return</span> <span class="n">cut_data</span><span class="p">,</span> <span class="n">cut_dep</span><span class="p">,</span> <span class="n">cut_lat</span><span class="p">,</span> <span class="n">cut_lon</span></div>
+
+
+<span class="c1"># def lsnc():</span>
+<span class="c1">#     parser = argparse.ArgumentParser(description=&quot;List all fields of netCDF file&quot;)</span>
+<span class="c1">#     parser.add_argument(&#39;-k&#39;, help=&#39;Key name of fields&#39;, type=str, dest=&#39;key&#39;, default=None)</span>
+<span class="c1">#     parser.add_argument(&#39;ncfile&#39;, type=str, help=&#39;Path to netCDF file&#39;)</span>
+<span class="c1">#     arg = parser.parse_args()</span>
+<span class="c1">#     if len(sys.argv) == 1:</span>
+<span class="c1">#         parser.print_help()</span>
+<span class="c1">#         sys.exit(1)</span>
+<span class="c1">#     ncdata = Dataset(arg.ncfile)</span>
+<span class="c1">#     if arg.key is None:</span>
+<span class="c1">#         print(ncdata.variables)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         print(ncdata.variables[arg.key])</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">ncfile</span> <span class="o">=</span> <span class="s1">&#39;/Users/xumj/Researches/Tibet_MTZ/models/3D2017-09Sv-depth.nc&#39;</span>
+    <span class="n">ncdata</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">ncfile</span><span class="p">)</span>
+    <span class="n">nc2npz</span><span class="p">(</span><span class="n">ncdata</span><span class="p">,</span> <span class="n">minlat</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">maxlat</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">minlon</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">maxlon</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">maxdep</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span>
+</pre></div>
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

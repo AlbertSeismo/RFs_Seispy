@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>seispy.eq &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/_modules/seispy/eq.html" />
+    <link rel="shortcut icon" href="../../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for seispy.eq</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">obspy</span>
+<span class="kn">from</span> <span class="nn">obspy.io.sac</span> <span class="kn">import</span> <span class="n">SACTrace</span>
+<span class="kn">from</span> <span class="nn">obspy.signal.rotate</span> <span class="kn">import</span> <span class="n">rotate2zne</span><span class="p">,</span> <span class="n">rotate_zne_lqt</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">resample</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">seispy.decon</span> <span class="kn">import</span> <span class="n">RFTrace</span>
+<span class="kn">from</span> <span class="nn">seispy.geo</span> <span class="kn">import</span> <span class="n">snr</span><span class="p">,</span> <span class="n">srad2skm</span><span class="p">,</span> <span class="n">rotateSeisENtoTR</span><span class="p">,</span> \
+                       <span class="n">rssq</span><span class="p">,</span> <span class="n">extrema</span>
+<span class="kn">from</span> <span class="nn">obspy.signal.trigger</span> <span class="kn">import</span> <span class="n">recursive_sta_lta</span>
+
+
+<div class="viewcode-block" id="rotateZNE"><a class="viewcode-back" href="../../seispy.html#seispy.eq.rotateZNE">[docs]</a><span class="k">def</span> <span class="nf">rotateZNE</span><span class="p">(</span><span class="n">st</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">zne</span> <span class="o">=</span> <span class="n">rotate2zne</span><span class="p">(</span>
+            <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpaz</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpinc</span><span class="p">,</span>
+            <span class="n">st</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">st</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpaz</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpinc</span><span class="p">,</span>
+            <span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpaz</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpinc</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No specified cmpaz or cmpinc. </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">tr</span><span class="p">,</span> <span class="n">new_data</span><span class="p">,</span> <span class="n">component</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">zne</span><span class="p">,</span> <span class="s2">&quot;ZNE&quot;</span><span class="p">):</span>
+        <span class="n">tr</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">new_data</span>
+        <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">component</span></div>
+
+
+<div class="viewcode-block" id="EQ"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ">[docs]</a><span class="k">class</span> <span class="nc">EQ</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pathname</span><span class="p">,</span> <span class="n">datestr</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;SAC&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class for processing event data with 3 components, which read SAC files of ``pathname*datastr*suffix`` </span>
+
+<span class="sd">        :param pathname: Directory to SAC files</span>
+<span class="sd">        :type pathname: string</span>
+<span class="sd">        :param datestr: date part in filename, e.g., ``2021.122.12.23.40``</span>
+<span class="sd">        :type datestr: string</span>
+<span class="sd">        :param suffix: suffix for SAC files, defaults to &#39;SAC&#39;</span>
+<span class="sd">        :type suffix: str, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datestr</span> <span class="o">=</span> <span class="n">datestr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filestr</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">pathname</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="n">datestr</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="n">suffix</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filestr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">channel</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">])</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Sismogram must be in 3 components, but there are only channel </span><span class="si">{}</span><span class="s1"> of </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">datestr</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> has more than 3 components, please select to delete redundant seismic components&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datestr</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rf</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">Stream</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeoffset</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">it</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trigger_shift</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inc_correction</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_comp</span><span class="p">()</span>
+    
+<div class="viewcode-block" id="EQ.readstream"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.readstream">[docs]</a>    <span class="k">def</span> <span class="nf">readstream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filestr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rf</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">Stream</span><span class="p">()</span></div>
+    
+<div class="viewcode-block" id="EQ.cleanstream"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.cleanstream">[docs]</a>    <span class="k">def</span> <span class="nf">cleanstream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rf</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="EQ.set_comp"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.set_comp">[docs]</a>    <span class="k">def</span> <span class="nf">set_comp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[E2]&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">=</span> <span class="s1">&#39;enz&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*R&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">=</span> <span class="s1">&#39;rtz&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Q&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">=</span> <span class="s1">&#39;lqt&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No such component in R, E or Q&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EQ.channel_correct"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.channel_correct">[docs]</a>    <span class="k">def</span> <span class="nf">channel_correct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">switchEN</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reverseE</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reverseN</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;_summary_</span>
+
+<span class="sd">        :param switchEN: _description_, defaults to False</span>
+<span class="sd">        :type switchEN: bool, optional</span>
+<span class="sd">        :param reverseE: _description_, defaults to False</span>
+<span class="sd">        :type reverseE: bool, optional</span>
+<span class="sd">        :param reverseN: _description_, defaults to False</span>
+<span class="sd">        :type reverseN: bool, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">reverseE</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[E2]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">reverseN</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[N1]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">switchEN</span><span class="p">:</span>
+            <span class="n">chE</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[E2]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span>
+            <span class="n">chN</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[N1]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[E2]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="n">chN</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*[N1]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="n">chE</span></div>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span><span class="p">(</span><span class="s1">&#39;Event data class </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datestr</span><span class="p">))</span>
+
+<div class="viewcode-block" id="EQ.detrend"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.detrend">[docs]</a>    <span class="k">def</span> <span class="nf">detrend</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">detrend</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">detrend</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fix_channel_name</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="EQ.filter"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">freqmin</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">freqmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">freqmin</span><span class="o">=</span><span class="n">freqmin</span><span class="p">,</span> <span class="n">freqmax</span><span class="o">=</span><span class="n">freqmax</span><span class="p">,</span> <span class="n">corners</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">zerophase</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EQ.get_arrival"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.get_arrival">[docs]</a>    <span class="k">def</span> <span class="nf">get_arrival</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">evdp</span><span class="p">,</span> <span class="n">dis</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;P&#39;</span><span class="p">):</span>
+        <span class="n">arrivals</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_travel_times</span><span class="p">(</span><span class="n">evdp</span><span class="p">,</span> <span class="n">dis</span><span class="p">,</span> <span class="n">phase_list</span><span class="o">=</span><span class="p">[</span><span class="n">phase</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">arrivals</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The phase of </span><span class="si">{}</span><span class="s1"> is not exists&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phase</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrivals</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;More than one phase were calculated with distance of </span><span class="si">{}</span><span class="s1"> and focal depth of </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dis</span><span class="p">,</span> <span class="n">evdp</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># self.arrival = arrivals[0]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">arr_time</span> <span class="o">=</span> <span class="n">arrivals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">time</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rayp</span> <span class="o">=</span> <span class="n">arrivals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ray_param</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">inc</span> <span class="o">=</span> <span class="n">arrivals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">incident_angle</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">phase</span></div>
+
+<div class="viewcode-block" id="EQ.search_inc"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.search_inc">[docs]</a>    <span class="k">def</span> <span class="nf">search_inc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bazi</span><span class="p">):</span>
+        <span class="n">inc_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">s_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">isreturn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">inc_range</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inc_range</span><span class="p">)):</span>
+            <span class="n">l_comp</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">rotate_zne_lqt</span><span class="p">(</span><span class="n">s_range</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">s_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">s_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">bazi</span><span class="p">,</span> <span class="n">inc_range</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">power</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">l_comp</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">real_inc_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">power</span><span class="p">)</span>
+        <span class="n">real_inc</span> <span class="o">=</span> <span class="n">inc_range</span><span class="p">[</span><span class="n">real_inc_idx</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inc_correction</span> <span class="o">=</span> <span class="n">real_inc</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">inc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inc</span> <span class="o">=</span> <span class="n">real_inc</span></div>
+
+<div class="viewcode-block" id="EQ.search_baz"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.search_baz">[docs]</a>    <span class="k">def</span> <span class="nf">search_baz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bazi</span><span class="p">,</span> <span class="n">time_b</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">time_e</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">90</span><span class="p">):</span>
+        <span class="n">p_arr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arr_correct</span><span class="p">(</span><span class="n">write_to_sac</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">this_st</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">this_st</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s1">&#39;bandpass&#39;</span><span class="p">,</span> <span class="n">freqmin</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">freqmax</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">this_st</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">this_st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span><span class="o">+</span><span class="n">p_arr</span><span class="o">-</span><span class="n">time_b</span><span class="p">,</span> <span class="n">this_st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span><span class="o">+</span><span class="n">p_arr</span><span class="o">+</span><span class="n">time_e</span><span class="p">)</span>
+        <span class="n">bazs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">offset</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span> <span class="o">+</span> <span class="n">bazi</span>
+        <span class="n">ampt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">bazs</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bazs</span><span class="p">):</span>
+            <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">rotateSeisENtoTR</span><span class="p">(</span><span class="n">this_st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">this_st</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+            <span class="n">ampt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rssq</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">ampt</span> <span class="o">=</span> <span class="n">ampt</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ampt</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">extrema</span><span class="p">(</span><span class="n">ampt</span><span class="p">,</span> <span class="n">opt</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">corr_baz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">corr_baz</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">corr_baz</span> <span class="o">=</span> <span class="n">bazs</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">-</span> <span class="n">bazi</span>
+        <span class="k">return</span> <span class="n">corr_baz</span><span class="p">,</span> <span class="n">ampt</span></div>
+
+<div class="viewcode-block" id="EQ.fix_channel_name"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.fix_channel_name">[docs]</a>    <span class="k">def</span> <span class="nf">fix_channel_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;??1&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;??Z&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="p">,</span> <span class="s1">&#39;cmpaz&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpaz</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;N&#39;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*2&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*2&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;E&#39;</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">cmpaz</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">rotateZNE</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">sort</span><span class="p">([</span><span class="s1">&#39;channel&#39;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="s1">&#39;Z&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*2&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*3&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">channel</span> <span class="o">=</span> <span class="s1">&#39;E&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">sort</span><span class="p">([</span><span class="s1">&#39;channel&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="EQ.rotate"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.rotate">[docs]</a>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bazi</span><span class="p">,</span> <span class="n">inc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;NE-&gt;RT&#39;</span><span class="p">,</span> <span class="n">search_inc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">inc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span> <span class="ow">and</span> <span class="n">search_inc</span><span class="p">:</span>
+                <span class="n">inc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_inc</span><span class="p">(</span><span class="n">bazi</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">inc</span> <span class="o">=</span> <span class="n">inc</span>
+
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;NE-&gt;RT&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">=</span> <span class="s1">&#39;rtz&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s1">&#39;NE-&gt;RT&#39;</span><span class="p">,</span> <span class="n">back_azimuth</span><span class="o">=</span><span class="n">bazi</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;RT-&gt;NE&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s1">&#39;RT-&gt;NE&#39;</span><span class="p">,</span> <span class="n">back_azimuth</span><span class="o">=</span><span class="n">bazi</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;ZNE-&gt;LQT&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">=</span> <span class="s1">&#39;lqt&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s1">&#39;ZNE-&gt;LQT&#39;</span><span class="p">,</span> <span class="n">back_azimuth</span><span class="o">=</span><span class="n">bazi</span><span class="p">,</span> <span class="n">inclination</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">inc</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;LQT-&gt;ZNE&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s1">&#39;LQT-&gt;ZNE&#39;</span><span class="p">,</span> <span class="n">back_azimuth</span><span class="o">=</span><span class="n">bazi</span><span class="p">,</span> <span class="n">inclination</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">inc</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="EQ.snr"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.snr">[docs]</a>    <span class="k">def</span> <span class="nf">snr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+        <span class="n">st_noise</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">isreturn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">st_signal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">isreturn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">snr_E</span> <span class="o">=</span> <span class="n">snr</span><span class="p">(</span><span class="n">st_signal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">st_noise</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="n">snr_E</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">snr_N</span> <span class="o">=</span> <span class="n">snr</span><span class="p">(</span><span class="n">st_signal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">st_noise</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="n">snr_N</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">snr_Z</span> <span class="o">=</span> <span class="n">snr</span><span class="p">(</span><span class="n">st_signal</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">st_noise</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="n">snr_Z</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">snr_E</span><span class="p">,</span> <span class="n">snr_N</span><span class="p">,</span> <span class="n">snr_Z</span></div>
+    
+<div class="viewcode-block" id="EQ.get_time_offset"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.get_time_offset">[docs]</a>    <span class="k">def</span> <span class="nf">get_time_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_time</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event_time</span><span class="p">,</span> <span class="n">obspy</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utcdatetime</span><span class="o">.</span><span class="n">UTCDateTime</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Event time should be UTCDateTime type in obspy&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">event_time</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">timeoffset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">o</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">timeoffset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span> <span class="o">-</span> <span class="n">event_time</span></div>
+
+<div class="viewcode-block" id="EQ.arr_correct"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.arr_correct">[docs]</a>    <span class="k">def</span> <span class="nf">arr_correct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">write_to_sac</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        offset = sac.b - real o</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">correct_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arr_time</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeoffset</span>
+        <span class="k">if</span> <span class="n">write_to_sac</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">:</span>
+                <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t0</span> <span class="o">=</span> <span class="n">correct_time</span>
+                <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">kt0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span>
+
+        <span class="k">return</span> <span class="n">correct_time</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_before</span><span class="p">,</span> <span class="n">time_after</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arr_correct</span><span class="p">(</span><span class="n">write_to_sac</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span> <span class="o">+</span> <span class="p">(</span><span class="n">arr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">trigger_shift</span> <span class="o">-</span> <span class="n">time_before</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span> <span class="o">+</span> <span class="p">(</span><span class="n">arr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">trigger_shift</span> <span class="o">+</span> <span class="n">time_after</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span>
+
+<div class="viewcode-block" id="EQ.phase_trigger"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.phase_trigger">[docs]</a>    <span class="k">def</span> <span class="nf">phase_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_before</span><span class="p">,</span> <span class="n">time_after</span><span class="p">,</span> <span class="n">stl</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ltl</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_time</span><span class="p">(</span><span class="n">time_before</span><span class="p">,</span> <span class="n">time_after</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">st_pick</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">st_pick</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span>
+            <span class="n">tr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st_pick</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Z&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st_pick</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*T&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sampling_rate</span>
+        <span class="n">cft</span> <span class="o">=</span> <span class="n">recursive_sta_lta</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">stl</span><span class="o">*</span><span class="n">df</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ltl</span><span class="o">*</span><span class="n">df</span><span class="p">))</span>
+        <span class="n">n_trigger</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">cft</span><span class="p">)[</span><span class="nb">int</span><span class="p">(</span><span class="n">ltl</span><span class="o">*</span><span class="n">df</span><span class="p">):])</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">ltl</span><span class="o">*</span><span class="n">df</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_trigger</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">n_trigger</span><span class="o">/</span><span class="n">df</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trigger_shift</span> <span class="o">=</span> <span class="n">n_trigger</span><span class="o">/</span><span class="n">df</span> <span class="o">-</span> <span class="n">time_before</span></div>
+
+<div class="viewcode-block" id="EQ.trim"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.trim">[docs]</a>    <span class="k">def</span> <span class="nf">trim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_before</span><span class="p">,</span> <span class="n">time_after</span><span class="p">,</span> <span class="n">isreturn</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        offset = sac.b - real o</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_time</span><span class="p">(</span><span class="n">time_before</span><span class="p">,</span> <span class="n">time_after</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">isreturn</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EQ.deconvolute"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.deconvolute">[docs]</a>    <span class="k">def</span> <span class="nf">deconvolute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">,</span> <span class="n">time_after</span><span class="p">,</span> <span class="n">f0</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iter&#39;</span><span class="p">,</span> <span class="n">only_r</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">itmax</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">minderr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">wlevel</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">target_dt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;iter&#39;</span><span class="p">:</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;method&#39;</span><span class="p">:</span> <span class="n">method</span><span class="p">,</span>
+                      <span class="s1">&#39;f0&#39;</span><span class="p">:</span> <span class="n">f0</span><span class="p">,</span>
+                      <span class="s1">&#39;tshift&#39;</span><span class="p">:</span> <span class="n">shift</span><span class="p">,</span>
+                      <span class="s1">&#39;itmax&#39;</span><span class="p">:</span> <span class="n">itmax</span><span class="p">,</span>
+                      <span class="s1">&#39;minderr&#39;</span><span class="p">:</span> <span class="n">minderr</span><span class="p">}</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;water&#39;</span><span class="p">:</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;method&#39;</span><span class="p">:</span> <span class="n">method</span><span class="p">,</span>
+                      <span class="s1">&#39;f0&#39;</span><span class="p">:</span> <span class="n">f0</span><span class="p">,</span>
+                      <span class="s1">&#39;tshift&#39;</span><span class="p">:</span> <span class="n">shift</span><span class="p">,</span>
+                      <span class="s1">&#39;wlevel&#39;</span><span class="p">:</span> <span class="n">wlevel</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;method must be in </span><span class="se">\&#39;</span><span class="s1">iter</span><span class="se">\&#39;</span><span class="s1"> or </span><span class="se">\&#39;</span><span class="s1">water</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">decon_p</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">only_r</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">decon_p</span><span class="p">(</span><span class="n">tcomp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># TODO: if &#39;Q&#39; not in self.rf[1].stats.channel or &#39;L&#39; not in self.rf[2].stats.channel:</span>
+            <span class="c1">#     raise ValueError(&#39;Please rotate component to \&#39;LQT\&#39;&#39;)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">decon_s</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">target_dt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span> <span class="o">!=</span> <span class="n">target_dt</span><span class="p">:</span>
+                <span class="c1"># self.rf.resample(1 / target_dt)</span>
+                <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="p">:</span>
+                    <span class="c1"># tr.data = tr.data[0:-1]</span>
+                    <span class="n">tr</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="nb">int</span><span class="p">((</span><span class="n">shift</span> <span class="o">+</span> <span class="n">time_after</span><span class="p">)</span><span class="o">/</span><span class="n">target_dt</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+                    <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span> <span class="o">=</span> <span class="n">target_dt</span></div>
+    
+<div class="viewcode-block" id="EQ.decon_p"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.decon_p">[docs]</a>    <span class="k">def</span> <span class="nf">decon_p</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tshift</span><span class="p">,</span> <span class="n">tcomp</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;lqt&#39;</span><span class="p">:</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*L&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">tcomp</span><span class="p">:</span>
+                <span class="n">uin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*T&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">uin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Q&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">uin</span><span class="o">.</span><span class="n">data</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Z&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">tcomp</span><span class="p">:</span>
+                <span class="n">uin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*T&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">uin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*R&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">uout</span> <span class="o">=</span> <span class="n">RFTrace</span><span class="o">.</span><span class="n">deconvolute</span><span class="p">(</span><span class="n">uin</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="n">tshift</span><span class="o">=</span><span class="n">tshift</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uout</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EQ.decon_s"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.decon_s">[docs]</a>    <span class="k">def</span> <span class="nf">decon_s</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tshift</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;lqt&#39;</span><span class="p">:</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Q&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">uin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*L&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*R&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">uin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">st</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Z&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">win</span><span class="o">.</span><span class="n">data</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="c1"># win.data[0:int((tshift-4)/win.stats.delta)] = 0</span>
+        <span class="n">uout</span> <span class="o">=</span> <span class="n">RFTrace</span><span class="o">.</span><span class="n">deconvolute</span><span class="p">(</span><span class="n">uin</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">tshift</span><span class="o">=</span><span class="n">tshift</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">uout</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">uout</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uout</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EQ.saverf"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.saverf">[docs]</a>    <span class="k">def</span> <span class="nf">saverf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">evtstr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">evla</span><span class="o">=-</span><span class="mf">12345.</span><span class="p">,</span> <span class="n">evlo</span><span class="o">=-</span><span class="mf">12345.</span><span class="p">,</span> <span class="n">evdp</span><span class="o">=-</span><span class="mf">12345.</span><span class="p">,</span> <span class="n">mag</span><span class="o">=-</span><span class="mf">12345.</span><span class="p">,</span>
+               <span class="n">gauss</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">baz</span><span class="o">=-</span><span class="mf">12345.</span><span class="p">,</span> <span class="n">gcarc</span><span class="o">=-</span><span class="mf">12345.</span><span class="p">,</span> <span class="n">only_r</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;lqt&#39;</span><span class="p">:</span>
+                <span class="n">svcomp</span> <span class="o">=</span> <span class="s1">&#39;Q&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">svcomp</span> <span class="o">=</span> <span class="s1">&#39;R&#39;</span>
+            <span class="k">if</span> <span class="n">only_r</span><span class="p">:</span>
+                <span class="n">loop_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">svcomp</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">loop_lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">svcomp</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">]</span>
+            <span class="n">rayp</span> <span class="o">=</span> <span class="n">srad2skm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rayp</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;lqt&#39;</span><span class="p">:</span>
+                <span class="n">loop_lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">loop_lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Z&#39;</span><span class="p">]</span>
+            <span class="n">rayp</span> <span class="o">=</span> <span class="n">srad2skm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rayp</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">if</span> <span class="n">evtstr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">datestr</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">evtstr</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">loop_lst</span><span class="p">:</span>
+            <span class="n">trrf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="o">+</span><span class="n">comp</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;evla&#39;</span><span class="p">:</span> <span class="n">evla</span><span class="p">,</span> <span class="s1">&#39;evlo&#39;</span><span class="p">:</span> <span class="n">evlo</span><span class="p">,</span> <span class="s1">&#39;evdp&#39;</span><span class="p">:</span> <span class="n">evdp</span><span class="p">,</span> <span class="s1">&#39;mag&#39;</span><span class="p">:</span> <span class="n">mag</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">:</span> <span class="n">baz</span><span class="p">,</span>
+                      <span class="s1">&#39;gcarc&#39;</span><span class="p">:</span> <span class="n">gcarc</span><span class="p">,</span> <span class="s1">&#39;user0&#39;</span><span class="p">:</span> <span class="n">rayp</span><span class="p">,</span> <span class="s1">&#39;kuser0&#39;</span><span class="p">:</span> <span class="s1">&#39;Ray Para&#39;</span><span class="p">,</span> <span class="s1">&#39;user1&#39;</span><span class="p">:</span> <span class="n">gauss</span><span class="p">,</span> <span class="s1">&#39;kuser1&#39;</span><span class="p">:</span> <span class="s1">&#39;G factor&#39;</span><span class="p">}</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">header</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;sac&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">tr</span> <span class="o">=</span> <span class="n">SACTrace</span><span class="o">.</span><span class="n">from_obspy_trace</span><span class="p">(</span><span class="n">trrf</span><span class="p">)</span>
+            <span class="n">tr</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="n">shift</span>
+            <span class="n">tr</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">tr</span><span class="o">.</span><span class="n">ka</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span>
+            <span class="n">tr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{0}</span><span class="s1">_</span><span class="si">{1}</span><span class="s1">.sac&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">,</span> <span class="n">tr</span><span class="o">.</span><span class="n">kcmpnm</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="EQ.s_condition"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.s_condition">[docs]</a>    <span class="k">def</span> <span class="nf">s_condition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trrf</span><span class="p">,</span> <span class="n">shift</span><span class="p">):</span>
+        <span class="n">nt0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">shift</span><span class="p">)</span><span class="o">/</span><span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+        <span class="n">nt25</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">shift</span><span class="o">+</span><span class="mi">25</span><span class="p">)</span><span class="o">/</span><span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">rssq</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">nt0</span><span class="p">:</span><span class="n">nt25</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">rssq</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">nt25</span><span class="p">:]):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="EQ.judge_rf"><a class="viewcode-back" href="../../seispy.html#seispy.eq.EQ.judge_rf">[docs]</a>    <span class="k">def</span> <span class="nf">judge_rf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shift</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;crust&#39;</span><span class="p">,</span> <span class="n">rmsgate</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;rtz&#39;</span><span class="p">:</span>
+            <span class="n">trrf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*R&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;lqt&#39;</span><span class="p">:</span>
+            <span class="n">trrf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Q&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;lqt&#39;</span><span class="p">:</span>
+            <span class="n">trrf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*L&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">==</span> <span class="s1">&#39;rtz&#39;</span><span class="p">:</span>
+            <span class="n">trrf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;*Z&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>        
+        <span class="k">if</span> <span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">npts</span> <span class="o">!=</span> <span class="n">npts</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        
+        <span class="c1"># Final RMS</span>
+        <span class="k">if</span> <span class="n">rmsgate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;iter&#39;</span><span class="p">:</span>
+                <span class="n">rms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">rms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">rms</span>
+            <span class="n">rmspass</span> <span class="o">=</span> <span class="n">rms</span> <span class="o">&lt;</span> <span class="n">rmsgate</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rmspass</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="c1"># R energy</span>
+        <span class="n">nt1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="mi">5</span><span class="o">+</span><span class="n">shift</span><span class="p">)</span><span class="o">/</span><span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+        <span class="n">reng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">nt1</span><span class="p">:]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">reng</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">:</span>
+            <span class="n">rengpass</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rengpass</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Max amplitude</span>
+        <span class="k">if</span> <span class="n">criterion</span> <span class="o">==</span> <span class="s1">&#39;crust&#39;</span><span class="p">:</span>
+            <span class="n">time_P1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="o">+</span><span class="n">shift</span><span class="p">)</span><span class="o">/</span><span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+            <span class="n">time_P2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="mi">4</span><span class="o">+</span><span class="n">shift</span><span class="p">)</span><span class="o">/</span><span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+            <span class="n">max_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">time_P1</span><span class="p">:</span><span class="n">time_P2</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">max_P</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="ow">and</span> <span class="n">max_P</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">rmspass</span> <span class="ow">and</span> <span class="n">rengpass</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">rengpass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">criterion</span> <span class="o">==</span> <span class="s1">&#39;mtz&#39;</span><span class="p">:</span>
+            <span class="n">max_deep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">((</span><span class="mi">30</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">/</span> <span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">):]))</span>
+            <span class="n">time_P1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="o">-</span><span class="mi">5</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">/</span> <span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+            <span class="n">time_P2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="mi">5</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span> <span class="o">/</span> <span class="n">trrf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+            <span class="n">max_P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">time_P1</span><span class="p">:</span><span class="n">time_P2</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">max_deep</span> <span class="o">&lt;</span> <span class="n">max_P</span> <span class="o">*</span> <span class="mf">0.4</span> <span class="ow">and</span> <span class="n">rmspass</span> <span class="ow">and</span> <span class="n">rengpass</span> <span class="ow">and</span>\
+                  <span class="n">max_P</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">trrf</span><span class="o">.</span><span class="n">data</span><span class="p">))</span> <span class="ow">and</span> <span class="n">max_P</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">rengpass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">criterion</span> <span class="o">==</span> <span class="s2">&quot;lab&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">s_condition</span><span class="p">(</span><span class="n">trrf</span><span class="p">,</span> <span class="n">shift</span><span class="p">)</span> <span class="ow">and</span> <span class="n">rengpass</span>
+        <span class="k">elif</span> <span class="n">criterion</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">rmspass</span> <span class="ow">and</span> <span class="n">rengpass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span></div></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+</pre></div>
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

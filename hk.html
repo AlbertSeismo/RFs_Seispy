@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Hk package &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/hk.html" />
+    <link rel="shortcut icon" href="_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CCP package" href="ccp.html" />
+    <link rel="prev" title="RF package" href="rf.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    <img src="_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rf.html">
+   RF package
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hk package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ccp.html">
+   CCP package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gui.html">
+   GUI package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seispy.html">
+   seispy package
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-seispy.hk">
+   seispy.hk module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-seispy.hkpara">
+   seispy.hkpara module
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="hk-package">
+<h1>Hk package<a class="headerlink" href="#hk-package" title="Permalink to this headline">#</a></h1>
+<section id="module-seispy.hk">
+<span id="seispy-hk-module"></span><h2>seispy.hk module<a class="headerlink" href="#module-seispy.hk" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.ci">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">ci</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allstack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev_num</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#ci"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.ci" title="Permalink to this definition">#</a></dt>
+<dd><p>Search best H and kappa from stacked matrix.
+Calculate error for H and kappa
+:param allstack: stacked HK matrix
+:param h: 1-D array of H
+:param kappa: 1-D array of kappa
+:param ev_num: event number
+:return:</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.hk">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">hk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#hk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.hk" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.hk_sta_test">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">hk_sta_test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#hk_sta_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.hk_sta_test" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.hksta">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">hksta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hpara</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isplot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isdisplay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#hksta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.hksta" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.hkstack">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">hkstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.7,</span> <span class="pre">0.2,</span> <span class="pre">0.1)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#hkstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.hkstack" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.hktest">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">hktest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#hktest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.hktest" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.plot">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allstack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">besth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bestk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cvalue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap=&lt;matplotlib.colors.ListedColormap</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.plot" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.print_result">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">print_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">besth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bestk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxhsig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxksig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#print_result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.print_result" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.time2idx">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">time2idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ti0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#time2idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.time2idx" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.tppps">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">tppps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#tppps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.tppps" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.tps">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">tps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#tps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.tps" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.tpsps">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">tpsps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#tpsps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.tpsps" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.transarray">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">transarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#transarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.transarray" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hk.vslow">
+<span class="sig-prename descclassname"><span class="pre">seispy.hk.</span></span><span class="sig-name descname"><span class="pre">vslow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rayp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hk.html#vslow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hk.vslow" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-seispy.hkpara">
+<span id="seispy-hkpara-module"></span><h2>seispy.hkpara module<a class="headerlink" href="#module-seispy.hkpara" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="seispy.hkpara.HKPara">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seispy.hkpara.</span></span><span class="sig-name descname"><span class="pre">HKPara</span></span><a class="reference internal" href="_modules/seispy/hkpara.html#HKPara"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hkpara.HKPara" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>hrange</strong></dt><dd></dd>
+<dt><strong>krange</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="seispy.hkpara.HKPara.hrange">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hrange</span></span><a class="headerlink" href="#seispy.hkpara.HKPara.hrange" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="seispy.hkpara.HKPara.krange">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">krange</span></span><a class="headerlink" href="#seispy.hkpara.HKPara.krange" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.hkpara.hkpara">
+<span class="sig-prename descclassname"><span class="pre">seispy.hkpara.</span></span><span class="sig-name descname"><span class="pre">hkpara</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/hkpara.html#hkpara"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.hkpara.hkpara" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="rf.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">RF package</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="ccp.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">CCP package</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

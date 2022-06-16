@@ -1,0 +1,1152 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>CCP package &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/ccp.html" />
+    <link rel="shortcut icon" href="_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GUI package" href="gui.html" />
+    <link rel="prev" title="Hk package" href="hk.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    <img src="_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rf.html">
+   RF package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hk.html">
+   Hk package
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   CCP package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gui.html">
+   GUI package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seispy.html">
+   seispy package
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-seispy.rfcorrect">
+   seispy.rfcorrect module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-seispy.rf2depth_makedata">
+   seispy.rf2depth_makedata module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seispy-ccpprofile-module">
+   seispy.ccpprofile module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seispy-cc3d-module">
+   seispy.cc3d module
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="ccp-package">
+<h1>CCP package<a class="headerlink" href="#ccp-package" title="Permalink to this headline">#</a></h1>
+<section id="module-seispy.rfcorrect">
+<span id="seispy-rfcorrect-module"></span><h2>seispy.rfcorrect module<a class="headerlink" href="#module-seispy.rfcorrect" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">RFStation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prime_comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'R'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>stel</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.harmonic" title="seispy.rfcorrect.RFStation.harmonic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic</span></code></a>([tb, te])</p></td>
+<td><p>Harmonic decomposition for extracting anisotropic and isotropic features from the radial and transverse RFs</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.jointani" title="seispy.rfcorrect.RFStation.jointani"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jointani</span></code></a>(tb, te[, tlen, stack_baz_val, ...])</p></td>
+<td><p>Eastimate crustal anisotropy with a joint method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.moveoutcorrect" title="seispy.rfcorrect.RFStation.moveoutcorrect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moveoutcorrect</span></code></a>([ref_rayp, dep_range, ...])</p></td>
+<td><p>Moveout correction with specified reference ray-parameter and depth</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.normalize" title="seispy.rfcorrect.RFStation.normalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code></a>([method])</p></td>
+<td><p>Normalize amplitude of each RFs. :param method: Method of normalization with <code class="docutils literal notranslate"><span class="pre">single</span></code> and <code class="docutils literal notranslate"><span class="pre">average</span></code> avaliable. - <code class="docutils literal notranslate"><span class="pre">single</span></code> for normalization with max amplitude of current RF. - <code class="docutils literal notranslate"><span class="pre">average</span></code> for normalization with average amplitude of current station. :type method: str, optional.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.psrf2depth" title="seispy.rfcorrect.RFStation.psrf2depth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">psrf2depth</span></code></a>([dep_range])</p></td>
+<td><p>Time-to-depth conversion with specified depth series.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.psrf_1D_raytracing" title="seispy.rfcorrect.RFStation.psrf_1D_raytracing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">psrf_1D_raytracing</span></code></a>([dep_range])</p></td>
+<td><p>1D back ray tracing to obtained Ps conversion points at discret depths</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.resample" title="seispy.rfcorrect.RFStation.resample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code></a>(dt)</p></td>
+<td><p>Resample RFs with specified dt</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.sort" title="seispy.rfcorrect.RFStation.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>([key])</p></td>
+<td><p>Sort RFs by keys in given <code class="docutils literal notranslate"><span class="pre">event</span></code>, <code class="docutils literal notranslate"><span class="pre">evla</span></code>, <code class="docutils literal notranslate"><span class="pre">evlo</span></code>, <code class="docutils literal notranslate"><span class="pre">evdp</span></code>, <code class="docutils literal notranslate"><span class="pre">dis</span></code>, <code class="docutils literal notranslate"><span class="pre">bazi</span></code>, <code class="docutils literal notranslate"><span class="pre">rayp</span></code>, <code class="docutils literal notranslate"><span class="pre">mag</span></code>, <code class="docutils literal notranslate"><span class="pre">f0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 72%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>psrf_3D_moveoutcorrect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>psrf_3D_raytracing</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>psrf_3D_timecorrect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>read_sample</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>slantstack</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.harmonic">
+<span class="sig-name descname"><span class="pre">harmonic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">te</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.harmonic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.harmonic" title="Permalink to this definition">#</a></dt>
+<dd><p>Harmonic decomposition for extracting anisotropic and isotropic features from the radial and transverse RFs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb</strong> (<em>float</em><em>, </em><em>optional</em>) – Start time relative to P, defaults to -5</p></li>
+<li><p><strong>te</strong> (<em>float</em><em>, </em><em>optional</em>) – End time relative to P, defaults to 10</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>harmonic_trans: numpy.ndarray, float</dt><dd><p>Harmonic components with shape of <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">nsamp)</span></code>, <code class="docutils literal notranslate"><span class="pre">nsamp</span> <span class="pre">=</span> <span class="pre">(te-tb)/RFStation.sampling</span></code></p>
+</dd>
+<dt>unmodel_trans: numpy.ndarray, float</dt><dd><p>Unmodel components with shape same as harmonic_trans.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.jointani">
+<span class="sig-name descname"><span class="pre">jointani</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">te</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tlen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack_baz_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rayp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmodel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iasp91'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.4,</span> <span class="pre">0.4,</span> <span class="pre">0.2]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.jointani"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.jointani" title="Permalink to this definition">#</a></dt>
+<dd><p>Eastimate crustal anisotropy with a joint method. See Liu and Niu (2012, doi: 10.1111/j.1365-246X.2011.05249.x) in detail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tb</strong> (<em>float</em>) – Time before Pms for search Ps peak</p></li>
+<li><p><strong>te</strong> (<em>float</em>) – Time after Pms for search Ps peak</p></li>
+<li><p><strong>tlen</strong> (<em>float</em><em>, </em><em>optional</em>) – Half time length for cut out Ps phase, defaults to 3.0</p></li>
+<li><p><strong>stack_baz_val</strong> (<em>float</em><em>, </em><em>optional</em>) – The interval for stacking binned by back-azimuth, defaults to 10</p></li>
+<li><p><strong>rayp</strong> (<em>float</em><em>, </em><em>optional</em>) – Reference ray-parameter for moveout correction, defaults to 0.06</p></li>
+<li><p><strong>velmodel</strong> (<em>str</em><em>, </em><em>optional</em>) – velocity model for moveout correction. ‘iasp91’, ‘prem’ 
+and ‘ak135’ is valid for internal model. Specify path to velocity model for the customized model. 
+The format is the same as in Taup, but the depth should be monotonically increasing, defaults to ‘iasp91’</p></li>
+<li><p><strong>weight</strong> (<em>list</em><em>, </em><em>optional</em>) – Weight for three different method, defaults to [0.4, 0.4, 0.2]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dominant fast velocity direction and time delay</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list, list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.moveoutcorrect">
+<span class="sig-name descname"><span class="pre">moveoutcorrect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_rayp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dep_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">13,</span> <span class="pre">14,</span> <span class="pre">15,</span> <span class="pre">16,</span> <span class="pre">17,</span> <span class="pre">18,</span> <span class="pre">19,</span> <span class="pre">20,</span> <span class="pre">21,</span> <span class="pre">22,</span> <span class="pre">23,</span> <span class="pre">24,</span> <span class="pre">25,</span> <span class="pre">26,</span> <span class="pre">27,</span> <span class="pre">28,</span> <span class="pre">29,</span> <span class="pre">30,</span> <span class="pre">31,</span> <span class="pre">32,</span> <span class="pre">33,</span> <span class="pre">34,</span> <span class="pre">35,</span> <span class="pre">36,</span> <span class="pre">37,</span> <span class="pre">38,</span> <span class="pre">39,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">44,</span> <span class="pre">45,</span> <span class="pre">46,</span> <span class="pre">47,</span> <span class="pre">48,</span> <span class="pre">49,</span> <span class="pre">50,</span> <span class="pre">51,</span> <span class="pre">52,</span> <span class="pre">53,</span> <span class="pre">54,</span> <span class="pre">55,</span> <span class="pre">56,</span> <span class="pre">57,</span> <span class="pre">58,</span> <span class="pre">59,</span> <span class="pre">60,</span> <span class="pre">61,</span> <span class="pre">62,</span> <span class="pre">63,</span> <span class="pre">64,</span> <span class="pre">65,</span> <span class="pre">66,</span> <span class="pre">67,</span> <span class="pre">68,</span> <span class="pre">69,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73,</span> <span class="pre">74,</span> <span class="pre">75,</span> <span class="pre">76,</span> <span class="pre">77,</span> <span class="pre">78,</span> <span class="pre">79,</span> <span class="pre">80,</span> <span class="pre">81,</span> <span class="pre">82,</span> <span class="pre">83,</span> <span class="pre">84,</span> <span class="pre">85,</span> <span class="pre">86,</span> <span class="pre">87,</span> <span class="pre">88,</span> <span class="pre">89,</span> <span class="pre">90,</span> <span class="pre">91,</span> <span class="pre">92,</span> <span class="pre">93,</span> <span class="pre">94,</span> <span class="pre">95,</span> <span class="pre">96,</span> <span class="pre">97,</span> <span class="pre">98,</span> <span class="pre">99,</span> <span class="pre">100,</span> <span class="pre">101,</span> <span class="pre">102,</span> <span class="pre">103,</span> <span class="pre">104,</span> <span class="pre">105,</span> <span class="pre">106,</span> <span class="pre">107,</span> <span class="pre">108,</span> <span class="pre">109,</span> <span class="pre">110,</span> <span class="pre">111,</span> <span class="pre">112,</span> <span class="pre">113,</span> <span class="pre">114,</span> <span class="pre">115,</span> <span class="pre">116,</span> <span class="pre">117,</span> <span class="pre">118,</span> <span class="pre">119,</span> <span class="pre">120,</span> <span class="pre">121,</span> <span class="pre">122,</span> <span class="pre">123,</span> <span class="pre">124,</span> <span class="pre">125,</span> <span class="pre">126,</span> <span class="pre">127,</span> <span class="pre">128,</span> <span class="pre">129,</span> <span class="pre">130,</span> <span class="pre">131,</span> <span class="pre">132,</span> <span class="pre">133,</span> <span class="pre">134,</span> <span class="pre">135,</span> <span class="pre">136,</span> <span class="pre">137,</span> <span class="pre">138,</span> <span class="pre">139,</span> <span class="pre">140,</span> <span class="pre">141,</span> <span class="pre">142,</span> <span class="pre">143,</span> <span class="pre">144,</span> <span class="pre">145,</span> <span class="pre">146,</span> <span class="pre">147,</span> <span class="pre">148,</span> <span class="pre">149])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iasp91'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.moveoutcorrect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.moveoutcorrect" title="Permalink to this definition">#</a></dt>
+<dd><p>Moveout correction with specified reference ray-parameter and depth</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref_rayp</strong> (<em>float</em><em>, </em><em>optional</em>) – reference ray-parameter in s/km, defaults to 0.06</p></li>
+<li><p><strong>dep_range</strong> (<code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code>, optional) – Depth range used for extracting velocity in velocity model, defaults to np.arange(0, 150)</p></li>
+<li><p><strong>velmod</strong> (<em>str</em><em>, </em><em>optional</em>) – Velocity model for moveout correction. ‘iasp91’, ‘prem’ 
+and ‘ak135’ is valid for internal model. Specify path to velocity model for the customized model. 
+The format is the same as in Taup, but the depth should be monotonically increasing, defaults to ‘iasp91’</p></li>
+<li><p><strong>replace</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether replace original data, False to return new array, defaults to False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>rf_corr:</strong><span class="classifier">meth:<cite>np.ndarray</cite></span></dt><dd><p>Corrected RFs with component of <code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.comp()</span></code></p>
+</dd>
+<dt><strong>t_corr:</strong><span class="classifier">meth:<cite>np.ndarray</cite> or <code class="docutils literal notranslate"><span class="pre">None</span></code></span></dt><dd><p>Corrected RFs in transverse component. If <code class="docutils literal notranslate"><span class="pre">only_r</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, this variable is <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.normalize" title="Permalink to this definition">#</a></dt>
+<dd><p>Normalize amplitude of each RFs.
+:param method: Method of normalization with <code class="docutils literal notranslate"><span class="pre">single</span></code> and <code class="docutils literal notranslate"><span class="pre">average</span></code> avaliable.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">single</span></code> for normalization with max amplitude of current RF.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">average</span></code> for normalization with average amplitude of current station.</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.psrf2depth">
+<span class="sig-name descname"><span class="pre">psrf2depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dep_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">13,</span> <span class="pre">14,</span> <span class="pre">15,</span> <span class="pre">16,</span> <span class="pre">17,</span> <span class="pre">18,</span> <span class="pre">19,</span> <span class="pre">20,</span> <span class="pre">21,</span> <span class="pre">22,</span> <span class="pre">23,</span> <span class="pre">24,</span> <span class="pre">25,</span> <span class="pre">26,</span> <span class="pre">27,</span> <span class="pre">28,</span> <span class="pre">29,</span> <span class="pre">30,</span> <span class="pre">31,</span> <span class="pre">32,</span> <span class="pre">33,</span> <span class="pre">34,</span> <span class="pre">35,</span> <span class="pre">36,</span> <span class="pre">37,</span> <span class="pre">38,</span> <span class="pre">39,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">44,</span> <span class="pre">45,</span> <span class="pre">46,</span> <span class="pre">47,</span> <span class="pre">48,</span> <span class="pre">49,</span> <span class="pre">50,</span> <span class="pre">51,</span> <span class="pre">52,</span> <span class="pre">53,</span> <span class="pre">54,</span> <span class="pre">55,</span> <span class="pre">56,</span> <span class="pre">57,</span> <span class="pre">58,</span> <span class="pre">59,</span> <span class="pre">60,</span> <span class="pre">61,</span> <span class="pre">62,</span> <span class="pre">63,</span> <span class="pre">64,</span> <span class="pre">65,</span> <span class="pre">66,</span> <span class="pre">67,</span> <span class="pre">68,</span> <span class="pre">69,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73,</span> <span class="pre">74,</span> <span class="pre">75,</span> <span class="pre">76,</span> <span class="pre">77,</span> <span class="pre">78,</span> <span class="pre">79,</span> <span class="pre">80,</span> <span class="pre">81,</span> <span class="pre">82,</span> <span class="pre">83,</span> <span class="pre">84,</span> <span class="pre">85,</span> <span class="pre">86,</span> <span class="pre">87,</span> <span class="pre">88,</span> <span class="pre">89,</span> <span class="pre">90,</span> <span class="pre">91,</span> <span class="pre">92,</span> <span class="pre">93,</span> <span class="pre">94,</span> <span class="pre">95,</span> <span class="pre">96,</span> <span class="pre">97,</span> <span class="pre">98,</span> <span class="pre">99,</span> <span class="pre">100,</span> <span class="pre">101,</span> <span class="pre">102,</span> <span class="pre">103,</span> <span class="pre">104,</span> <span class="pre">105,</span> <span class="pre">106,</span> <span class="pre">107,</span> <span class="pre">108,</span> <span class="pre">109,</span> <span class="pre">110,</span> <span class="pre">111,</span> <span class="pre">112,</span> <span class="pre">113,</span> <span class="pre">114,</span> <span class="pre">115,</span> <span class="pre">116,</span> <span class="pre">117,</span> <span class="pre">118,</span> <span class="pre">119,</span> <span class="pre">120,</span> <span class="pre">121,</span> <span class="pre">122,</span> <span class="pre">123,</span> <span class="pre">124,</span> <span class="pre">125,</span> <span class="pre">126,</span> <span class="pre">127,</span> <span class="pre">128,</span> <span class="pre">129,</span> <span class="pre">130,</span> <span class="pre">131,</span> <span class="pre">132,</span> <span class="pre">133,</span> <span class="pre">134,</span> <span class="pre">135,</span> <span class="pre">136,</span> <span class="pre">137,</span> <span class="pre">138,</span> <span class="pre">139,</span> <span class="pre">140,</span> <span class="pre">141,</span> <span class="pre">142,</span> <span class="pre">143,</span> <span class="pre">144,</span> <span class="pre">145,</span> <span class="pre">146,</span> <span class="pre">147,</span> <span class="pre">148,</span> <span class="pre">149])</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.psrf2depth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.psrf2depth" title="Permalink to this definition">#</a></dt>
+<dd><p>Time-to-depth conversion with specified depth series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dep_range</strong> (<code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code> , optional) – Discret conversion depth, defaults to np.arange(0, 150)</p></li>
+<li><p><strong>velmod</strong> (<em>str</em><em>, </em><em>optional</em>) – Velocity model for time-to-depth conversion. ‘iasp91’, ‘prem’ 
+and ‘ak135’ is valid for internal model. Specify path to velocity model for the customized model. 
+The format is the same as in Taup, but the depth should be monotonically increasing, defaults to ‘iasp91’</p></li>
+<li><p><strong>srayp</strong> (<em>numpy.lib.npyio.NpzFile</em><em>, </em><em>optional</em>) – Ray-parameter lib for Ps phases, If set up to None the rayp of direct is used, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D array of RFs in depth</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.psrf_1D_raytracing">
+<span class="sig-name descname"><span class="pre">psrf_1D_raytracing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dep_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">13,</span> <span class="pre">14,</span> <span class="pre">15,</span> <span class="pre">16,</span> <span class="pre">17,</span> <span class="pre">18,</span> <span class="pre">19,</span> <span class="pre">20,</span> <span class="pre">21,</span> <span class="pre">22,</span> <span class="pre">23,</span> <span class="pre">24,</span> <span class="pre">25,</span> <span class="pre">26,</span> <span class="pre">27,</span> <span class="pre">28,</span> <span class="pre">29,</span> <span class="pre">30,</span> <span class="pre">31,</span> <span class="pre">32,</span> <span class="pre">33,</span> <span class="pre">34,</span> <span class="pre">35,</span> <span class="pre">36,</span> <span class="pre">37,</span> <span class="pre">38,</span> <span class="pre">39,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">44,</span> <span class="pre">45,</span> <span class="pre">46,</span> <span class="pre">47,</span> <span class="pre">48,</span> <span class="pre">49,</span> <span class="pre">50,</span> <span class="pre">51,</span> <span class="pre">52,</span> <span class="pre">53,</span> <span class="pre">54,</span> <span class="pre">55,</span> <span class="pre">56,</span> <span class="pre">57,</span> <span class="pre">58,</span> <span class="pre">59,</span> <span class="pre">60,</span> <span class="pre">61,</span> <span class="pre">62,</span> <span class="pre">63,</span> <span class="pre">64,</span> <span class="pre">65,</span> <span class="pre">66,</span> <span class="pre">67,</span> <span class="pre">68,</span> <span class="pre">69,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73,</span> <span class="pre">74,</span> <span class="pre">75,</span> <span class="pre">76,</span> <span class="pre">77,</span> <span class="pre">78,</span> <span class="pre">79,</span> <span class="pre">80,</span> <span class="pre">81,</span> <span class="pre">82,</span> <span class="pre">83,</span> <span class="pre">84,</span> <span class="pre">85,</span> <span class="pre">86,</span> <span class="pre">87,</span> <span class="pre">88,</span> <span class="pre">89,</span> <span class="pre">90,</span> <span class="pre">91,</span> <span class="pre">92,</span> <span class="pre">93,</span> <span class="pre">94,</span> <span class="pre">95,</span> <span class="pre">96,</span> <span class="pre">97,</span> <span class="pre">98,</span> <span class="pre">99,</span> <span class="pre">100,</span> <span class="pre">101,</span> <span class="pre">102,</span> <span class="pre">103,</span> <span class="pre">104,</span> <span class="pre">105,</span> <span class="pre">106,</span> <span class="pre">107,</span> <span class="pre">108,</span> <span class="pre">109,</span> <span class="pre">110,</span> <span class="pre">111,</span> <span class="pre">112,</span> <span class="pre">113,</span> <span class="pre">114,</span> <span class="pre">115,</span> <span class="pre">116,</span> <span class="pre">117,</span> <span class="pre">118,</span> <span class="pre">119,</span> <span class="pre">120,</span> <span class="pre">121,</span> <span class="pre">122,</span> <span class="pre">123,</span> <span class="pre">124,</span> <span class="pre">125,</span> <span class="pre">126,</span> <span class="pre">127,</span> <span class="pre">128,</span> <span class="pre">129,</span> <span class="pre">130,</span> <span class="pre">131,</span> <span class="pre">132,</span> <span class="pre">133,</span> <span class="pre">134,</span> <span class="pre">135,</span> <span class="pre">136,</span> <span class="pre">137,</span> <span class="pre">138,</span> <span class="pre">139,</span> <span class="pre">140,</span> <span class="pre">141,</span> <span class="pre">142,</span> <span class="pre">143,</span> <span class="pre">144,</span> <span class="pre">145,</span> <span class="pre">146,</span> <span class="pre">147,</span> <span class="pre">148,</span> <span class="pre">149])</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.psrf_1D_raytracing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.psrf_1D_raytracing" title="Permalink to this definition">#</a></dt>
+<dd><p>1D back ray tracing to obtained Ps conversion points at discret depths</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dep_range</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Discret conversion depth, defaults to np.arange(0, 150)</p></li>
+<li><p><strong>velmod</strong> (<em>str</em><em>, </em><em>optional</em>) – Velocity model for time-to-depth conversion. ‘iasp91’, ‘prem’ 
+and ‘ak135’ is valid for internal model. Specify path to velocity model for the customized model. 
+The format is the same as in Taup, but the depth should be monotonically increasing, defaults to ‘iasp91’</p></li>
+<li><p><strong>srayp</strong> (<em>numpy.lib.npyio.NpzFile</em><em>, </em><em>optional</em>) – Ray-parameter lib for Ps phases, If set up to None the rayp of direct is used, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return pplat_s</dt>
+<dd class="field-even"><p>Latitude of conversion points</p>
+</dd>
+<dt class="field-odd">Return pplon_s</dt>
+<dd class="field-odd"><p>Longitude of conversion points</p>
+</dd>
+<dt class="field-even">Return tps</dt>
+<dd class="field-even"><p>Time difference of Ps at each depth</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.psrf_3D_moveoutcorrect">
+<span class="sig-name descname"><span class="pre">psrf_3D_moveoutcorrect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod3dpath</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.psrf_3D_moveoutcorrect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.psrf_3D_moveoutcorrect" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.psrf_3D_raytracing">
+<span class="sig-name descname"><span class="pre">psrf_3D_raytracing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod3dpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dep_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">13,</span> <span class="pre">14,</span> <span class="pre">15,</span> <span class="pre">16,</span> <span class="pre">17,</span> <span class="pre">18,</span> <span class="pre">19,</span> <span class="pre">20,</span> <span class="pre">21,</span> <span class="pre">22,</span> <span class="pre">23,</span> <span class="pre">24,</span> <span class="pre">25,</span> <span class="pre">26,</span> <span class="pre">27,</span> <span class="pre">28,</span> <span class="pre">29,</span> <span class="pre">30,</span> <span class="pre">31,</span> <span class="pre">32,</span> <span class="pre">33,</span> <span class="pre">34,</span> <span class="pre">35,</span> <span class="pre">36,</span> <span class="pre">37,</span> <span class="pre">38,</span> <span class="pre">39,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">44,</span> <span class="pre">45,</span> <span class="pre">46,</span> <span class="pre">47,</span> <span class="pre">48,</span> <span class="pre">49,</span> <span class="pre">50,</span> <span class="pre">51,</span> <span class="pre">52,</span> <span class="pre">53,</span> <span class="pre">54,</span> <span class="pre">55,</span> <span class="pre">56,</span> <span class="pre">57,</span> <span class="pre">58,</span> <span class="pre">59,</span> <span class="pre">60,</span> <span class="pre">61,</span> <span class="pre">62,</span> <span class="pre">63,</span> <span class="pre">64,</span> <span class="pre">65,</span> <span class="pre">66,</span> <span class="pre">67,</span> <span class="pre">68,</span> <span class="pre">69,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73,</span> <span class="pre">74,</span> <span class="pre">75,</span> <span class="pre">76,</span> <span class="pre">77,</span> <span class="pre">78,</span> <span class="pre">79,</span> <span class="pre">80,</span> <span class="pre">81,</span> <span class="pre">82,</span> <span class="pre">83,</span> <span class="pre">84,</span> <span class="pre">85,</span> <span class="pre">86,</span> <span class="pre">87,</span> <span class="pre">88,</span> <span class="pre">89,</span> <span class="pre">90,</span> <span class="pre">91,</span> <span class="pre">92,</span> <span class="pre">93,</span> <span class="pre">94,</span> <span class="pre">95,</span> <span class="pre">96,</span> <span class="pre">97,</span> <span class="pre">98,</span> <span class="pre">99,</span> <span class="pre">100,</span> <span class="pre">101,</span> <span class="pre">102,</span> <span class="pre">103,</span> <span class="pre">104,</span> <span class="pre">105,</span> <span class="pre">106,</span> <span class="pre">107,</span> <span class="pre">108,</span> <span class="pre">109,</span> <span class="pre">110,</span> <span class="pre">111,</span> <span class="pre">112,</span> <span class="pre">113,</span> <span class="pre">114,</span> <span class="pre">115,</span> <span class="pre">116,</span> <span class="pre">117,</span> <span class="pre">118,</span> <span class="pre">119,</span> <span class="pre">120,</span> <span class="pre">121,</span> <span class="pre">122,</span> <span class="pre">123,</span> <span class="pre">124,</span> <span class="pre">125,</span> <span class="pre">126,</span> <span class="pre">127,</span> <span class="pre">128,</span> <span class="pre">129,</span> <span class="pre">130,</span> <span class="pre">131,</span> <span class="pre">132,</span> <span class="pre">133,</span> <span class="pre">134,</span> <span class="pre">135,</span> <span class="pre">136,</span> <span class="pre">137,</span> <span class="pre">138,</span> <span class="pre">139,</span> <span class="pre">140,</span> <span class="pre">141,</span> <span class="pre">142,</span> <span class="pre">143,</span> <span class="pre">144,</span> <span class="pre">145,</span> <span class="pre">146,</span> <span class="pre">147,</span> <span class="pre">148,</span> <span class="pre">149])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srayp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.psrf_3D_raytracing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.psrf_3D_raytracing" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.psrf_3D_timecorrect">
+<span class="sig-name descname"><span class="pre">psrf_3D_timecorrect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod3dpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dep_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">10,</span> <span class="pre">11,</span> <span class="pre">12,</span> <span class="pre">13,</span> <span class="pre">14,</span> <span class="pre">15,</span> <span class="pre">16,</span> <span class="pre">17,</span> <span class="pre">18,</span> <span class="pre">19,</span> <span class="pre">20,</span> <span class="pre">21,</span> <span class="pre">22,</span> <span class="pre">23,</span> <span class="pre">24,</span> <span class="pre">25,</span> <span class="pre">26,</span> <span class="pre">27,</span> <span class="pre">28,</span> <span class="pre">29,</span> <span class="pre">30,</span> <span class="pre">31,</span> <span class="pre">32,</span> <span class="pre">33,</span> <span class="pre">34,</span> <span class="pre">35,</span> <span class="pre">36,</span> <span class="pre">37,</span> <span class="pre">38,</span> <span class="pre">39,</span> <span class="pre">40,</span> <span class="pre">41,</span> <span class="pre">42,</span> <span class="pre">43,</span> <span class="pre">44,</span> <span class="pre">45,</span> <span class="pre">46,</span> <span class="pre">47,</span> <span class="pre">48,</span> <span class="pre">49,</span> <span class="pre">50,</span> <span class="pre">51,</span> <span class="pre">52,</span> <span class="pre">53,</span> <span class="pre">54,</span> <span class="pre">55,</span> <span class="pre">56,</span> <span class="pre">57,</span> <span class="pre">58,</span> <span class="pre">59,</span> <span class="pre">60,</span> <span class="pre">61,</span> <span class="pre">62,</span> <span class="pre">63,</span> <span class="pre">64,</span> <span class="pre">65,</span> <span class="pre">66,</span> <span class="pre">67,</span> <span class="pre">68,</span> <span class="pre">69,</span> <span class="pre">70,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">73,</span> <span class="pre">74,</span> <span class="pre">75,</span> <span class="pre">76,</span> <span class="pre">77,</span> <span class="pre">78,</span> <span class="pre">79,</span> <span class="pre">80,</span> <span class="pre">81,</span> <span class="pre">82,</span> <span class="pre">83,</span> <span class="pre">84,</span> <span class="pre">85,</span> <span class="pre">86,</span> <span class="pre">87,</span> <span class="pre">88,</span> <span class="pre">89,</span> <span class="pre">90,</span> <span class="pre">91,</span> <span class="pre">92,</span> <span class="pre">93,</span> <span class="pre">94,</span> <span class="pre">95,</span> <span class="pre">96,</span> <span class="pre">97,</span> <span class="pre">98,</span> <span class="pre">99,</span> <span class="pre">100,</span> <span class="pre">101,</span> <span class="pre">102,</span> <span class="pre">103,</span> <span class="pre">104,</span> <span class="pre">105,</span> <span class="pre">106,</span> <span class="pre">107,</span> <span class="pre">108,</span> <span class="pre">109,</span> <span class="pre">110,</span> <span class="pre">111,</span> <span class="pre">112,</span> <span class="pre">113,</span> <span class="pre">114,</span> <span class="pre">115,</span> <span class="pre">116,</span> <span class="pre">117,</span> <span class="pre">118,</span> <span class="pre">119,</span> <span class="pre">120,</span> <span class="pre">121,</span> <span class="pre">122,</span> <span class="pre">123,</span> <span class="pre">124,</span> <span class="pre">125,</span> <span class="pre">126,</span> <span class="pre">127,</span> <span class="pre">128,</span> <span class="pre">129,</span> <span class="pre">130,</span> <span class="pre">131,</span> <span class="pre">132,</span> <span class="pre">133,</span> <span class="pre">134,</span> <span class="pre">135,</span> <span class="pre">136,</span> <span class="pre">137,</span> <span class="pre">138,</span> <span class="pre">139,</span> <span class="pre">140,</span> <span class="pre">141,</span> <span class="pre">142,</span> <span class="pre">143,</span> <span class="pre">144,</span> <span class="pre">145,</span> <span class="pre">146,</span> <span class="pre">147,</span> <span class="pre">148,</span> <span class="pre">149])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.psrf_3D_timecorrect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.psrf_3D_timecorrect" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.read_sample">
+<span class="sig-name descname"><span class="pre">read_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.read_sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.read_sample" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.resample">
+<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.resample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.resample" title="Permalink to this definition">#</a></dt>
+<dd><p>Resample RFs with specified dt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dt</strong><span class="classifier">float</span></dt><dd><p>Target sampling interval in sec</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.slantstack">
+<span class="sig-name descname"><span class="pre">slantstack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_dis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rayp_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.slantstack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.slantstack" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bazi'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#RFStation.sort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.RFStation.sort" title="Permalink to this definition">#</a></dt>
+<dd><p>Sort RFs by keys in given <code class="docutils literal notranslate"><span class="pre">event</span></code>, <code class="docutils literal notranslate"><span class="pre">evla</span></code>, <code class="docutils literal notranslate"><span class="pre">evlo</span></code>, <code class="docutils literal notranslate"><span class="pre">evdp</span></code>,
+<code class="docutils literal notranslate"><span class="pre">dis</span></code>, <code class="docutils literal notranslate"><span class="pre">bazi</span></code>, <code class="docutils literal notranslate"><span class="pre">rayp</span></code>, <code class="docutils literal notranslate"><span class="pre">mag</span></code>, <code class="docutils literal notranslate"><span class="pre">f0</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em><em>, </em><em>optional</em>) – key to sort, defaults to <code class="docutils literal notranslate"><span class="pre">bazi</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="seispy.rfcorrect.RFStation.stel">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stel</span></span><a class="headerlink" href="#seispy.rfcorrect.RFStation.stel" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seispy.rfcorrect.SACStation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">SACStation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#SACStation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.SACStation" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation" title="seispy.rfcorrect.RFStation"><code class="xref py py-class docutils literal notranslate"><span class="pre">seispy.rfcorrect.RFStation</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>stel</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic</span></code>([tb, te])</p></td>
+<td><p>Harmonic decomposition for extracting anisotropic and isotropic features from the radial and transverse RFs</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">jointani</span></code>(tb, te[, tlen, stack_baz_val, ...])</p></td>
+<td><p>Eastimate crustal anisotropy with a joint method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">moveoutcorrect</span></code>([ref_rayp, dep_range, ...])</p></td>
+<td><p>Moveout correction with specified reference ray-parameter and depth</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code>([method])</p></td>
+<td><p>Normalize amplitude of each RFs. :param method: Method of normalization with <code class="docutils literal notranslate"><span class="pre">single</span></code> and <code class="docutils literal notranslate"><span class="pre">average</span></code> avaliable. - <code class="docutils literal notranslate"><span class="pre">single</span></code> for normalization with max amplitude of current RF. - <code class="docutils literal notranslate"><span class="pre">average</span></code> for normalization with average amplitude of current station. :type method: str, optional.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">psrf2depth</span></code>([dep_range])</p></td>
+<td><p>Time-to-depth conversion with specified depth series.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">psrf_1D_raytracing</span></code>([dep_range])</p></td>
+<td><p>1D back ray tracing to obtained Ps conversion points at discret depths</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code>(dt)</p></td>
+<td><p>Resample RFs with specified dt</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code>([key])</p></td>
+<td><p>Sort RFs by keys in given <code class="docutils literal notranslate"><span class="pre">event</span></code>, <code class="docutils literal notranslate"><span class="pre">evla</span></code>, <code class="docutils literal notranslate"><span class="pre">evlo</span></code>, <code class="docutils literal notranslate"><span class="pre">evdp</span></code>, <code class="docutils literal notranslate"><span class="pre">dis</span></code>, <code class="docutils literal notranslate"><span class="pre">bazi</span></code>, <code class="docutils literal notranslate"><span class="pre">rayp</span></code>, <code class="docutils literal notranslate"><span class="pre">mag</span></code>, <code class="docutils literal notranslate"><span class="pre">f0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 72%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>psrf_3D_moveoutcorrect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>psrf_3D_raytracing</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>psrf_3D_timecorrect</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>read_sample</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>slantstack</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.interp_depth_model">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">interp_depth_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_dep</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#interp_depth_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.interp_depth_model" title="Permalink to this definition">#</a></dt>
+<dd><p>Interpolate Vp and Vs from 3D velocity with a specified depth range.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>mod3d</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.lib.npyio.NpzFile()</span></code></span></dt><dd><p>3D velocity loaded from a <code class="docutils literal notranslate"><span class="pre">.npz</span></code> file</p>
+</dd>
+<dt><strong>lat</strong><span class="classifier">float</span></dt><dd><p>Latitude of position in 3D velocity model</p>
+</dd>
+<dt><strong>lon</strong><span class="classifier">float</span></dt><dd><p>Longitude of position in 3D velocity model</p>
+</dd>
+<dt><strong>new_dep</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>1D array of depths in km</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>Vp</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>Vp in <code class="docutils literal notranslate"><span class="pre">new_dep</span></code></p>
+</dd>
+<dt><strong>Vs</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>Vs in <code class="docutils literal notranslate"><span class="pre">new_dep</span></code></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.moveoutcorrect_ref">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">moveoutcorrect_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stadatar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raypref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YAxisRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iasp91'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#moveoutcorrect_ref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.moveoutcorrect_ref" title="Permalink to this definition">#</a></dt>
+<dd><p>Moveout correction refer to a specified ray-parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stadatar</strong> – data class of RFStation</p></li>
+<li><p><strong>raypref</strong> – referred ray parameter in rad</p></li>
+<li><p><strong>YAxisRange</strong> – Depth range in nd.array type</p></li>
+<li><p><strong>velmod</strong> – Path to velocity model</p></li>
+<li><p><strong>chan</strong> – channel name for correction, ‘r’, ‘t’…</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Newdatar, EndIndex</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.psrf2depth">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">psrf2depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stadatar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YAxisRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iasp91'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srayp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#psrf2depth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.psrf2depth" title="Permalink to this definition">#</a></dt>
+<dd><p>Time-to-depth conversion with S-wave backprojection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stadatar</strong> (<a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation" title="seispy.rfcorrect.RFStation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation()</span></code></a>) – Data class of RFStation</p></li>
+<li><p><strong>YAxisRange</strong> (<em>numpy.ndarray</em>) – Depth range for converison</p></li>
+<li><p><strong>velmod</strong> (<em>str</em><em>, </em><em>optional</em>) – Velocity for conversion, whcih can be a path to velocity file, defaults to ‘iasp91’</p></li>
+<li><p><strong>srayp</strong> (str or <a class="reference internal" href="seispy.html#seispy.psrayp.PsRayp" title="seispy.psrayp.PsRayp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">seispy.psrayp.PsRayp()</span></code></a>, optional) – ray-parameter library of conversion phases. See <a class="reference internal" href="seispy.html#module-seispy.psrayp" title="seispy.psrayp"><code class="xref py py-meth docutils literal notranslate"><span class="pre">seispy.psrayp()</span></code></a> in detail, defaults to None</p></li>
+<li><p><strong>normalize</strong> (<em>str</em><em>, </em><em>optional</em>) – method of normalization, defaults to ‘single’. Please refer to <a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.normalize" title="seispy.rfcorrect.RFStation.normalize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.normalize()</span></code></a></p></li>
+<li><p><strong>sphere</strong> (<em>bool</em><em>, </em><em>optional</em>) – Wether do earth-flattening transformation, defaults to True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ps_rfdepth: 2-D numpy.ndarray, float</dt><dd><p>RFs in depth with shape of <code class="docutils literal notranslate"><span class="pre">(stadatar.ev_num,</span> <span class="pre">YAxisRange.size)</span></code>, <code class="docutils literal notranslate"><span class="pre">stadatar.ev_num</span></code> is the number of RFs in current station.
+<code class="docutils literal notranslate"><span class="pre">YAxisRange.size</span></code> is the size of depth axis.</p>
+</dd>
+<dt>endindex: numpy.ndarray, int</dt><dd><p>End index of each RF in depth</p>
+</dd>
+<dt>x_s: 2-D numpy.ndarray, float</dt><dd><p>Horizontal distance between station and S-wave conversion points with shape of  <code class="docutils literal notranslate"><span class="pre">(stadatar.ev_num,</span> <span class="pre">YAxisRange.size)</span></code></p>
+</dd>
+<dt>x_p: 2-D numpy.ndarray, float</dt><dd><p>Horizontal distance between station and P-wave conversion points with shape of  <code class="docutils literal notranslate"><span class="pre">(stadatar.ev_num,</span> <span class="pre">YAxisRange.size)</span></code></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.psrf_1D_raytracing">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">psrf_1D_raytracing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stadatar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YAxisRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iasp91'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srayp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#psrf_1D_raytracing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.psrf_1D_raytracing" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.psrf_3D_migration">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">psrf_3D_migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pplat_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pplon_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pplat_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pplon_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raylength_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raylength_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tpds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dep_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod3d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#psrf_3D_migration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.psrf_3D_migration" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>3D time difference correction with specified ray path and 3D velocity model. </dt><dd><p>The input parameters can be generated with <a class="reference internal" href="seispy.html#seispy.rfcorrect.psrf_1D_raytracing" title="seispy.rfcorrect.psrf_1D_raytracing"><code class="xref py py-meth docutils literal notranslate"><span class="pre">psrf_1D_raytracing()</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>pplat_s</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>2D array of latitude of S-wave in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code>, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>pplon_s</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>2D array of longitude of S-wave in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code>, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>pplat_p</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>2D array of latitude of P-wave in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code>, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>pplon_p</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>2D array of longitude of P-wave in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code>, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>raylength_s</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>2D array of ray path length of S-wave in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code>, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>raylength_p</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>2D array of ray path length of P-wave in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code>, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>Tpds</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>1D array of time difference in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code> (<code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>dep_range</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>1D array of depths in km, (<code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>mod3d</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.lib.npyio.NpzFile()</span></code></span></dt><dd><p>3D velocity loaded from a <code class="docutils literal notranslate"><span class="pre">.npz</span></code> file</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></dt><dd><p>Corrected time difference in dep_range</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.psrf_3D_raytracing">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">psrf_3D_raytracing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stadatar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YAxisRange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod3d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srayp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elevation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#psrf_3D_raytracing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.psrf_3D_raytracing" title="Permalink to this definition">#</a></dt>
+<dd><p>Back ray trace the S wavs with a assumed ray parameter of P.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stadatar</strong> (<em>object RFStation</em>) – The data class including PRFs and more parameters</p></li>
+<li><p><strong>YAxisRange</strong> (<em>numpy.ndarray</em>) – The depth array with the same intervals</p></li>
+<li><p><strong>mod3d</strong> (<em>'Mod3DPerturbation' object</em>) – The 3D velocity model with fields of <code class="docutils literal notranslate"><span class="pre">dep</span></code>, <code class="docutils literal notranslate"><span class="pre">lat</span></code>,
+<code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">vp</span></code> and <code class="docutils literal notranslate"><span class="pre">vs</span></code>.</p></li>
+<li><p><strong>elevation</strong> (<em>float</em>) – Elevation of this station relative to sea level</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pplat_s, pplon_s, pplat_p, pplon_p, tps</p>
+</dd>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray * 5</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.time2depth">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">time2depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stadatar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dep_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tpds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#time2depth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.time2depth" title="Permalink to this definition">#</a></dt>
+<dd><p>Interpolate RF amplitude with specified time difference and depth range</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>stadatar</strong><span class="classifier"><a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation" title="seispy.rfcorrect.RFStation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation()</span></code></a></span></dt><dd><p>Data class of <a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation" title="seispy.rfcorrect.RFStation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation()</span></code></a></p>
+</dd>
+<dt><strong>dep_range</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>1D array of depths in km, (<code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>Tpds</strong><span class="classifier"><code class="xref py py-meth docutils literal notranslate"><span class="pre">np.ndarray()</span></code></span></dt><dd><p>1D array of time difference in <code class="docutils literal notranslate"><span class="pre">dep_range</span></code> (<code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>normalize</strong><span class="classifier">str, optional</span></dt><dd><p>Normlization option, <code class="docutils literal notranslate"><span class="pre">'sinlge'</span></code> and <code class="docutils literal notranslate"><span class="pre">'average'</span></code> are available , by default ‘single’See <a class="reference internal" href="seispy.html#seispy.rfcorrect.RFStation.normalize" title="seispy.rfcorrect.RFStation.normalize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.normalize()</span></code></a> in detail.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>PS_RFdepth:</strong><span class="classifier">meth:<cite>np.ndarray</cite></span></dt><dd><p>2D array of RFs in depth, (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>, <code class="docutils literal notranslate"><span class="pre">dep_range.size</span></code>)</p>
+</dd>
+<dt><strong>end_index:</strong><span class="classifier">meth:<cite>np.ndarray</cite></span></dt><dd><p>1D array of the last digit of effective depth (<code class="xref py py-meth docutils literal notranslate"><span class="pre">RFStation.ev_num()</span></code>)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rfcorrect.xps_tps_map">
+<span class="sig-prename descclassname"><span class="pre">seispy.rfcorrect.</span></span><span class="sig-name descname"><span class="pre">xps_tps_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dep_mod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srayp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prayp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_raylen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rfcorrect.html#xps_tps_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rfcorrect.xps_tps_map" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate horizontal distance and time difference at depths</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dep_mod</strong> (<code class="xref py py-meth docutils literal notranslate"><span class="pre">seispy.util.DepModel()</span></code>) – 1D velocity model class</p></li>
+<li><p><strong>srayp</strong> (<em>float</em>) – conversion phase ray-parameters</p></li>
+<li><p><strong>prayp</strong> (<em>float</em>) – S-wave ray-parameters</p></li>
+<li><p><strong>is_raylen</strong> (<em>bool</em><em>, </em><em>optional</em>) – Wether calculate ray length at depths, defaults to False</p></li>
+<li><p><strong>sphere</strong> (<em>bool</em><em>, </em><em>optional</em>) – Wether do earth-flattening transformation, defaults to True, defaults to True</p></li>
+<li><p><strong>phase</strong> (<em>int</em><em>, </em><em>optional</em>) – Phases to calculate 1 for <code class="docutils literal notranslate"><span class="pre">Ps</span></code>, 2 for <code class="docutils literal notranslate"><span class="pre">PpPs</span></code>, 3 for <code class="docutils literal notranslate"><span class="pre">PsPs+PpSs</span></code>, defaults to 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">is_raylen</span> <span class="pre">=</span> <span class="pre">False</span></code></dt><dd></dd>
+<dt>tps: 2-D numpy.ndarray, float</dt><dd><p>RFs in depth with shape of <code class="docutils literal notranslate"><span class="pre">(stadatar.ev_num,</span> <span class="pre">YAxisRange.size)</span></code>, <code class="docutils literal notranslate"><span class="pre">stadatar.ev_num</span></code> is the number of RFs in current station.
+<code class="docutils literal notranslate"><span class="pre">YAxisRange.size</span></code> is the size of depth axis.</p>
+</dd>
+<dt>x_s: 2-D numpy.ndarray, float</dt><dd><p>Horizontal distance between station and S-wave conversion points with shape of  <code class="docutils literal notranslate"><span class="pre">(stadatar.ev_num,</span> <span class="pre">YAxisRange.size)</span></code></p>
+</dd>
+<dt>x_p: 2-D numpy.ndarray, float</dt><dd><p>Horizontal distance between station and P-wave conversion points with shape of  <code class="docutils literal notranslate"><span class="pre">(stadatar.ev_num,</span> <span class="pre">YAxisRange.size)</span></code></p>
+</dd>
+<dt>otherwise, two more variables will be returned</dt><dd></dd>
+<dt>raylength_s: 2-D numpy.ndarray, float</dt><dd></dd>
+<dt>raylength_p: 2-D numpy.ndarray, float</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-seispy.rf2depth_makedata">
+<span id="seispy-rf2depth-makedata-module"></span><h2>seispy.rf2depth_makedata module<a class="headerlink" href="#module-seispy.rf2depth_makedata" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="seispy.rf2depth_makedata.Station">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seispy.rf2depth_makedata.</span></span><span class="sig-name descname"><span class="pre">Station</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sta_lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rf2depth_makedata.html#Station"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rf2depth_makedata.Station" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rf2depth_makedata.init_mat">
+<span class="sig-prename descclassname"><span class="pre">seispy.rf2depth_makedata.</span></span><span class="sig-name descname"><span class="pre">init_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sta_num</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rf2depth_makedata.html#init_mat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rf2depth_makedata.init_mat" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rf2depth_makedata.makedata">
+<span class="sig-prename descclassname"><span class="pre">seispy.rf2depth_makedata.</span></span><span class="sig-name descname"><span class="pre">makedata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpara</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmod3d=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modfolder1d=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log=&lt;seispy.setuplog.setuplog</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rf2depth_makedata.html#makedata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rf2depth_makedata.makedata" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rf2depth_makedata.makedata3d">
+<span class="sig-prename descclassname"><span class="pre">seispy.rf2depth_makedata.</span></span><span class="sig-name descname"><span class="pre">makedata3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpara</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velmod3d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log=&lt;seispy.setuplog.setuplog</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raytracing3d=True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rf2depth_makedata.html#makedata3d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rf2depth_makedata.makedata3d" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.rf2depth_makedata.rf2depth">
+<span class="sig-prename descclassname"><span class="pre">seispy.rf2depth_makedata.</span></span><span class="sig-name descname"><span class="pre">rf2depth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/rf2depth_makedata.html#rf2depth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.rf2depth_makedata.rf2depth" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="seispy-ccpprofile-module">
+<h2>seispy.ccpprofile module<a class="headerlink" href="#seispy-ccpprofile-module" title="Permalink to this headline">#</a></h2>
+<span class="target" id="module-seispy.ccpprofile"></span><dl class="py class">
+<dt class="sig sig-object py" id="seispy.ccpprofile.CCPProfile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seispy.ccpprofile.</span></span><span class="sig-name descname"><span class="pre">CCPProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#CCPProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.CCPProfile" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.ccpprofile.CCPProfile.initial_profile" title="seispy.ccpprofile.CCPProfile.initial_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_profile</span></code></a>()</p></td>
+<td><p>Initialize bins of profile</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.ccpprofile.CCPProfile.read_rfdep" title="seispy.ccpprofile.CCPProfile.read_rfdep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_rfdep</span></code></a>()</p></td>
+<td><p>Read RFdepth file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.ccpprofile.CCPProfile.save_stack_data" title="seispy.ccpprofile.CCPProfile.save_stack_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_stack_data</span></code></a>([format])</p></td>
+<td><p>If format is 'npz', saving stacked data and parameters to local as a npz file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.ccpprofile.CCPProfile.stack" title="seispy.ccpprofile.CCPProfile.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>()</p></td>
+<td><p>Stack RFs in bins</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 57%" />
+<col style="width: 43%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>load_para</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccpprofile.CCPProfile.initial_profile">
+<span class="sig-name descname"><span class="pre">initial_profile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#CCPProfile.initial_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.CCPProfile.initial_profile" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize bins of profile</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccpprofile.CCPProfile.load_para">
+<span class="sig-name descname"><span class="pre">load_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#CCPProfile.load_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.CCPProfile.load_para" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccpprofile.CCPProfile.read_rfdep">
+<span class="sig-name descname"><span class="pre">read_rfdep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#CCPProfile.read_rfdep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.CCPProfile.read_rfdep" title="Permalink to this definition">#</a></dt>
+<dd><p>Read RFdepth file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>FileNotFoundError</strong> – Not Found RFdepth file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccpprofile.CCPProfile.save_stack_data">
+<span class="sig-name descname"><span class="pre">save_stack_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'npz'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#CCPProfile.save_stack_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.CCPProfile.save_stack_data" title="Permalink to this definition">#</a></dt>
+<dd><p>If format is ‘npz’, saving stacked data and parameters to local as a npz file. To load the file, please use data = np.load(fname, allow_pickle=True).
+data[‘cpara’] is the parameters when CCP stacking.
+data[‘stack_data’] is the result of stacked data.</p>
+<p>If format is ‘dat’ the stacked data will be save into a txt file with 8 columns, including bin_lat, bin_lon, profile_dis, depth, amp, ci_low, ci_high and count.
+where bin_lat and bin_lon represent the position of each bin; profile_dis represents the distance in km between each bin and the start point of the profile; depth represents depth of each bin; amp means the stacked amplitude; ci_low and ci_high mean confidence interval with bootstrap method; count represents stacking number of each bin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>format</strong> (<em>str</em>) – Format for stacked data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccpprofile.CCPProfile.stack">
+<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#CCPProfile.stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.CCPProfile.stack" title="Permalink to this definition">#</a></dt>
+<dd><p>Stack RFs in bins</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccpprofile.bin_shape">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccpprofile.</span></span><span class="sig-name descname"><span class="pre">bin_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpara</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#bin_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.bin_shape" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccpprofile.fix_filename">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccpprofile.</span></span><span class="sig-name descname"><span class="pre">fix_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dat'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#fix_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.fix_filename" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccpprofile.init_profile">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccpprofile.</span></span><span class="sig-name descname"><span class="pre">init_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#init_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.init_profile" title="Permalink to this definition">#</a></dt>
+<dd><p>Initial bins along a profile with given position of two points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat1</strong> (<em>float</em>) – The latitude of the start point</p></li>
+<li><p><strong>lon1</strong> (<em>float</em>) – The lontitude of the start point</p></li>
+<li><p><strong>lat2</strong> (<em>float</em>) – The latitude of the end point</p></li>
+<li><p><strong>lon2</strong> (<em>float</em>) – The lontitude of the end point</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – The interval between two points in km</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The location of bins (bin_loca), and length between each bin and the start point (profile_range)</p>
+</dd>
+</dl>
+<p>The bin_loca is positions of bins with a numpy.array with two column. The profile_range is distance between bin center and the start point with an 1D numpy.array.
+:rtype: (numpy.array, numpy.array)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccpprofile.line_proj">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccpprofile.</span></span><span class="sig-name descname"><span class="pre">line_proj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccpprofile.html#line_proj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccpprofile.line_proj" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="seispy-cc3d-module">
+<h2>seispy.cc3d module<a class="headerlink" href="#seispy-cc3d-module" title="Permalink to this headline">#</a></h2>
+<span class="target" id="module-seispy.ccp3d"></span><dl class="py class">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seispy.ccp3d.</span></span><span class="sig-name descname"><span class="pre">CCP3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="seispy.html#seispy.ccp3d.CCP3D.save_stack_data" title="seispy.ccp3d.CCP3D.save_stack_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_stack_data</span></code></a>(fname)</p></td>
+<td><p>Save stacked data and parameters to local as a npz file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="seispy.html#seispy.ccp3d.CCP3D.stack" title="seispy.ccp3d.CCP3D.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>()</p></td>
+<td><p>Search conversion points falling within a bin and stack them with bootstrap method.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>get_depth_err</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>initial_grid</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>load_para</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>read_rfdep</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>read_stack_data</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>save_good_410_660</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>search_good_410_660</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.get_depth_err">
+<span class="sig-name descname"><span class="pre">get_depth_err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'std'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.get_depth_err"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.get_depth_err" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.initial_grid">
+<span class="sig-name descname"><span class="pre">initial_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.initial_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.initial_grid" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.load_para">
+<span class="sig-name descname"><span class="pre">load_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.load_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.load_para" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.read_rfdep">
+<span class="sig-name descname"><span class="pre">read_rfdep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.read_rfdep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.read_rfdep" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.read_stack_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_stack_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stack_data_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">good_depth_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ismtz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.read_stack_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.read_stack_data" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.save_good_410_660">
+<span class="sig-name descname"><span class="pre">save_good_410_660</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.save_good_410_660"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.save_good_410_660" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.save_stack_data">
+<span class="sig-name descname"><span class="pre">save_stack_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.save_stack_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.save_stack_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Save stacked data and parameters to local as a npz file. To load the file, please use data = np.load(fname, allow_pickle=True).
+data[‘cpara’] is the parameters when CCP stacking.
+data[‘stack_data’] is the result of stacked data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fname</strong> (<em>str</em>) – file name of stacked data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.search_good_410_660">
+<span class="sig-name descname"><span class="pre">search_good_410_660</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">peak_410_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">380</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_410_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">440</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_660_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">630</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">peak_660_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">690</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.search_good_410_660"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.search_good_410_660" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seispy.ccp3d.CCP3D.stack">
+<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#CCP3D.stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.CCP3D.stack" title="Permalink to this definition">#</a></dt>
+<dd><p>Search conversion points falling within a bin and stack them with bootstrap method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccp3d.bin_shape">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccp3d.</span></span><span class="sig-name descname"><span class="pre">bin_shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cpara</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#bin_shape"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.bin_shape" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccp3d.boot_bin_stack">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccp3d.</span></span><span class="sig-name descname"><span class="pre">boot_bin_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_bin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#boot_bin_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.boot_bin_stack" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="seispy.ccp3d.gen_center_bin">
+<span class="sig-prename descclassname"><span class="pre">seispy.ccp3d.</span></span><span class="sig-name descname"><span class="pre">gen_center_bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len_lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len_lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/seispy/ccp3d.html#gen_center_bin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#seispy.ccp3d.gen_center_bin" title="Permalink to this definition">#</a></dt>
+<dd><p>Create spaced grid point with coordinates of the center point in the area in spherical coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center_lat</strong> (<em>float</em>) – Latitude of the center point.</p></li>
+<li><p><strong>center_lon</strong> (<em>float</em>) – Longitude of the center point.</p></li>
+<li><p><strong>len_lat</strong> (<em>float</em>) – Half length in degree along latitude axis.</p></li>
+<li><p><strong>len_lon</strong> (<em>float</em>) – Half length in degree along longitude axis.</p></li>
+<li><p><strong>val</strong> (<em>float</em>) – Interval in degree between adjacent grid point.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Coordinates of Grid points.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>2-D ndarray of floats with shape (n, 2), where n is the number of grid points.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="hk.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Hk package</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="gui.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">GUI package</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

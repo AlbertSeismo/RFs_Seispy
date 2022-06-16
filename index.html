@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Seispy Documentation &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/index.html" />
+    <link rel="shortcut icon" href="_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    <img src="_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-resources">
+   Learning resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#libraries">
+   Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <!-- .. seispy documentation master file, created by
+   sphinx-quickstart on Sat Jul 18 19:55:28 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive. -->
+<section id="seispy-documentation">
+<h1>Seispy Documentation<a class="headerlink" href="#seispy-documentation" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<p><a class="reference external" href="https://github.com/xumi1993/seispy/actions/workflows/test.yml"><img alt="CRV test" src="https://github.com/xumi1993/seispy/actions/workflows/test.yml/badge.svg?branch=dev" /></a>
+<a class="reference external" href="https://codecov.io/gh/xumi1993/seispy"><img alt="codecov" src="https://codecov.io/gh/xumi1993/seispy/branch/dev/graph/badge.svg?token=XN3E3N6S3V" /></a></p>
+<p><a class="reference external" href="https://github.com/xumi1993/seispy/actions/workflows/python-publish.yml"><img alt="Upload Python Package" src="https://github.com/xumi1993/seispy/actions/workflows/python-publish.yml/badge.svg" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy-doc.post/actions/workflows/deploy.yml"><img alt="Deploy Seispy Docs" src="https://github.com/xumi1993/seispy-doc.post/actions/workflows/deploy.yml/badge.svg" /></a>
+<a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=13623&branchName=master">
+<img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/seispy-feedstock?branchName=master">
+</a></p>
+<p><a class="reference external" href="https://anaconda.org/conda-forge/seispy"><img alt="Conda Version" src="https://img.shields.io/conda/vn/conda-forge/seispy.svg" /></a>
+<a class="reference external" href="https://pypi.org/project/python-seispy/"><img alt="PyPI" src="https://img.shields.io/pypi/v/python-seispy" /></a>
+<a class="reference external" href="https://pypi.org/project/python-seispy/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/python-seispy" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy/blob/master/LICENSE.txt"><img alt="GitHub" src="https://img.shields.io/github/license/xumi1993/seispy" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy"><img alt="" src="https://img.shields.io/github/last-commit/xumi1993/seispy" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy"><img alt="" src="https://img.shields.io/github/commit-activity/m/xumi1993/seispy" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy"><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/xumi1993/seispy" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/xumi1993/seispy" /></a>
+<a class="reference external" href="https://zenodo.org/badge/latestdoi/41006349"><img alt="DOI" src="https://zenodo.org/badge/41006349.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/xumi1993/seispy"><img alt="GitHub stars" src="https://img.shields.io/github/stars/xumi1993/seispy?style=social" /></a>
+<a class="reference external" href="https://github.com/xumi1993/seispy"><img alt="" src="https://img.shields.io/github/forks/xumi1993/seispy?style=social" /></a></p>
+<p>Seispy is a Python module for processing seismological data and calculating Receiver Functions. The advanced functions are available to improve the Obspy.</p>
+<p>I have been writing Seispy when I was a master student. At first, I wanted to calculate Receiver Functions in Python, but there is no suitable toolkit. Fortunately, The Obspy provided mounts of APIs for processing seismic data, so I ported codes for calculating Receiver Functions from Matlab to Python. Today increased functions have been added to Seispy to further process seismic data over than Obspy.</p>
+<img src="_static/seispy_shortcut.png"/> 
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<div class="sphinx-bs full-width docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header bg-myst-one docutils">
+<p class="card-text"><strong>Install via PyPI</strong></p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">seispy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header bg-myst-two docutils">
+<p class="card-text"><strong>Install via conda</strong></p>
+</div>
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">seispy</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Further details are available in the <a class="reference internal" href="installation.html"><span class="doc std std-doc">Installation Guide</span></a>.</p>
+</section>
+<section id="learning-resources">
+<h2>Learning resources<a class="headerlink" href="#learning-resources" title="Permalink to this headline">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Access <a class="reference external" href="https://www.koushare.com/video/videodetail/14734">here</a> for video tutorial in Chinese</p>
+</div>
+<div class="sphinx-bs full-width docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-4 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header bg-myst-two docutils">
+<p class="card-text"><strong>Getting Started</strong></p>
+</div>
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text"><a class="reference internal" href="usage/PRF_Process.html"><span class="doc std std-doc">Introduction to receiver function</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="usage/rf-sta.html"><span class="doc std std-doc">Procedure of RF calculation</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="usage/pickrf.html"><span class="doc std std-doc">Visual check RFs</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="usage/ccp.html"><span class="doc std std-doc">Time-to-depth &amp; CCP stacking</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header bg-myst-three docutils">
+<p class="card-text"><strong>Examples</strong></p>
+</div>
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text"><a class="reference internal" href="examples/ex-prf.html"><span class="doc std std-doc">RF calculation &amp; H-k stacking</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="examples/ex-ccp.html"><span class="doc std std-doc">CCP staking along profile</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="examples/ex-ccp3d.html"><span class="doc std std-doc">3D CCP stacking</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header bg-myst-three docutils">
+<p class="card-text"><strong>Configuration</strong></p>
+</div>
+<div class="card-body docutils">
+<ul class="simple">
+<li><p class="card-text"><a class="reference internal" href="notes/rf_cfg.html"><span class="doc std std-doc">RF Configure</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="notes/hk_cfg.html"><span class="doc std std-doc">Hk Configure</span></a></p></li>
+<li><p class="card-text"><a class="reference internal" href="notes/ccp_cfg.html"><span class="doc std std-doc">CCP Configure</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.distaz</span></code>: Calculate distance and azimuth credited by the <a class="reference external" href="http://www.seis.sc.edu/software/distaz/">lithospheric seismology program at USC</a>, but <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> operations are supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.geo</span></code>: Tiny codes of geophysics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.decon</span></code>: Functions of deconvolution transferred from <a class="reference external" href="https://github.com/iwbailey/processRFmatlab">iwbailey/processRFmatlab</a> including</p>
+<ul>
+<li><p>Iterative time domain deconvolution method (Ligorría and Ammon 1999 BSSA).</p></li>
+<li><p>Water level frequency domain deconvolution method (CJ. Ammon 1991 BSSA)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.rf</span></code>: Procedure for RF calculation. The functions of <code class="docutils literal notranslate"><span class="pre">match_eq</span></code>, <code class="docutils literal notranslate"><span class="pre">search_eq</span></code> invoked <code class="docutils literal notranslate"><span class="pre">obspy.core.UTCDateTime</span></code> and <code class="docutils literal notranslate"><span class="pre">obspy.clients</span></code> from the <a class="reference external" href="https://docs.obspy.org/">Obspy</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.eq</span></code>: RF processing for each event, which invoked <code class="docutils literal notranslate"><span class="pre">obspy.io.sac</span></code>, <code class="docutils literal notranslate"><span class="pre">obspy.signal</span></code>, <code class="docutils literal notranslate"><span class="pre">obspy.taup</span></code> and <code class="docutils literal notranslate"><span class="pre">obspy.core.Stream</span></code> from the <a class="reference external" href="https://docs.obspy.org/">Obspy</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.hk</span></code>: H-k stacking for single station (Zhu and Kanamori 2000 JGR).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.rfani</span></code>: A joint method for crustal anisotropic calculation (Liu and Niu 2011 GJI).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.slantstack</span></code>: Slant stacking for single station (Tauzin et al., 2008)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.rfcorrect</span></code>: Subsequent process of RFs including moveout correction and time to depth conversion (1D and 3D) (see <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0012821X17306921?via%3Dihub">Xu et al., 2018 EPSL</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.ccpprofile</span></code>: CCP stacking along a profile.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seispy.ccp3d</span></code>: 3-D CCP stacking with extracting depth D410 and D660.</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>Ammon C J. The isolation of receiver effects from teleseismic P waveforms[J]. Bulletin-Seismological Society of America, 1991, 81(6): 2504-2510.</p>
+<p>Liu H, Niu F. Estimating crustal seismic anisotropy with a joint analysis of radial and transverse receiver function data[J]. Geophysical Journal International, 2012, 188(1): 144-164.</p>
+<p>Krischer L, Megies T, Barsch R, et al. ObsPy: A bridge for seismology into the scientific Python ecosystem[J]. Computational Science &amp; Discovery, 2015, 8(1): 014003.</p>
+<p>Ligorría J P, Ammon C J. Iterative deconvolution and receiver-function estimation[J]. Bulletin of the seismological Society of America, 1999, 89(5): 1395-1400.</p>
+<p>Tauzin B, Debayle E, Wittlinger G. The mantle transition zone as seen by global Pds phases: No clear evidence for a thin transition zone beneath hotspots[J]. Journal of Geophysical Research: Solid Earth, 2008, 113(B8).</p>
+<p>Xu M, Huang H, Huang Z, et al. Insight into the subducted Indian slab and origin of the Tengchong volcano in SE Tibet from receiver function analysis[J]. Earth and Planetary Science Letters, 2018, 482: 567-579.</p>
+<p>Zhu, L., and Kanamori, H. Moho depth variation in southern California from teleseismic receiver functions[J]. J. Geophys. Res., 2000, 105( B2), 2969– 2980, doi:10.1029/1999JB900322.</p>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='right-next' id="next-link" href="installation.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Installation</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

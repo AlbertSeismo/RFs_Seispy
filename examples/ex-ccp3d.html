@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3-D CCP stacking for mantle transition zone structure under the Tibet. &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/examples/ex-ccp3d.html" />
+    <link rel="shortcut icon" href="../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configurations" href="../notes/index.html" />
+    <link rel="prev" title="Batch calculation and CCP stacking" href="ex-ccp.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ex-prf.html">
+   PRFs calculation and H-k stacking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ex-ccp.html">
+   Batch calculation and CCP stacking
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3-D CCP stacking for mantle transition zone structure under the Tibet.
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-this-example">
+   Download this example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-ccp-stacking">
+   3-D CCP stacking
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#required-parameters">
+     Required parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-grid">
+     Initialize grid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ccp-stacking">
+     CCP stacking
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#output-files">
+     Output files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stackfile">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         stackfile
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#peakfile">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         peakfile
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-map-of-d410-d660-and-the-mtz-thickness">
+     Plot the map of D410, D660 and the MTZ thickness
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ccp-stacking-along-a-profile-with-bootstrapping">
+   CCP stacking along a profile with bootstrapping
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Required parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-2-d-ccp-stacking-in-command-line">
+     Run 2-D CCP stacking in command line
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="d-ccp-stacking-for-mantle-transition-zone-structure-under-the-tibet">
+<h1>3-D CCP stacking for mantle transition zone structure under the Tibet.<a class="headerlink" href="#d-ccp-stacking-for-mantle-transition-zone-structure-under-the-tibet" title="Permalink to this headline">#</a></h1>
+<p>The discontinuities of the 410 and the 660 (D410 and D660) are velocity
+discontinuities at the bottom of the upper mantle. The receiver function
+method will provide visible phases to highlight the topography of D410
+and D660. The difference in depth between the D410 and D660 (i.e., the
+mantle transition zone (MTZ) thickness) is correspond to mineral phase
+transitions and thermal process in the mantle.</p>
+<p>Here, we will introduce the usage of the Seispy for imaging the MTZ
+structure in the central Tibet (<a class="reference external" href="https://doi.org/10.1016/j.pepi.2020.106452">Xu et al., 2020</a>).</p>
+<section id="download-this-example">
+<h2>Download this example<a class="headerlink" href="#download-this-example" title="Permalink to this headline">#</a></h2>
+<p>Download link: <a class="reference external" href="https://osf.io/4cga5/download">ex-ccp3d.tar.gz</a></p>
+<p>Download and unzip the file to any directory.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget https://osf.io/4cga5/download -O ex-ccp3d.tar.gz
+tar -xzf ex-ccp3d.tar.gz
+</pre></div>
+</div>
+<p>The package include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RFdepth_1D.npy</span></code>: RF data with time-to-depth conversion with 1-D IASP91 model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ccp.cfg</span></code>: Configure file for 3-D CCP stacking.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ps_mtz.sh</span></code>: Plot map for topography of D410 and D660 and the MTZ
+thickness.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ps_profile.sh</span></code>: Plot section with 2-D CCP stacking along a
+profile.</p></li>
+</ul>
+</section>
+<section id="d-ccp-stacking">
+<h2>3-D CCP stacking<a class="headerlink" href="#d-ccp-stacking" title="Permalink to this headline">#</a></h2>
+<section id="required-parameters">
+<h3>Required parameters<a class="headerlink" href="#required-parameters" title="Permalink to this headline">#</a></h3>
+<p>Some new parameters in the configure file (<code class="docutils literal notranslate"><span class="pre">ccp.cfg</span></code>) are exclusive for 3-D CCP stacking. Other parameters are same as the 2-D CCP stacking. See <a class="reference internal" href="../usage/ccp.html"><span class="doc">Stack PRFs with Common Conversion points (CCP) method</span></a> in detail.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">peakfile</span></code>: File to the output depth of the D410 and D660.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[spacedbins]</span></code>: Options for spaced grid of bins.</p></li>
+</ul>
+</section>
+<section id="initialize-grid">
+<h3>Initialize grid<a class="headerlink" href="#initialize-grid" title="Permalink to this headline">#</a></h3>
+<p>Seispy provide a command as the <code class="docutils literal notranslate"><span class="pre">ccp3d</span></code> for the 3-D CCP stacking.
+Before using this command, we will introduce rules of spaced grid.</p>
+<p>The section <code class="docutils literal notranslate"><span class="pre">[spacedbins]</span></code> and option <code class="docutils literal notranslate"><span class="pre">slide_val</span></code> in the <code class="docutils literal notranslate"><span class="pre">ccp.cfg</span></code>
+controls positions of bins. The <code class="docutils literal notranslate"><span class="pre">center_lat</span></code> and the <code class="docutils literal notranslate"><span class="pre">center_lon</span></code>
+are the latitude and longitude of the center of study region;
+<code class="docutils literal notranslate"><span class="pre">half_len_lat</span></code> and <code class="docutils literal notranslate"><span class="pre">half_len_lon</span></code> represent half length <strong>in
+degree</strong> of grid region along the latitude and longitude direction,
+respectively; <code class="docutils literal notranslate"><span class="pre">slide_val</span></code> represent spacing of grid <strong>in kilometer</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The option <code class="docutils literal notranslate"><span class="pre">slide_val</span></code> are shared by the two commands <code class="docutils literal notranslate"><span class="pre">ccp_profile</span></code> and <code class="docutils literal notranslate"><span class="pre">ccp3d</span></code>, so the unit is unified as kilometer.</p>
+</div>
+<p>In this step, there is compensation for curvature to avoid distortion at
+high latitude.</p>
+</section>
+<section id="ccp-stacking">
+<h3>CCP stacking<a class="headerlink" href="#ccp-stacking" title="Permalink to this headline">#</a></h3>
+<p>Run following command in the command line for 3-D CCP stacking.</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ccp3d ccp.cfg -s <span class="m">380</span>/440/630/690
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The option <code class="docutils literal notranslate"><span class="pre">-s</span></code> denotes the searching range in depth of the P410s
+and the P660s.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">boot_samples</span></code> was set in the <code class="docutils literal notranslate"><span class="pre">ccp.cfg</span></code>, the 95% confidence interval will calculated with the bootstrap method when CCP stacking. <code class="docutils literal notranslate"><span class="pre">boot_samples</span></code> represent the times of the sample in bootstrapping.</p></li>
+</ul>
+</section>
+<section id="output-files">
+<h3>Output files<a class="headerlink" href="#output-files" title="Permalink to this headline">#</a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">-s</span></code> was set in <code class="docutils literal notranslate"><span class="pre">ccp3d</span></code>, two files <code class="docutils literal notranslate"><span class="pre">stackfile</span></code> and <code class="docutils literal notranslate"><span class="pre">peakfile</span></code>
+will be generated, otherwise only <code class="docutils literal notranslate"><span class="pre">stackfile</span></code> will be generated.</p>
+<section id="stackfile">
+<h4><code class="docutils literal notranslate"><span class="pre">stackfile</span></code><a class="headerlink" href="#stackfile" title="Permalink to this headline">#</a></h4>
+<p>As the parameter <code class="docutils literal notranslate"><span class="pre">stackfile</span></code> set, A <code class="docutils literal notranslate"><span class="pre">npz</span></code> file will be generated,
+which include the stacked data of each bin and the all parameters. We
+can read the file in Python script</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seispy.ccp3d</span> <span class="kn">import</span> <span class="n">CCP3D</span>
+
+<span class="n">ccp</span> <span class="o">=</span> <span class="n">CCP3D</span><span class="o">.</span><span class="n">read_stack_data</span><span class="p">(</span><span class="s1">&#39;/path/to/stackfile&#39;</span><span class="p">)</span>
+<span class="c1"># ccp.stack_data is a np.ndarray with stacked data of each bin</span>
+</pre></div>
+</div>
+</section>
+<section id="peakfile">
+<h4><code class="docutils literal notranslate"><span class="pre">peakfile</span></code><a class="headerlink" href="#peakfile" title="Permalink to this headline">#</a></h4>
+<p>Text file with 10 columns including the Depth information of the D410
+and D660. Column 1 and 2 are latitude and longitude of each bin; column
+3 is the depth of the D410; column 4 and 5 are confidence interval at the D410 depth if
+<code class="docutils literal notranslate"><span class="pre">boot_samples</span></code> was set in <code class="docutils literal notranslate"><span class="pre">ccp.cfg</span></code>; column 6 is the ray number of
+each bin in this D410 depth; column 7 is the depth of the D660; column 8
+and 9 are confidence interval at the D660 depth; column 10 is the ray number of each bin
+in this D660 depth</p>
+</section>
+</section>
+<section id="plot-the-map-of-d410-d660-and-the-mtz-thickness">
+<h3>Plot the map of D410, D660 and the MTZ thickness<a class="headerlink" href="#plot-the-map-of-d410-d660-and-the-mtz-thickness" title="Permalink to this headline">#</a></h3>
+<p>We have provided a GMT script to plot the map</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sh ps_mtz.sh
+</pre></div>
+</div>
+<figure class="align-center" id="id2">
+<img alt="MTZ structure" src="../_images/mtz.png" />
+<figcaption>
+<p><span class="caption-text">Topographies of the d410, d660 and MTZ thickness</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="ccp-stacking-along-a-profile-with-bootstrapping">
+<h2>CCP stacking along a profile with bootstrapping<a class="headerlink" href="#ccp-stacking-along-a-profile-with-bootstrapping" title="Permalink to this headline">#</a></h2>
+<p>Lateral variations of the topography of D410 and D660 can be imaged by 2-D CCP stacking. To estimate errors of stacked PRFs, we will calculate 95% confidence interval with bootstrap method.</p>
+<section id="id1">
+<h3>Required parameters<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Following parameters are required in the <code class="docutils literal notranslate"><span class="pre">ccp.cfg</span></code>.</p>
+<ul class="simple">
+<li><p>Path to input/output files, including <code class="docutils literal notranslate"><span class="pre">depthdat</span></code> and <code class="docutils literal notranslate"><span class="pre">stackfile</span></code>.</p></li>
+<li><p>The bin <code class="docutils literal notranslate"><span class="pre">shape</span></code> was set to <code class="docutils literal notranslate"><span class="pre">circle</span></code>; <code class="docutils literal notranslate"><span class="pre">bin_radius</span></code> was set to 75 km; the interval between adjacent bins (<code class="docutils literal notranslate"><span class="pre">slide_val</span></code>) was set to 25 km.</p></li>
+<li><p>Two end points of the profile were set in <code class="docutils literal notranslate"><span class="pre">[line]</span></code> section.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">[stack]</span></code> section, We set the stacking from 300 km to 750 km with 2 km interval in depth.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">boot_samples</span></code> was set to 2000 times in bootstrapping.</p></li>
+</ul>
+</section>
+<section id="run-2-d-ccp-stacking-in-command-line">
+<h3>Run 2-D CCP stacking in command line<a class="headerlink" href="#run-2-d-ccp-stacking-in-command-line" title="Permalink to this headline">#</a></h3>
+<p>Run following command</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>ccp_profile ccp.cfg -t
+</pre></div>
+</div>
+<p>The text <code class="docutils literal notranslate"><span class="pre">stackfile</span></code> will be generated. Use provided GMT script to plot the profile.</p>
+<div class="highlight-Shell notranslate"><div class="highlight"><pre><span></span>sh ps_profile.sh
+</pre></div>
+</div>
+<figure class="align-center" id="id3">
+<img alt="MTZ structure profile" src="../_images/profile.png" />
+<figcaption>
+<p><span class="caption-text">Topography of D410 and D660 along the profile</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<p>Xu M, Huang Z, Wang L, et al. Lateral variation of the mantle transition zone beneath the Tibetan Plateau: Insight into thermal processes during Indian–Asian collision[J]. Physics of the Earth and Planetary Interiors, 2020, 301: 106452.</p>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="ex-ccp.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Batch calculation and CCP stacking</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../notes/index.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Configurations</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

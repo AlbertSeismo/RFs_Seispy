@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>seispy.ccp3d &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/_modules/seispy/ccp3d.html" />
+    <link rel="shortcut icon" href="../../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for seispy.ccp3d</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">seispy.geo</span> <span class="kn">import</span> <span class="n">km2deg</span><span class="p">,</span> <span class="n">latlon_from</span><span class="p">,</span> <span class="n">cosd</span><span class="p">,</span> <span class="n">extrema</span><span class="p">,</span> <span class="n">skm2srad</span><span class="p">,</span> <span class="n">rad2deg</span>
+<span class="kn">from</span> <span class="nn">seispy</span> <span class="kn">import</span> <span class="n">distaz</span>
+<span class="kn">from</span> <span class="nn">seispy.rfcorrect</span> <span class="kn">import</span> <span class="n">DepModel</span>
+<span class="kn">from</span> <span class="nn">seispy.setuplog</span> <span class="kn">import</span> <span class="n">setuplog</span>
+<span class="kn">from</span> <span class="nn">scikits.bootstrap</span> <span class="kn">import</span> <span class="n">ci</span>
+<span class="kn">from</span> <span class="nn">seispy.ccppara</span> <span class="kn">import</span> <span class="n">ccppara</span><span class="p">,</span> <span class="n">CCPPara</span>
+<span class="kn">from</span> <span class="nn">seispy.signal</span> <span class="kn">import</span> <span class="n">smooth</span>
+<span class="kn">from</span> <span class="nn">seispy.utils</span> <span class="kn">import</span> <span class="n">check_stack_val</span><span class="p">,</span> <span class="n">read_rfdep</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<div class="viewcode-block" id="gen_center_bin"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.gen_center_bin">[docs]</a><span class="k">def</span> <span class="nf">gen_center_bin</span><span class="p">(</span><span class="n">center_lat</span><span class="p">,</span> <span class="n">center_lon</span><span class="p">,</span> <span class="n">len_lat</span><span class="p">,</span> <span class="n">len_lon</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Create spaced grid point with coordinates of the center point in the area in spherical coordinates.</span>
+
+<span class="sd">:param center_lat: Latitude of the center point.</span>
+<span class="sd">:type center_lat: float</span>
+<span class="sd">:param center_lon: Longitude of the center point.</span>
+<span class="sd">:type center_lon: float</span>
+<span class="sd">:param len_lat: Half length in degree along latitude axis.</span>
+<span class="sd">:type len_lat: float</span>
+<span class="sd">:param len_lon: Half length in degree along longitude axis.</span>
+<span class="sd">:type len_lon: float</span>
+<span class="sd">:param val: Interval in degree between adjacent grid point.</span>
+<span class="sd">:type val: float</span>
+<span class="sd">:return: Coordinates of Grid points.</span>
+<span class="sd">:rtype: 2-D ndarray of floats with shape (n, 2), where n is the number of grid points.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">len_lat</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">lons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">len_lon</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">plat</span><span class="p">,</span> <span class="n">plon</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">center_lat</span><span class="p">,</span> <span class="n">center_lon</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+    <span class="n">da</span> <span class="o">=</span> <span class="n">distaz</span><span class="p">(</span><span class="n">plat</span><span class="p">,</span> <span class="n">plon</span><span class="p">,</span> <span class="n">center_lat</span><span class="p">,</span> <span class="n">center_lon</span><span class="p">)</span>
+    <span class="n">begx</span> <span class="o">=</span> <span class="o">-</span><span class="n">len_lon</span> 
+    <span class="n">begy</span> <span class="o">=</span> <span class="o">-</span><span class="n">len_lat</span>
+    <span class="n">bin_loca</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">bin_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">lats</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">lons</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">bin_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">lats</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">lons</span><span class="o">.</span><span class="n">size</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lats</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+        <span class="n">delyinc</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">val</span> <span class="o">+</span> <span class="n">begy</span>
+        <span class="n">delt</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">delta</span> <span class="o">+</span> <span class="n">delyinc</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lons</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">azim</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">az</span> <span class="o">+</span> <span class="p">(</span><span class="n">begx</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">val</span><span class="p">)</span> <span class="o">/</span> <span class="n">cosd</span><span class="p">(</span><span class="n">delyinc</span><span class="p">)</span>
+            <span class="n">glat</span><span class="p">,</span> <span class="n">glon</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">plat</span><span class="p">,</span> <span class="n">plon</span><span class="p">,</span> <span class="n">azim</span><span class="p">,</span> <span class="n">delt</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">glon</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">:</span>
+                <span class="n">glon</span> <span class="o">-=</span> <span class="mi">360</span>
+            <span class="n">bin_loca</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">glat</span><span class="p">,</span> <span class="n">glon</span><span class="p">])</span>
+            <span class="n">bin_mat</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">glat</span>
+            <span class="n">bin_mat</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">glon</span>
+            <span class="n">bin_map</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bin_loca</span><span class="p">),</span> <span class="n">bin_mat</span><span class="p">,</span> <span class="n">bin_map</span></div>
+
+
+<div class="viewcode-block" id="bin_shape"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.bin_shape">[docs]</a><span class="k">def</span> <span class="nf">bin_shape</span><span class="p">(</span><span class="n">cpara</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cpara</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="s1">&#39;rect&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The shape of bins must be set to </span><span class="se">\&#39;</span><span class="s1">circle</span><span class="se">\&#39;</span><span class="s1"> in ccp3d mode.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cpara</span><span class="o">.</span><span class="n">bin_radius</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">depmod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">)</span>
+        <span class="n">fzone</span> <span class="o">=</span> <span class="n">km2deg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">cpara</span><span class="o">.</span><span class="n">domperiod</span><span class="o">*</span><span class="n">depmod</span><span class="o">.</span><span class="n">vs</span><span class="o">*</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fzone</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">)</span> <span class="o">*</span> <span class="n">km2deg</span><span class="p">(</span><span class="n">cpara</span><span class="o">.</span><span class="n">bin_radius</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fzone</span></div>
+
+
+<div class="viewcode-block" id="boot_bin_stack"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.boot_bin_stack">[docs]</a><span class="k">def</span> <span class="nf">boot_bin_stack</span><span class="p">(</span><span class="n">data_bin</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">3000</span><span class="p">):</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">data_bin</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n_samples</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">cci</span> <span class="o">=</span> <span class="n">ci</span><span class="p">(</span><span class="n">data_bin</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cci</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">data_bin</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cci</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">mu</span><span class="p">,</span> <span class="n">cci</span><span class="p">,</span> <span class="n">count</span></div>
+
+
+<span class="k">def</span> <span class="nf">_get_sta</span><span class="p">(</span><span class="n">rfdep</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">sta</span><span class="p">[</span><span class="s1">&#39;stalat&#39;</span><span class="p">],</span> <span class="n">sta</span><span class="p">[</span><span class="s1">&#39;stalon&#39;</span><span class="p">]]</span> <span class="k">for</span> <span class="n">sta</span> <span class="ow">in</span> <span class="n">rfdep</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">_sta_val</span><span class="p">(</span><span class="n">stack_range</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+    <span class="n">dep_mod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">stack_range</span><span class="p">)</span>
+    <span class="n">x_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">((</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">dz</span> <span class="o">/</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">skm2srad</span><span class="p">(</span><span class="mf">0.08</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.</span> <span class="o">*</span> <span class="p">(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">R</span> <span class="o">/</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">vs</span><span class="p">)</span> <span class="o">**</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">dis</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">+</span> <span class="n">rad2deg</span><span class="p">(</span><span class="n">x_s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">dis</span>
+
+
+<div class="viewcode-block" id="CCP3D"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D">[docs]</a><span class="k">class</span> <span class="nc">CCP3D</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class for 3-D CCP stacking, Usually used to study mantle transition zone structure.</span>
+
+<span class="sd">        :param cfg_file: Path to configure file. If not defined a instance of CCP3D.cpara will be initialed, defaults to None</span>
+<span class="sd">        :type cfg_file: str, optional</span>
+<span class="sd">        :param log: A logger instance. If not defined, seispy.sutuplog.logger will be initialed, defaults to None</span>
+<span class="sd">        :type log: seispy.sutuplog.logger , optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">log</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">setuplog</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">log</span>
+        <span class="k">if</span> <span class="n">cfg_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span> <span class="o">=</span> <span class="n">CCPPara</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cfg_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">load_para</span><span class="p">(</span><span class="n">cfg_file</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;cfg_file must be str format.&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">good_410_660</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">good_depth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bin_mat</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bin_map</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="CCP3D.load_para"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.load_para">[docs]</a>    <span class="k">def</span> <span class="nf">load_para</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg_file</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span> <span class="o">=</span> <span class="n">ccppara</span><span class="p">(</span><span class="n">cfg_file</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="p">(</span><span class="s1">&#39;Cannot open configure file </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cfg_file</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stack_mul</span> <span class="o">=</span> <span class="n">check_stack_val</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_val</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">dep_val</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span></div>
+    
+<div class="viewcode-block" id="CCP3D.read_rfdep"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.read_rfdep">[docs]</a>    <span class="k">def</span> <span class="nf">read_rfdep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Loading RFdepth data from </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">depthdat</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rfdep</span> <span class="o">=</span> <span class="n">read_rfdep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">depthdat</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;Cannot open file of </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">depthdat</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="CCP3D.initial_grid"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.initial_grid">[docs]</a>    <span class="k">def</span> <span class="nf">initial_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read_rfdep</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bin_mat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bin_map</span> <span class="o">=</span> <span class="n">gen_center_bin</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">center_bin</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fzone</span> <span class="o">=</span> <span class="n">bin_shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stalst</span> <span class="o">=</span> <span class="n">_get_sta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rfdep</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dismin</span> <span class="o">=</span> <span class="n">_sta_val</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fzone</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+    <span class="k">def</span> <span class="nf">_select_sta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bin_lat</span><span class="p">,</span> <span class="n">bin_lon</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">distaz</span><span class="p">(</span><span class="n">bin_lat</span><span class="p">,</span> <span class="n">bin_lon</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stalst</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">stalst</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">delta</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dismin</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<div class="viewcode-block" id="CCP3D.stack"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.stack">[docs]</a>    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Search conversion points falling within a bin and stack them with bootstrap method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bin_info</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">):</span>
+            <span class="n">boot_stack</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">bin_mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">bin_ci</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="n">bin_count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1"> bin at lat: </span><span class="si">{:.3f}</span><span class="s1"> lon: </span><span class="si">{:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                                                                  <span class="n">bin_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bin_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="n">idxs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_select_sta</span><span class="p">(</span><span class="n">bin_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bin_info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">dep</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">):</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">j</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_mul</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">dep_val</span><span class="p">)</span>
+                <span class="n">bin_dep_amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">idxs</span><span class="p">:</span>
+                    <span class="n">stop_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rfdep</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;stopindex&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">idx</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">fall_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">distaz</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rfdep</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;piercelat&#39;</span><span class="p">][</span><span class="n">stop_idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfdep</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;piercelon&#39;</span><span class="p">][</span><span class="n">stop_idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span>
+                                        <span class="n">bin_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bin_info</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">delta</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">fzone</span><span class="p">[</span><span class="n">j</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">bin_dep_amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bin_dep_amp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfdep</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;moveout_correct&#39;</span><span class="p">][</span><span class="n">stop_idx</span><span class="p">[</span><span class="n">fall_idx</span><span class="p">],</span> <span class="n">idx</span><span class="p">])</span>
+                <span class="n">bin_mu</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bin_ci</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bin_count</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">boot_bin_stack</span><span class="p">(</span><span class="n">bin_dep_amp</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">boot_samples</span><span class="p">)</span>
+            <span class="n">boot_stack</span><span class="p">[</span><span class="s1">&#39;bin_lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bin_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">boot_stack</span><span class="p">[</span><span class="s1">&#39;bin_lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bin_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">boot_stack</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bin_mu</span>
+            <span class="n">boot_stack</span><span class="p">[</span><span class="s1">&#39;ci&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bin_ci</span>
+            <span class="n">boot_stack</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bin_count</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">boot_stack</span><span class="p">)</span></div>
+ 
+<div class="viewcode-block" id="CCP3D.save_stack_data"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.save_stack_data">[docs]</a>    <span class="k">def</span> <span class="nf">save_stack_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save stacked data and parameters to local as a npz file. To load the file, please use data = np.load(fname, allow_pickle=True).</span>
+<span class="sd">        data[&#39;cpara&#39;] is the parameters when CCP stacking.</span>
+<span class="sd">        data[&#39;stack_data&#39;] is the result of stacked data.</span>
+
+<span class="sd">        :param fname: file name of stacked data</span>
+<span class="sd">        :type fname: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;fname should be in </span><span class="se">\&#39;</span><span class="s1">str</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;fname should be in </span><span class="se">\&#39;</span><span class="s1">str</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">cpara</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="p">,</span> <span class="n">stack_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">)</span></div>
+    
+    <span class="k">def</span> <span class="nf">_search_peak</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">peak_410_min</span><span class="o">=</span><span class="mi">380</span><span class="p">,</span> <span class="n">peak_410_max</span><span class="o">=</span><span class="mi">440</span><span class="p">,</span> <span class="n">peak_660_min</span><span class="o">=</span><span class="mi">630</span><span class="p">,</span> <span class="n">peak_660_max</span><span class="o">=</span><span class="mi">690</span><span class="p">):</span>
+        <span class="n">tr</span> <span class="o">=</span> <span class="n">smooth</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span> <span class="n">half_len</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">idx_all</span> <span class="o">=</span> <span class="n">extrema</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span>
+        <span class="n">idx_ex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">idx_all</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1">#idx = idx_all[idx_ex]</span>
+        <span class="n">peak</span> <span class="o">=</span> <span class="n">tr</span><span class="p">[</span><span class="n">idx_all</span><span class="p">[</span><span class="n">idx_ex</span><span class="p">]]</span>
+        <span class="n">peak_depth</span> <span class="o">=</span> <span class="n">idx_all</span><span class="p">[</span><span class="n">idx_ex</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_val</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">idx_410</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">peak_depth</span><span class="o">&gt;</span><span class="n">peak_410_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">peak_depth</span><span class="o">&lt;</span><span class="n">peak_410_max</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">idx_410_max</span> <span class="o">=</span> <span class="n">idx_410</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="n">idx_410</span><span class="p">])]</span>
+            <span class="n">dep_410</span> <span class="o">=</span> <span class="n">peak_depth</span><span class="p">[</span><span class="n">idx_410_max</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">dep_410</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">idx_660</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">peak_depth</span><span class="o">&gt;</span><span class="n">peak_660_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">peak_depth</span><span class="o">&lt;</span><span class="n">peak_660_max</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">idx_660_max</span> <span class="o">=</span> <span class="n">idx_660</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="n">idx_660</span><span class="p">])]</span>
+            <span class="n">dep_660</span> <span class="o">=</span> <span class="n">peak_depth</span><span class="p">[</span><span class="n">idx_660_max</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">dep_660</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">return</span> <span class="n">dep_410</span><span class="p">,</span> <span class="n">dep_660</span>
+
+<div class="viewcode-block" id="CCP3D.search_good_410_660"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.search_good_410_660">[docs]</a>    <span class="k">def</span> <span class="nf">search_good_410_660</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">peak_410_min</span><span class="o">=</span><span class="mi">380</span><span class="p">,</span> <span class="n">peak_410_max</span><span class="o">=</span><span class="mi">440</span><span class="p">,</span> <span class="n">peak_660_min</span><span class="o">=</span><span class="mi">630</span><span class="p">,</span> <span class="n">peak_660_max</span><span class="o">=</span><span class="mi">690</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">good_410_660</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">boot_stack</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">good_410_660</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">good_410_660</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_search_peak</span><span class="p">(</span><span class="n">boot_stack</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">],</span> <span class="n">peak_410_min</span><span class="p">,</span> <span class="n">peak_410_max</span><span class="p">,</span> <span class="n">peak_660_min</span><span class="p">,</span> <span class="n">peak_660_max</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CCP3D.save_good_410_660"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.save_good_410_660">[docs]</a>    <span class="k">def</span> <span class="nf">save_good_410_660</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">good_peak</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">good_410_660</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">good_peak</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                    <span class="n">ci_410</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+                    <span class="n">count_410</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">good_peak</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_val</span><span class="p">)</span>
+                    <span class="n">ci_410</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;ci&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+                    <span class="n">count_410</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">good_peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                    <span class="n">ci_660</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+                    <span class="n">count_660</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">good_peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_val</span><span class="p">)</span>
+                    <span class="n">ci_660</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;ci&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+                    <span class="n">count_660</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;count&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.3f}</span><span class="s1"> </span><span class="si">{:.3f}</span><span class="s1"> </span><span class="si">{:.0f}</span><span class="s1"> </span><span class="si">{:.4f}</span><span class="s1"> </span><span class="si">{:.4f}</span><span class="s1"> </span><span class="si">{:.0f}</span><span class="s1"> </span><span class="si">{:.0f}</span><span class="s1"> </span><span class="si">{:.4f}</span><span class="s1"> </span><span class="si">{:.4f}</span><span class="s1"> </span><span class="si">{:.0f}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>   
+                        <span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">good_peak</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci_410</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci_410</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">count_410</span><span class="p">,</span>
+                        <span class="n">good_peak</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ci_660</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci_660</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">count_660</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="CCP3D.read_stack_data"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.read_stack_data">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">read_stack_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">stack_data_path</span><span class="p">,</span> <span class="n">cfg_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">good_depth_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ismtz</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">ccp</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">cfg_file</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stack_data_path</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ccp</span><span class="o">.</span><span class="n">stack_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stack_data&#39;</span><span class="p">]</span>
+        <span class="n">ccp</span><span class="o">.</span><span class="n">cpara</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;cpara&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+        <span class="n">ccp</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">,</span> <span class="n">ccp</span><span class="o">.</span><span class="n">bin_mat</span><span class="p">,</span> <span class="n">ccp</span><span class="o">.</span><span class="n">bin_map</span> <span class="o">=</span> <span class="n">gen_center_bin</span><span class="p">(</span><span class="o">*</span><span class="n">ccp</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">center_bin</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">good_depth_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ismtz</span><span class="p">:</span>
+                <span class="n">ccp</span><span class="o">.</span><span class="n">good_410_660</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">good_depth_path</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">ccp</span><span class="o">.</span><span class="n">good_410_660</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">good_depth_path</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ccp</span><span class="o">.</span><span class="n">good_depth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">good_depth_path</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">ccp</span></div>
+
+<div class="viewcode-block" id="CCP3D.get_depth_err"><a class="viewcode-back" href="../../seispy.html#seispy.ccp3d.CCP3D.get_depth_err">[docs]</a>    <span class="k">def</span> <span class="nf">get_depth_err</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;std&#39;</span><span class="p">):</span>
+        <span class="n">moho_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Computing errors of selected depth&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">good_depth</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Please load good depths before.&#39;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="s1">&#39;ci&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;ci&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">CCPlog</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;No confidence intervals in stack data, using standard division instead.&#39;</span><span class="p">)</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;std&#39;</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bin_loca</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">good_depth</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+                <span class="n">moho_err</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">moho_err</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">good_depth</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+                <span class="n">mu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span>
+                <span class="n">min_idxes</span> <span class="o">=</span> <span class="n">extrema</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">opt</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">low_idx</span> <span class="o">=</span> <span class="n">min_idxes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">min_idxes</span> <span class="o">-</span> <span class="n">idx</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])]</span>
+                    <span class="n">up_idx</span> <span class="o">=</span> <span class="n">min_idxes</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">min_idxes</span> <span class="o">-</span> <span class="n">idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])]</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">moho_err</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">moho_err</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;std&#39;</span><span class="p">:</span>
+                    <span class="n">cvalue</span> <span class="o">=</span> <span class="n">mu</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.645</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">mu</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">up_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">up_idx</span><span class="o">-</span><span class="n">low_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;ci&#39;</span><span class="p">:</span>
+                    <span class="n">cvalue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;ci&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Reference type should be in </span><span class="se">\&#39;</span><span class="s1">std</span><span class="se">\&#39;</span><span class="s1"> and </span><span class="se">\&#39;</span><span class="s1">ci</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">moho_err</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">moho_err</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_err</span><span class="p">(</span><span class="n">mu</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">up_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">cpara</span><span class="o">.</span><span class="n">stack_range</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">up_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">cvalue</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">moho_err</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_err</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">dep</span><span class="p">,</span> <span class="n">cvalue</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">amp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">amp</span> <span class="o">&lt;=</span> <span class="n">cvalue</span> <span class="o">&lt;</span> <span class="n">tr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="n">amp</span> <span class="o">&gt;</span> <span class="n">cvalue</span> <span class="o">&gt;=</span> <span class="n">tr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">interp1d</span><span class="p">([</span><span class="n">amp</span><span class="p">,</span> <span class="n">tr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> 
+                                  <span class="p">[</span><span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dep</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]])(</span><span class="n">cvalue</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">bin_loca</span> <span class="o">=</span> <span class="n">gen_center_bin</span><span class="p">(</span><span class="mf">48.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">km2deg</span><span class="p">(</span><span class="mi">55</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/workspace/WMHG_MTZ/ccp_results/bin_loca.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">binin</span> <span class="ow">in</span> <span class="n">bin_loca</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">binin</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">binin</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

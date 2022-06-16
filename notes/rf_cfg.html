@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>RF calculation &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/notes/rf_cfg.html" />
+    <link rel="shortcut icon" href="../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hk stacking" href="hk_cfg.html" />
+    <link rel="prev" title="Configurations" href="index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   RF calculation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hk_cfg.html">
+   Hk stacking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ccp_cfg.html">
+   CCP stacking
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+
+<nav id="bd-toc-nav">
+    
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="rf-calculation">
+<h1>RF calculation<a class="headerlink" href="#rf-calculation" title="Permalink to this headline">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">path</span><span class="p">]</span>
+<span class="c1"># Data path with event records</span>
+<span class="n">datapath</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">CB</span><span class="o">.</span><span class="n">NJ2</span>
+
+<span class="c1"># Output RF path</span>
+<span class="n">rfpath</span> <span class="o">=</span> <span class="o">./</span><span class="n">RFresult</span><span class="o">/</span><span class="n">CB</span><span class="o">.</span><span class="n">NJ2</span>
+
+<span class="c1"># Catalog path</span>
+<span class="n">catalogpath</span> <span class="o">=</span> <span class="n">events_all</span><span class="o">.</span><span class="n">dat</span>
+
+<span class="n">path</span> <span class="n">to</span> <span class="n">project</span> <span class="n">file</span>
+<span class="n">pjtpath</span> <span class="o">=</span> <span class="n">rfpjt</span><span class="o">.</span><span class="n">pkl</span>
+
+<span class="p">[</span><span class="n">search_eq</span><span class="p">]</span>
+<span class="c1"># Date range</span>
+<span class="n">date_begin</span> <span class="o">=</span> <span class="mi">20140101</span>
+<span class="n">date_end</span> <span class="o">=</span> <span class="mi">20150723</span>
+
+<span class="c1"># Catalog server, defaults to IRIS</span>
+<span class="n">catalog_server</span> <span class="o">=</span> <span class="n">IRIS</span>
+
+<span class="c1"># Events limitation</span>
+<span class="n">magmin</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="n">magmax</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dismin</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">dismax</span> <span class="o">=</span> <span class="mi">90</span>
+
+<span class="p">[</span><span class="n">match_eq</span><span class="p">]</span>
+<span class="c1"># Date format in SAC filenames</span>
+<span class="n">dateformat</span> <span class="o">=</span> <span class="o">%</span><span class="n">Y</span><span class="o">.%</span><span class="n">j</span><span class="o">.%</span><span class="n">H</span><span class="o">%</span><span class="n">M</span><span class="o">%</span><span class="n">S</span>
+
+<span class="c1"># Reference component in SAC filenames</span>
+<span class="n">ref_comp</span> <span class="o">=</span> <span class="o">.</span><span class="n">BHZ</span><span class="o">.</span>
+
+<span class="c1"># Suffix of SAC filenames</span>
+<span class="n">suffix</span> <span class="o">=</span> <span class="n">SAC</span>
+
+<span class="c1"># Relative time and tolerance</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="p">[</span><span class="n">snr</span><span class="p">]</span>
+<span class="c1"># Threshold of SNR</span>
+<span class="n">noisegate</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Time length of SNR calculation</span>
+<span class="n">noiselen</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="p">[</span><span class="nb">filter</span><span class="p">]</span>
+<span class="c1"># Low and high cut off frequency</span>
+<span class="n">freqmin</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">freqmax</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="p">[</span><span class="n">rotation</span><span class="p">]</span>
+<span class="c1"># Target components, TRZ or LQT available</span>
+<span class="n">comp</span> <span class="o">=</span> <span class="n">TRZ</span>
+
+<span class="p">[</span><span class="n">trim</span><span class="p">]</span>
+<span class="c1"># Time before and after P arrival for trim</span>
+<span class="n">time_before</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">time_after</span> <span class="o">=</span> <span class="mi">120</span>
+
+<span class="p">[</span><span class="n">decon</span><span class="p">]</span>
+<span class="c1"># Deconvolution method, iter or water available</span>
+<span class="n">decon_method</span> <span class="o">=</span> <span class="nb">iter</span>
+
+<span class="c1"># Gauss factor</span>
+<span class="n">gauss</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Iteration times and min error</span>
+<span class="n">itmax</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">minderr</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="c1"># Water level</span>
+<span class="n">wlevel</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="p">[</span><span class="n">save</span><span class="p">]</span>
+<span class="c1"># DT for resample</span>
+<span class="n">target_dt</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1"># Calculate only R component, yes or no available</span>
+<span class="n">only_r</span> <span class="o">=</span> <span class="n">no</span>
+
+<span class="c1"># Criterion for saving RFs, non-set, crust or mtz available</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">crust</span>
+
+<span class="c1"># Max RMS for RFs</span>
+<span class="n">rmsgate</span> <span class="o">=</span> <span class="mf">0.25</span>
+</pre></div>
+</div>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Configurations</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="hk_cfg.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Hk stacking</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

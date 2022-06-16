@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PRFs calculation and H-k stacking &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/examples/ex-prf.html" />
+    <link rel="shortcut icon" href="../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Batch calculation and CCP stacking" href="ex-ccp.html" />
+    <link rel="prev" title="Examples" href="index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   PRFs calculation and H-k stacking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ex-ccp.html">
+   Batch calculation and CCP stacking
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ex-ccp3d.html">
+   3-D CCP stacking for mantle transition zone structure under the Tibet.
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-prfs-of-the-station-cb-nj2">
+   Calculate PRFs of the station CB.NJ2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-this-example">
+     Download this example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-this-example">
+     Run this example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-the-moho-depth-and-the-crustal-vp-vs-using-the-h-k-stacking-method">
+   Estimate the Moho depth and the crustal Vp/Vs using the H-k stacking method
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prepare-a-configure-file-for-hk">
+     Prepare a configure file for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       hk
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Run this example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="prfs-calculation-and-h-k-stacking">
+<span id="label-name"></span><h1>PRFs calculation and H-k stacking<a class="headerlink" href="#prfs-calculation-and-h-k-stacking" title="Permalink to this headline">#</a></h1>
+<section id="calculate-prfs-of-the-station-cb-nj2">
+<h2>Calculate PRFs of the station CB.NJ2<a class="headerlink" href="#calculate-prfs-of-the-station-cb-nj2" title="Permalink to this headline">#</a></h2>
+<p>Here, we provide an example for calculating PRFs of CB.NJ2, which is a permanent station at Nanjing China mainland.</p>
+<section id="download-this-example">
+<h3>Download this example<a class="headerlink" href="#download-this-example" title="Permalink to this headline">#</a></h3>
+<p>Download link: <a class="reference external" href="https://osf.io/dxcfz/download">ex-prf.tar.gz</a></p>
+<p>unzip the file to any directory.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget https://osf.io/dxcfz/download -O ex-prf.tar.gz
+tar -xzf ex-prf.tar.gz
+</pre></div>
+</div>
+<p>the package include the seismic records of the station CB.NJ2 and configure files for RF calculation and H-k stacking.</p>
+<p>The seismic records of CB.NJ2 were cut out from origin time of seismic events to 1000 s after the origin time, which contained the direct P wave and its conversion phases.</p>
+</section>
+<section id="run-this-example">
+<h3>Run this example<a class="headerlink" href="#run-this-example" title="Permalink to this headline">#</a></h3>
+<p>Change directory to Data.CB.NJ2 then execute following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>prf rf.cfg
+</pre></div>
+</div>
+<p>As the <code class="docutils literal notranslate"><span class="pre">rfpath</span></code> set in the <code class="docutils literal notranslate"><span class="pre">rf.cfg</span></code>, run following command to visual check PRFs use a GUI. See <a class="reference internal" href="../usage/pickrf.html"><span class="doc std std-doc">visual check PRFs with an user interface</span></a> in detail.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pickrf ./RFresult/CB.NJ2
+</pre></div>
+</div>
+</section>
+</section>
+<section id="estimate-the-moho-depth-and-the-crustal-vp-vs-using-the-h-k-stacking-method">
+<h2>Estimate the Moho depth and the crustal Vp/Vs using the H-k stacking method<a class="headerlink" href="#estimate-the-moho-depth-and-the-crustal-vp-vs-using-the-h-k-stacking-method" title="Permalink to this headline">#</a></h2>
+<p>The PRFs had been saved to <code class="docutils literal notranslate"><span class="pre">./RFresult/CB.NJ2</span></code>, and the <code class="docutils literal notranslate"><span class="pre">CB.NJ2finallist.dat</span></code> had been created via the visual checking. The Moho depth can be estimated using the the H-k stacking method.</p>
+<p>Seispy has provided a command <code class="docutils literal notranslate"><span class="pre">hk</span></code> to do this process.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>usage: hk <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> cfg_file
+
+HK stacking <span class="k">for</span> single station
+
+positional arguments:
+  cfg_file    Path to HK configure file
+
+optional arguments:
+  -h, --help  show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  -v          Display results to standard output
+</pre></div>
+</div>
+<section id="prepare-a-configure-file-for-hk">
+<h3>Prepare a configure file for <code class="docutils literal notranslate"><span class="pre">hk</span></code><a class="headerlink" href="#prepare-a-configure-file-for-hk" title="Permalink to this headline">#</a></h3>
+<p>Here we provide an <code class="docutils literal notranslate"><span class="pre">hk.cfg</span></code> in this example. See <a class="reference internal" href="../notes/hk_cfg.html"><span class="doc std std-doc">Templates of configurations</span></a> in detail.</p>
+</section>
+<section id="id1">
+<h3>Run this example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>hk hk.cfg
+</pre></div>
+</div>
+<p>The figure would be generated to <code class="docutils literal notranslate"><span class="pre">hkpath</span></code>, which shows the stacking energy of difference phases and the final result of the estimation.</p>
+<p><img alt="" src="../_images/CB.NJ2.png" /></p>
+<p>The result of the Moho depth and Vp/Vs were saved into the path of <code class="docutils literal notranslate"><span class="pre">hklst</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">hk.dat</span></code>).</p>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Examples</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="ex-ccp.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Batch calculation and CCP stacking</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

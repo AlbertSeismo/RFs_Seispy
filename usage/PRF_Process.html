@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Calculate a P-wave Receiver Function (PRF) &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/usage/PRF_Process.html" />
+    <link rel="shortcut icon" href="../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Calculate PRFs for single station" href="rf-sta.html" />
+    <link rel="prev" title="Getting Started" href="index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Calculate a P-wave Receiver Function (PRF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rf-sta.html">
+   Calculate PRFs for single station
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="srf.html">
+   Calculate S wave Receiver Functions (SRF) for single station
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pickrf.html">
+   Visual check PRFs with an user interface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ccp.html">
+   Stack PRFs with Common Conversion points (CCP) method
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-corresponding-modules">
+   1. Import corresponding modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-sac-files-with-3-components-enz">
+   2. Read SAC files with 3 components (ENZ)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-process-for-raw-data">
+   3. Pre-process for raw data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-the-epicenter-distance-and-back-azimuth">
+   4. Calculate the epicenter distance and back-azimuth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rotation">
+   5. Rotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimating-p-arrival-time-and-ray-parameter-by-obspy-taup">
+   6. Estimating P arrival time and ray parameter by
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     obspy.taup
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trim-the-waveforms-for-prf">
+   7.Trim the waveforms for PRF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-prf">
+   8. Calculate PRF
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="calculate-a-p-wave-receiver-function-prf">
+<h1>Calculate a P-wave Receiver Function (PRF)<a class="headerlink" href="#calculate-a-p-wave-receiver-function-prf" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This notebook can be downloaded as <strong><a class="reference download internal" download="" href="../_downloads/3dc6b21e7317f0adfc489d8e356fa07b/PRF_Process.ipynb"><code class="xref download myst-nb docutils literal notranslate"><span class="pre">PRF_Process.ipynb</span></code></a></strong></p></li>
+<li><p>Teleseismic waveforms can be downloaded as <strong><a class="reference download internal" download="" href="../_downloads/699e96f564611e5327191799aa89ded5/rf_example.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">rf_example.tar.gz</span></code></a></strong></p></li>
+</ul>
+</div>
+<section id="import-corresponding-modules">
+<h2>1. Import corresponding modules<a class="headerlink" href="#import-corresponding-modules" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">obspy</span>
+<span class="kn">import</span> <span class="nn">seispy</span>
+<span class="kn">from</span> <span class="nn">seispy.decon</span> <span class="kn">import</span> <span class="n">RFTrace</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="read-sac-files-with-3-components-enz">
+<h2>2. Read SAC files with 3 components (ENZ)<a class="headerlink" href="#read-sac-files-with-3-components-enz" title="Permalink to this headline">#</a></h2>
+<p>You should perpare teleseismic data if SAC format (ENZ) and read them via obspy. To facilitate the follow-up, you’d better write positions of the station and the event into SAC header (i.e., <code class="docutils literal notranslate"><span class="pre">stla</span></code>, <code class="docutils literal notranslate"><span class="pre">stlo</span></code>, <code class="docutils literal notranslate"><span class="pre">evla</span></code>, <code class="docutils literal notranslate"><span class="pre">evlo</span></code> and <code class="docutils literal notranslate"><span class="pre">evdp</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">obspy</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;../_static/files/rf_example/*.101.*.SAC&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pre-process-for-raw-data">
+<h2>3. Pre-process for raw data<a class="headerlink" href="#pre-process-for-raw-data" title="Permalink to this headline">#</a></h2>
+<p>You should remove the mean offset and linear trend of the waveforms, then filtered them with a Butterworth bandpass filter in the range of 0.05–2 Hz. The figures show a comparison between the raw data and the data after pre-process</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">detrend</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;bandpass&quot;</span><span class="p">,</span> <span class="n">freqmin</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">freqmax</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">zerophase</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0496bad36e006b6202d259dc88a9bf3a2d46a9d96b8b8d9da46b75ce6f767c82.png" src="../_images/0496bad36e006b6202d259dc88a9bf3a2d46a9d96b8b8d9da46b75ce6f767c82.png" />
+</div>
+</div>
+</section>
+<section id="calculate-the-epicenter-distance-and-back-azimuth">
+<h2>4. Calculate the epicenter distance and back-azimuth<a class="headerlink" href="#calculate-the-epicenter-distance-and-back-azimuth" title="Permalink to this headline">#</a></h2>
+<p>To trim the waveform or rotate the components, you can use the <code class="docutils literal notranslate"><span class="pre">seispy.distaz</span></code> to calculate the epicenter distance and back-azimuth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span> <span class="o">=</span> <span class="n">seispy</span><span class="o">.</span><span class="n">distaz</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evla</span><span class="p">,</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evlo</span><span class="p">)</span>
+<span class="n">dis</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">delta</span>
+<span class="n">bazi</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">baz</span>
+<span class="n">ev_dep</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">evdp</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distance = </span><span class="si">%5.2f</span><span class="s1">˚&#39;</span> <span class="o">%</span> <span class="n">dis</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;back-azimuth = </span><span class="si">%5.2f</span><span class="s1">˚&#39;</span> <span class="o">%</span> <span class="n">bazi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distance = 51.64˚
+back-azimuth = 131.59˚
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rotation">
+<h2>5. Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">#</a></h2>
+<p>Now you can rotate horizontal components (ENZ) into radial and transverse components (TRZ)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st_TRZ</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s1">&#39;NE-&gt;RT&#39;</span><span class="p">,</span> <span class="n">back_azimuth</span><span class="o">=</span><span class="n">bazi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimating-p-arrival-time-and-ray-parameter-by-obspy-taup">
+<h2>6. Estimating P arrival time and ray parameter by <code class="docutils literal notranslate"><span class="pre">obspy.taup</span></code><a class="headerlink" href="#estimating-p-arrival-time-and-ray-parameter-by-obspy-taup" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">obspy.taup</span> <span class="kn">import</span> <span class="n">TauPyModel</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">TauPyModel</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;iasp91&#39;</span><span class="p">)</span>
+<span class="n">arrivals</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_travel_times</span><span class="p">(</span><span class="n">ev_dep</span><span class="p">,</span> <span class="n">dis</span><span class="p">,</span> <span class="n">phase_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">])</span>
+<span class="n">P_arr</span> <span class="o">=</span> <span class="n">arrivals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="trim-the-waveforms-for-prf">
+<h2>7.Trim the waveforms for PRF<a class="headerlink" href="#trim-the-waveforms-for-prf" title="Permalink to this headline">#</a></h2>
+<p>Then you cut 130 s long waveforms around P arrival time (from 10 s before to 120 s after theoretical P arrival times).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span>
+<span class="n">shift</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">time_after</span> <span class="o">=</span> <span class="mi">120</span>
+
+<span class="n">st_TRZ</span><span class="o">.</span><span class="n">trim</span><span class="p">(</span><span class="n">st_TRZ</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span><span class="o">+</span><span class="n">P_arr</span><span class="o">.</span><span class="n">time</span><span class="o">-</span><span class="n">shift</span><span class="p">,</span>
+            <span class="n">st_TRZ</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span><span class="o">+</span><span class="n">P_arr</span><span class="o">.</span><span class="n">time</span><span class="o">+</span><span class="n">time_after</span><span class="p">)</span>
+
+<span class="n">time_axis</span> <span class="o">=</span> <span class="n">st_TRZ</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">times</span><span class="p">()</span> <span class="o">-</span> <span class="n">shift</span>
+<span class="n">st_TRZ</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b71c3968ca778004f13d0d5d5807d9f9a044cb97c922c3b3cd3d5551ccd64abb.png" src="../_images/b71c3968ca778004f13d0d5d5807d9f9a044cb97c922c3b3cd3d5551ccd64abb.png" />
+</div>
+</div>
+</section>
+<section id="calculate-prf">
+<h2>8. Calculate PRF<a class="headerlink" href="#calculate-prf" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">seispy.decon.RFTrace</span></code> provide a class for deconvolution. Now let’s Calculate a PRF with iteration time-domain deconvolution mehtod. In this example, we assume:</p>
+<ul class="simple">
+<li><p>Gauss factor = 2.0</p></li>
+<li><p>The maximum number of iterations = 400</p></li>
+<li><p>Minimum error = 0.001</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f0</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">itmax</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">minderr</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RFTrace</span><span class="o">.</span><span class="n">deconvolute</span><span class="p">(</span><span class="n">st_TRZ</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">st_TRZ</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iter&#39;</span><span class="p">,</span>
+                         <span class="n">tshift</span><span class="o">=</span><span class="n">shift</span><span class="p">,</span> <span class="n">f0</span><span class="o">=</span><span class="n">f0</span><span class="p">,</span> <span class="n">itmax</span><span class="o">=</span><span class="n">itmax</span><span class="p">,</span> <span class="n">minderr</span><span class="o">=</span><span class="n">minderr</span><span class="p">)</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;relative&#39;</span><span class="p">,</span>
+        <span class="n">starttime</span><span class="o">=</span><span class="n">rf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span><span class="o">+</span><span class="n">shift</span><span class="p">,</span>
+        <span class="n">endtime</span><span class="o">=</span><span class="n">rf</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">starttime</span><span class="o">+</span><span class="n">shift</span><span class="o">+</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/709e5ac4e5b8add95a1a44c2d29bc7ebf7b0890f147a540773514bca7c262f8a.png" src="../_images/709e5ac4e5b8add95a1a44c2d29bc7ebf7b0890f147a540773514bca7c262f8a.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Getting Started</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="rf-sta.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Calculate PRFs for single station</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

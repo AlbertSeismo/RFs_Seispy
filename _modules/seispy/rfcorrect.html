@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>seispy.rfcorrect &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/_modules/seispy/rfcorrect.html" />
+    <link rel="shortcut icon" href="../../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../usage/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for seispy.rfcorrect</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">multiprocessing.sharedctypes</span> <span class="kn">import</span> <span class="n">Value</span>
+<span class="kn">from</span> <span class="nn">obspy.io.sac.sactrace</span> <span class="kn">import</span> <span class="n">SACTrace</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span><span class="p">,</span> <span class="n">interpn</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">resample</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span><span class="p">,</span> <span class="n">exists</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">abspath</span>
+<span class="kn">from</span> <span class="nn">seispy.geo</span> <span class="kn">import</span> <span class="n">skm2srad</span><span class="p">,</span> <span class="n">sdeg2skm</span><span class="p">,</span> <span class="n">rad2deg</span><span class="p">,</span> <span class="n">latlon_from</span><span class="p">,</span> \
+                       <span class="n">asind</span><span class="p">,</span> <span class="n">tand</span><span class="p">,</span> <span class="n">srad2skm</span><span class="p">,</span> <span class="n">km2deg</span>
+<span class="kn">from</span> <span class="nn">seispy.psrayp</span> <span class="kn">import</span> <span class="n">get_psrayp</span>
+<span class="kn">from</span> <span class="nn">seispy.rfani</span> <span class="kn">import</span> <span class="n">RFAni</span>
+<span class="kn">from</span> <span class="nn">seispy.slantstack</span> <span class="kn">import</span> <span class="n">SlantStack</span>
+<span class="kn">from</span> <span class="nn">seispy.harmonics</span> <span class="kn">import</span> <span class="n">Harmonics</span>
+<span class="kn">from</span> <span class="nn">seispy.utils</span> <span class="kn">import</span> <span class="n">DepModel</span><span class="p">,</span> <span class="n">Mod3DPerturbation</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+
+<div class="viewcode-block" id="RFStation"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation">[docs]</a><span class="k">class</span> <span class="nc">RFStation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">,</span> <span class="n">only_r</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">prime_comp</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Class for derivative process of RFs.</span>
+
+<span class="sd">        :param data_path: Path to RF data with SAC format. A finallist.dat must be in this path.</span>
+<span class="sd">        :type data_path: str</span>
+<span class="sd">        :param only_r: Whether reading transverse RFs, defaults to False</span>
+<span class="sd">        :type only_r: bool, optional</span>
+<span class="sd">        :param prime_comp: Prime component in RF filename. ``R`` or ``Q`` for PRF and ``L`` or ``Z`` for SRF</span>
+<span class="sd">        :type prime_comp: str</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            This Class will be renamed to ``RFStation`` in future versions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span> <span class="o">=</span> <span class="n">only_r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="o">=</span> <span class="n">prime_comp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_chech_comp</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="n">data_path</span><span class="p">):</span>
+            <span class="n">data_path</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">data_path</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">staname</span> <span class="o">=</span> <span class="n">basename</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">data_path</span><span class="p">))</span>
+        <span class="n">evt_lsts</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;*finallist.dat&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">evt_lsts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;No such *finallist.dat in the </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_path</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">evt_lsts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;More than one finallist.dat in the </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_path</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">evt_lst</span> <span class="o">=</span> <span class="n">evt_lsts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;names&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="s1">&#39;evla&#39;</span><span class="p">,</span> <span class="s1">&#39;evlo&#39;</span><span class="p">,</span> <span class="s1">&#39;evdp&#39;</span><span class="p">,</span> <span class="s1">&#39;dis&#39;</span><span class="p">,</span> <span class="s1">&#39;bazi&#39;</span><span class="p">,</span> <span class="s1">&#39;rayp&#39;</span><span class="p">,</span> <span class="s1">&#39;mag&#39;</span><span class="p">,</span> <span class="s1">&#39;f0&#39;</span><span class="p">),</span>
+                 <span class="s1">&#39;formats&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;U20&#39;</span><span class="p">,</span> <span class="s1">&#39;U20&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f4&#39;</span><span class="p">)}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">evla</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">evlo</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">evdp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bazi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rayp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mag</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">f0</span> <span class="o">=</span> \
+            <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">evt_lst</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rayp</span> <span class="o">=</span> <span class="n">skm2srad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rayp</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evla</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read_sample</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rflength</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">only_r</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">datat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rflength</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">evt</span><span class="p">,</span> <span class="n">ph</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">):</span>
+                <span class="n">sac</span> <span class="o">=</span> <span class="n">SACTrace</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">evt</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">ph</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{}</span><span class="s1">.sac&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="p">)))</span>
+                <span class="n">sact</span> <span class="o">=</span> <span class="n">SACTrace</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">evt</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">ph</span> <span class="o">+</span> <span class="s1">&#39;_T.sac&#39;</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())][</span><span class="n">_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sac</span><span class="o">.</span><span class="n">data</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">datat</span><span class="p">[</span><span class="n">_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sact</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_i</span><span class="p">,</span> <span class="n">evt</span><span class="p">,</span> <span class="n">ph</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">):</span>
+                <span class="n">sac</span> <span class="o">=</span> <span class="n">SACTrace</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">evt</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">ph</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{}</span><span class="s1">.sac&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="p">)))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())][</span><span class="n">_i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sac</span><span class="o">.</span><span class="n">data</span>
+
+<div class="viewcode-block" id="RFStation.read_sample"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.read_sample">[docs]</a>    <span class="k">def</span> <span class="nf">read_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">):</span>
+        <span class="n">fname</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_</span><span class="si">{}</span><span class="s1">.sac&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;No such files with comp of </span><span class="si">{}</span><span class="s1"> in </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="p">,</span> <span class="n">data_path</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sample_sac</span> <span class="o">=</span> <span class="n">SACTrace</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">fname</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stla</span> <span class="o">=</span> <span class="n">sample_sac</span><span class="o">.</span><span class="n">stla</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stlo</span> <span class="o">=</span> <span class="n">sample_sac</span><span class="o">.</span><span class="n">stlo</span>
+        <span class="k">if</span> <span class="n">sample_sac</span><span class="o">.</span><span class="n">stel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stel</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stel</span> <span class="o">=</span> <span class="n">sample_sac</span><span class="o">.</span><span class="n">stel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rflength</span> <span class="o">=</span> <span class="n">sample_sac</span><span class="o">.</span><span class="n">npts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shift</span> <span class="o">=</span> <span class="o">-</span><span class="n">sample_sac</span><span class="o">.</span><span class="n">b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampling</span> <span class="o">=</span> <span class="n">sample_sac</span><span class="o">.</span><span class="n">delta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rflength</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampling</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">shift</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">stel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stel</span>
+    
+    <span class="nd">@stel</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">stel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stel</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stel</span> <span class="o">=</span> <span class="n">value</span><span class="o">/</span><span class="mi">1000</span>
+
+    <span class="k">def</span> <span class="nf">_chech_comp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prime_phase</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prime_phase</span> <span class="o">=</span> <span class="s1">&#39;S&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;prime component should be in </span><span class="se">\&#39;</span><span class="s1">R</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">Q</span><span class="se">\&#39;</span><span class="s1">, </span><span class="se">\&#39;</span><span class="s1">L</span><span class="se">\&#39;</span><span class="s1"> and </span><span class="se">\&#39;</span><span class="s1">Z</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RFStation.normalize"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.normalize">[docs]</a>    <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Normalize amplitude of each RFs.</span>
+<span class="sd">        :param method: Method of normalization with ``single`` and ``average`` avaliable.</span>
+<span class="sd">                     - ``single`` for normalization with max amplitude of current RF.</span>
+<span class="sd">                     - ``average`` for normalization with average amplitude of current station.</span>
+<span class="sd">        :type method: str, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">type</span><span class="se">\&#39;</span><span class="s1"> must be string, but </span><span class="si">{}</span><span class="s1"> type got&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">method</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;single&#39;</span><span class="p">:</span>
+            <span class="n">maxamp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;average&#39;</span><span class="p">:</span>
+            <span class="n">amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span>
+            <span class="n">maxamp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span><span class="p">)</span> <span class="o">*</span> <span class="n">amp</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">method</span><span class="se">\&#39;</span><span class="s1"> must be in </span><span class="se">\&#39;</span><span class="s1">single</span><span class="se">\&#39;</span><span class="s1"> and </span><span class="se">\&#39;</span><span class="s1">average</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())][</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">maxamp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">datat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">maxamp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="RFStation.resample"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.resample">[docs]</a>    <span class="k">def</span> <span class="nf">resample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Resample RFs with specified dt</span>
+
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dt : float</span>
+<span class="sd">            Target sampling interval in sec</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">npts</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rflength</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sampling</span> <span class="o">/</span> <span class="n">dt</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())]</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())],</span> <span class="n">npts</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">datat</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datat</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampling</span> <span class="o">=</span> <span class="n">dt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rflength</span> <span class="o">=</span> <span class="n">npts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">npts</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">shift</span></div>
+
+<div class="viewcode-block" id="RFStation.sort"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;bazi&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sort RFs by keys in given ``event``, ``evla``, ``evlo``, ``evdp``,</span>
+<span class="sd">        ``dis``, ``bazi``, ``rayp``, ``mag``, ``f0``</span>
+
+<span class="sd">        :param key: key to sort, defaults to ``bazi``</span>
+<span class="sd">        :type key: str, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">keyarg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">[</span><span class="s1">&#39;names&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">keyarg</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">keyarg</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">datat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">datat</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="RFStation.moveoutcorrect"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.moveoutcorrect">[docs]</a>    <span class="k">def</span> <span class="nf">moveoutcorrect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref_rayp</span><span class="o">=</span><span class="mf">0.06</span><span class="p">,</span> <span class="n">dep_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">velmod</span><span class="o">=</span><span class="s1">&#39;iasp91&#39;</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Moveout correction with specified reference ray-parameter and depth</span>
+
+<span class="sd">        :param ref_rayp: reference ray-parameter in s/km, defaults to 0.06</span>
+<span class="sd">        :type ref_rayp: float, optional</span>
+<span class="sd">        :param dep_range: Depth range used for extracting velocity in velocity model, defaults to np.arange(0, 150)</span>
+<span class="sd">        :type dep_range: :meth:`np.ndarray`, optional</span>
+<span class="sd">        :param velmod: Velocity model for moveout correction. &#39;iasp91&#39;, &#39;prem&#39; </span>
+<span class="sd">                      and &#39;ak135&#39; is valid for internal model. Specify path to velocity model for the customized model. </span>
+<span class="sd">                      The format is the same as in Taup, but the depth should be monotonically increasing, defaults to &#39;iasp91&#39;</span>
+<span class="sd">        :type velmod: str, optional</span>
+<span class="sd">        :param replace: whether replace original data, False to return new array, defaults to False</span>
+<span class="sd">        :type replace: bool, optional</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        rf_corr: :meth:`np.ndarray` </span>
+<span class="sd">            Corrected RFs with component of :meth:`RFStation.comp`</span>
+
+<span class="sd">        t_corr: :meth:`np.ndarray` or ``None``</span>
+<span class="sd">            Corrected RFs in transverse component. If ``only_r`` is ``True``, this variable is ``None``</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span><span class="p">:</span>
+            <span class="n">t_corr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">moveoutcorrect_ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skm2srad</span><span class="p">(</span><span class="n">ref_rayp</span><span class="p">),</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">chan</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">velmod</span><span class="o">=</span><span class="n">velmod</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t_corr</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="s1">&#39;datar&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="n">chan</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span>
+        <span class="k">elif</span> <span class="s1">&#39;dataz&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="n">chan</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span>
+        <span class="k">elif</span> <span class="s1">&#39;datal&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">:</span>
+            <span class="n">chan</span> <span class="o">=</span> <span class="s1">&#39;l&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">rf_corr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">moveoutcorrect_ref</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">skm2srad</span><span class="p">(</span><span class="n">ref_rayp</span><span class="p">),</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">chan</span><span class="o">=</span><span class="n">chan</span><span class="p">,</span> <span class="n">velmod</span><span class="o">=</span><span class="n">velmod</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">replace</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chan</span><span class="p">)]</span> <span class="o">=</span> <span class="n">rf_corr</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">datat</span> <span class="o">=</span> <span class="n">t_corr</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">rf_corr</span><span class="p">,</span> <span class="n">t_corr</span></div>
+
+<div class="viewcode-block" id="RFStation.psrf2depth"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.psrf2depth">[docs]</a>    <span class="k">def</span> <span class="nf">psrf2depth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Time-to-depth conversion with specified depth series.</span>
+
+<span class="sd">        :param dep_range: Discret conversion depth, defaults to np.arange(0, 150)</span>
+<span class="sd">        :type dep_range: :meth:`np.ndarray` , optional</span>
+<span class="sd">        :param velmod: Velocity model for time-to-depth conversion. &#39;iasp91&#39;, &#39;prem&#39; </span>
+<span class="sd">                      and &#39;ak135&#39; is valid for internal model. Specify path to velocity model for the customized model. </span>
+<span class="sd">                      The format is the same as in Taup, but the depth should be monotonically increasing, defaults to &#39;iasp91&#39;</span>
+<span class="sd">        :type velmod: str, optional</span>
+<span class="sd">        :param srayp: Ray-parameter lib for Ps phases, If set up to None the rayp of direct is used, defaults to None</span>
+<span class="sd">        :type srayp: numpy.lib.npyio.NpzFile, optional</span>
+<span class="sd">        :return: 2D array of RFs in depth</span>
+<span class="sd">        :rtype: :meth:`np.ndarray`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dep_range</span> <span class="o">=</span> <span class="n">dep_range</span>
+        <span class="n">rfdepth</span><span class="p">,</span> <span class="n">endindex</span><span class="p">,</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">x_p</span> <span class="o">=</span> <span class="n">psrf2depth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rfdepth</span></div>
+
+<div class="viewcode-block" id="RFStation.psrf_1D_raytracing"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.psrf_1D_raytracing">[docs]</a>    <span class="k">def</span> <span class="nf">psrf_1D_raytracing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;1D back ray tracing to obtained Ps conversion points at discret depths</span>
+
+<span class="sd">        :param dep_range: Discret conversion depth, defaults to np.arange(0, 150)</span>
+<span class="sd">        :type dep_range: numpy.ndarray, optional</span>
+<span class="sd">        :param velmod: Velocity model for time-to-depth conversion. &#39;iasp91&#39;, &#39;prem&#39; </span>
+<span class="sd">                      and &#39;ak135&#39; is valid for internal model. Specify path to velocity model for the customized model. </span>
+<span class="sd">                      The format is the same as in Taup, but the depth should be monotonically increasing, defaults to &#39;iasp91&#39;</span>
+<span class="sd">        :type velmod: str, optional</span>
+<span class="sd">        :param srayp: Ray-parameter lib for Ps phases, If set up to None the rayp of direct is used, defaults to None</span>
+<span class="sd">        :type srayp: numpy.lib.npyio.NpzFile, optional</span>
+<span class="sd">        :return pplat_s: Latitude of conversion points</span>
+<span class="sd">        :return pplon_s: Longitude of conversion points</span>
+<span class="sd">        :return tps: Time difference of Ps at each depth</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dep_range</span> <span class="o">=</span> <span class="n">dep_range</span>
+        <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">_</span> <span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="n">psrf_1D_raytracing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">tps</span></div>
+
+<div class="viewcode-block" id="RFStation.psrf_3D_raytracing"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.psrf_3D_raytracing">[docs]</a>    <span class="k">def</span> <span class="nf">psrf_3D_raytracing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mod3dpath</span><span class="p">,</span> <span class="n">dep_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">srayp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dep_range</span> <span class="o">=</span> <span class="n">dep_range</span>
+        <span class="n">mod3d</span> <span class="o">=</span> <span class="n">Mod3DPerturbation</span><span class="p">(</span><span class="n">mod3dpath</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">)</span>
+        <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="n">psrf_3D_raytracing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">mod3d</span><span class="p">,</span> <span class="n">srayp</span><span class="o">=</span><span class="n">srayp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">tps</span></div>
+
+<div class="viewcode-block" id="RFStation.psrf_3D_moveoutcorrect"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.psrf_3D_moveoutcorrect">[docs]</a>    <span class="k">def</span> <span class="nf">psrf_3D_moveoutcorrect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mod3dpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The fuction will be change to RFStation.psrf_3D_timecorrect in the future&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">psrf_3D_timecorrect</span><span class="p">(</span><span class="n">mod3dpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="RFStation.psrf_3D_timecorrect"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.psrf_3D_timecorrect">[docs]</a>    <span class="k">def</span> <span class="nf">psrf_3D_timecorrect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="n">mod3dpath</span><span class="p">,</span> <span class="n">dep_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dep_range</span> <span class="o">=</span> <span class="n">dep_range</span>
+        <span class="n">mod3d</span> <span class="o">=</span> <span class="n">Mod3DPerturbation</span><span class="p">(</span><span class="n">mod3dpath</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">)</span>
+        <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">,</span> <span class="n">pplon_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">,</span> <span class="n">raylength_p</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="n">psrf_1D_raytracing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">tps</span> <span class="o">=</span> <span class="n">psrf_3D_migration</span><span class="p">(</span><span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">,</span> <span class="n">pplon_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">,</span> <span class="n">raylength_p</span><span class="p">,</span> <span class="n">tps</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">mod3d</span><span class="p">)</span>
+        <span class="n">rfdepth</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">time2depth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">tps</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="n">normalize</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rfdepth</span></div>
+
+<div class="viewcode-block" id="RFStation.jointani"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.jointani">[docs]</a>    <span class="k">def</span> <span class="nf">jointani</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">te</span><span class="p">,</span> <span class="n">tlen</span><span class="o">=</span><span class="mf">3.</span><span class="p">,</span> <span class="n">stack_baz_val</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rayp</span><span class="o">=</span><span class="mf">0.06</span><span class="p">,</span>
+                 <span class="n">velmodel</span><span class="o">=</span><span class="s1">&#39;iasp91&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Eastimate crustal anisotropy with a joint method. See Liu and Niu (2012, doi: 10.1111/j.1365-246X.2011.05249.x) in detail.</span>
+
+<span class="sd">        :param tb: Time before Pms for search Ps peak</span>
+<span class="sd">        :type tb: float</span>
+<span class="sd">        :param te: Time after Pms for search Ps peak</span>
+<span class="sd">        :type te: float</span>
+<span class="sd">        :param tlen: Half time length for cut out Ps phase, defaults to 3.0</span>
+<span class="sd">        :type tlen: float, optional</span>
+<span class="sd">        :param stack_baz_val: The interval for stacking binned by back-azimuth, defaults to 10</span>
+<span class="sd">        :type stack_baz_val: float, optional</span>
+<span class="sd">        :param rayp: Reference ray-parameter for moveout correction, defaults to 0.06</span>
+<span class="sd">        :type rayp: float, optional</span>
+<span class="sd">        :param velmodel: velocity model for moveout correction. &#39;iasp91&#39;, &#39;prem&#39; </span>
+<span class="sd">                      and &#39;ak135&#39; is valid for internal model. Specify path to velocity model for the customized model. </span>
+<span class="sd">                      The format is the same as in Taup, but the depth should be monotonically increasing, defaults to &#39;iasp91&#39;</span>
+<span class="sd">        :type velmodel: str, optional</span>
+<span class="sd">        :param weight: Weight for three different method, defaults to [0.4, 0.4, 0.2]</span>
+<span class="sd">        :type weight: list, optional</span>
+<span class="sd">        :return: Dominant fast velocity direction and time delay</span>
+<span class="sd">        :rtype: list, list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ani</span> <span class="o">=</span> <span class="n">RFAni</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">te</span><span class="p">,</span> <span class="n">tlen</span><span class="o">=</span><span class="n">tlen</span><span class="p">,</span> <span class="n">rayp</span><span class="o">=</span><span class="n">rayp</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">velmodel</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ani</span><span class="o">.</span><span class="n">baz_stack</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="n">stack_baz_val</span><span class="p">)</span>
+        <span class="n">best_f</span><span class="p">,</span> <span class="n">best_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ani</span><span class="o">.</span><span class="n">joint_ani</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">best_f</span><span class="p">,</span> <span class="n">best_t</span></div>
+
+<div class="viewcode-block" id="RFStation.slantstack"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.slantstack">[docs]</a>    <span class="k">def</span> <span class="nf">slantstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ref_dis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rayp_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slant</span> <span class="o">=</span> <span class="n">SlantStack</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_axis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dis</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slant</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">ref_dis</span><span class="p">,</span> <span class="n">rayp_range</span><span class="p">,</span> <span class="n">tau_range</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">slant</span><span class="o">.</span><span class="n">stack_amp</span></div>
+
+<div class="viewcode-block" id="RFStation.harmonic"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.RFStation.harmonic">[docs]</a>    <span class="k">def</span> <span class="nf">harmonic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span> <span class="n">te</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Harmonic decomposition for extracting anisotropic and isotropic features from the radial and transverse RFs</span>
+
+<span class="sd">        :param tb: Start time relative to P, defaults to -5</span>
+<span class="sd">        :type tb: float, optional</span>
+<span class="sd">        :param te: End time relative to P, defaults to 10</span>
+<span class="sd">        :type te: float, optional</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        harmonic_trans: numpy.ndarray, float</span>
+<span class="sd">                Harmonic components with shape of ``(5, nsamp)``, ``nsamp = (te-tb)/RFStation.sampling``</span>
+
+<span class="sd">        unmodel_trans: numpy.ndarray, float</span>
+<span class="sd">                Unmodel components with shape same as harmonic_trans.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_r</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Transverse RFs are nessary for harmonic decomposition&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">harmo</span> <span class="o">=</span> <span class="n">Harmonics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">te</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">harmo</span><span class="o">.</span><span class="n">harmo_trans</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">harmo</span><span class="o">.</span><span class="n">harmonic_trans</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">harmo</span><span class="o">.</span><span class="n">unmodel_trans</span></div></div>
+
+
+<div class="viewcode-block" id="SACStation"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.SACStation">[docs]</a><span class="k">class</span> <span class="nc">SACStation</span><span class="p">(</span><span class="n">RFStation</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_path</span><span class="p">,</span> <span class="n">only_r</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Class for derivative process of RFs.</span>
+
+<span class="sd">        :param data_path: Path to RF data with SAC format. A finallist.dat must be in this path.</span>
+<span class="sd">        :type data_path: str</span>
+<span class="sd">        :param only_r: Wether only read R component, defaults to False</span>
+<span class="sd">        :type only_r: bool, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">only_r</span><span class="o">=</span><span class="n">only_r</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_imag2nan</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">StopIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">StopIndex</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">StopIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+
+<div class="viewcode-block" id="moveoutcorrect_ref"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.moveoutcorrect_ref">[docs]</a><span class="k">def</span> <span class="nf">moveoutcorrect_ref</span><span class="p">(</span><span class="n">stadatar</span><span class="p">,</span> <span class="n">raypref</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="p">,</span> 
+                       <span class="n">chan</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">velmod</span><span class="o">=</span><span class="s1">&#39;iasp91&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Moveout correction refer to a specified ray-parameter</span>
+<span class="sd">    </span>
+<span class="sd">    :param stadatar: data class of RFStation</span>
+<span class="sd">    :param raypref: referred ray parameter in rad</span>
+<span class="sd">    :param YAxisRange: Depth range in nd.array type</span>
+<span class="sd">    :param velmod: Path to velocity model</span>
+<span class="sd">    :param chan: channel name for correction, &#39;r&#39;, &#39;t&#39;...</span>
+
+<span class="sd">    :return: Newdatar, EndIndex</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sampling</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">sampling</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">shift</span>
+    <span class="k">if</span> <span class="n">chan</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">datar</span>
+    <span class="k">elif</span> <span class="n">chan</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">datat</span>
+    <span class="k">elif</span> <span class="n">chan</span> <span class="o">==</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">dataz</span>
+    <span class="k">elif</span> <span class="n">chan</span> <span class="o">==</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">datal</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Field </span><span class="se">\&#39;</span><span class="s1">datar</span><span class="se">\&#39;</span><span class="s1"> or </span><span class="se">\&#39;</span><span class="s1">datal</span><span class="se">\&#39;</span><span class="s1"> must be in the SACStation&#39;</span><span class="p">)</span>
+    <span class="n">dep_mod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">,</span> <span class="n">velmod</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stel</span><span class="p">)</span>
+    <span class="c1"># x_s = np.zeros([stadatar.ev_num, YAxisRange.shape[0]])</span>
+    <span class="c1"># x_p = np.zeros([stadatar.ev_num, YAxisRange.shape[0]])</span>
+    <span class="n">tps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+        <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">xps_tps_map</span><span class="p">(</span><span class="n">dep_mod</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)</span>
+    <span class="n">Tpds_ref</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">xps_tps_map</span><span class="p">(</span><span class="n">dep_mod</span><span class="p">,</span> <span class="n">raypref</span><span class="p">,</span> <span class="n">raypref</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)</span>
+    <span class="n">Newdatar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rflength</span><span class="p">])</span>
+    <span class="n">EndIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">)</span>
+<span class="c1">#</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+        <span class="n">Newaxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+        <span class="n">TempTpds</span> <span class="o">=</span> <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">StopIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">TempTpds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">StopIndex</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">StopIndex</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">EndIndex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">StopIndex</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">Newaxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Newaxis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">shift</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sampling</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">shift</span> <span class="o">/</span> <span class="n">sampling</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rflength</span><span class="p">):</span>
+            <span class="n">Refaxis</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">sampling</span> <span class="o">-</span> <span class="n">shift</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Refaxis</span> <span class="o">&lt;=</span> <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">StopIndex</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">index</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">Ratio</span> <span class="o">=</span> <span class="p">(</span><span class="n">Tpds_ref</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">-</span> <span class="n">Tpds_ref</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">-</span> <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">Newaxis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Newaxis</span><span class="p">,</span> <span class="n">Tpds_ref</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">Refaxis</span> <span class="o">-</span> <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">Ratio</span><span class="p">)</span>
+        <span class="n">endidx</span> <span class="o">=</span> <span class="n">Newaxis</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">x_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rflength</span><span class="p">)</span> <span class="o">*</span> <span class="n">sampling</span> <span class="o">-</span> <span class="n">shift</span>
+        <span class="n">Tempdata</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">Newaxis</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">endidx</span><span class="p">],</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">)(</span><span class="n">x_new</span><span class="p">)</span>
+        <span class="n">endIndice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">Tempdata</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">endIndice</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">New_data</span> <span class="o">=</span> <span class="n">Tempdata</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">New_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tempdata</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">endIndice</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">endidx</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="k">if</span> <span class="n">New_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rflength</span><span class="p">:</span>
+            <span class="n">Newdatar</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">New_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">rflength</span> <span class="o">-</span> <span class="n">New_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Newdatar</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">New_data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rflength</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Newdatar</span><span class="p">,</span> <span class="n">EndIndex</span></div>
+
+
+<div class="viewcode-block" id="psrf2depth"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.psrf2depth">[docs]</a><span class="k">def</span> <span class="nf">psrf2depth</span><span class="p">(</span><span class="n">stadatar</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="p">,</span> <span class="n">velmod</span><span class="o">=</span><span class="s1">&#39;iasp91&#39;</span><span class="p">,</span> <span class="n">srayp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Time-to-depth conversion with S-wave backprojection.</span>
+
+<span class="sd">    :param stadatar: Data class of RFStation</span>
+<span class="sd">    :type stadatar: :meth:`RFStation`</span>
+<span class="sd">    :param YAxisRange: Depth range for converison</span>
+<span class="sd">    :type YAxisRange: numpy.ndarray</span>
+<span class="sd">    :param velmod: Velocity for conversion, whcih can be a path to velocity file, defaults to &#39;iasp91&#39;</span>
+<span class="sd">    :type velmod: str, optional</span>
+<span class="sd">    :param srayp: ray-parameter library of conversion phases. See :meth:`seispy.psrayp` in detail, defaults to None</span>
+<span class="sd">    :type srayp: str or :meth:`seispy.psrayp.PsRayp`, optional</span>
+<span class="sd">    :param normalize: method of normalization, defaults to &#39;single&#39;. Please refer to :meth:`RFStation.normalize`</span>
+<span class="sd">    :type normalize: str, optional</span>
+<span class="sd">    :param sphere: Wether do earth-flattening transformation, defaults to True</span>
+<span class="sd">    :type sphere: bool, optional</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ------------</span>
+
+<span class="sd">    ps_rfdepth: 2-D numpy.ndarray, float</span>
+<span class="sd">                RFs in depth with shape of ``(stadatar.ev_num, YAxisRange.size)``, ``stadatar.ev_num`` is the number of RFs in current station.</span>
+<span class="sd">                ``YAxisRange.size`` is the size of depth axis.</span>
+<span class="sd">    endindex: numpy.ndarray, int</span>
+<span class="sd">                End index of each RF in depth</span>
+<span class="sd">    x_s: 2-D numpy.ndarray, float</span>
+<span class="sd">                Horizontal distance between station and S-wave conversion points with shape of  ``(stadatar.ev_num, YAxisRange.size)``</span>
+<span class="sd">    x_p: 2-D numpy.ndarray, float</span>
+<span class="sd">                Horizontal distance between station and P-wave conversion points with shape of  ``(stadatar.ev_num, YAxisRange.size)``</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">exists</span><span class="p">(</span><span class="n">velmod</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dep_mod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">,</span> <span class="n">velmod</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stel</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">dep_mod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">,</span> <span class="s1">&#39;iasp91&#39;</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stel</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">velmod_3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">velmod</span><span class="p">)</span>
+                <span class="n">dep_mod</span><span class="o">.</span><span class="n">vp</span><span class="p">,</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">vs</span> <span class="o">=</span> <span class="n">interp_depth_model</span><span class="p">(</span><span class="n">velmod_3d</span><span class="p">,</span>
+                                         <span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;Cannot load 1D or 3D velocity model of </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">velmod</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dep_mod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">,</span> <span class="n">velmod</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stel</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot recognize the velocity model of </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">velmod</span><span class="p">))</span>
+
+    <span class="n">x_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">x_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">tps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">if</span> <span class="n">srayp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+            <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xps_tps_map</span><span class="p">(</span><span class="n">dep_mod</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+                <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">npyio</span><span class="o">.</span><span class="n">NpzFile</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">srayp</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;Ps rayp lib file was not found&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rayp_lib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">srayp</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rayp_lib</span> <span class="o">=</span> <span class="n">srayp</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+            <span class="n">rayp</span> <span class="o">=</span> <span class="n">get_psrayp</span><span class="p">(</span><span class="n">rayp_lib</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">evdp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">)</span>
+            <span class="n">rayp</span> <span class="o">=</span> <span class="n">skm2srad</span><span class="p">(</span><span class="n">sdeg2skm</span><span class="p">(</span><span class="n">rayp</span><span class="p">))</span>
+            <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xps_tps_map</span><span class="p">(</span><span class="n">dep_mod</span><span class="p">,</span>
+                <span class="n">rayp</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;srayp should be path to Ps rayp lib&#39;</span><span class="p">)</span>
+    <span class="n">ps_rfdepth</span><span class="p">,</span> <span class="n">endindex</span> <span class="o">=</span> <span class="n">time2depth</span><span class="p">(</span><span class="n">stadatar</span><span class="p">,</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="p">,</span> <span class="n">tps</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="n">normalize</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ps_rfdepth</span><span class="p">,</span> <span class="n">endindex</span><span class="p">,</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">x_p</span></div>
+
+
+<div class="viewcode-block" id="xps_tps_map"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.xps_tps_map">[docs]</a><span class="k">def</span> <span class="nf">xps_tps_map</span><span class="p">(</span><span class="n">dep_mod</span><span class="p">,</span> <span class="n">srayp</span><span class="p">,</span> <span class="n">prayp</span><span class="p">,</span> <span class="n">is_raylen</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate horizontal distance and time difference at depths</span>
+
+<span class="sd">    :param dep_mod: 1D velocity model class </span>
+<span class="sd">    :type dep_mod: :meth:`seispy.util.DepModel`</span>
+<span class="sd">    :param srayp: conversion phase ray-parameters</span>
+<span class="sd">    :type srayp: float</span>
+<span class="sd">    :param prayp: S-wave ray-parameters</span>
+<span class="sd">    :type prayp: float</span>
+<span class="sd">    :param is_raylen: Wether calculate ray length at depths, defaults to False</span>
+<span class="sd">    :type is_raylen: bool, optional</span>
+<span class="sd">    :param sphere: Wether do earth-flattening transformation, defaults to True, defaults to True</span>
+<span class="sd">    :type sphere: bool, optional</span>
+<span class="sd">    :param phase: Phases to calculate 1 for ``Ps``, 2 for ``PpPs``, 3 for ``PsPs+PpSs``, defaults to 1</span>
+<span class="sd">    :type phase: int, optional</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -----------</span>
+<span class="sd">    If ``is_raylen = False``</span>
+
+<span class="sd">    tps: 2-D numpy.ndarray, float</span>
+<span class="sd">        RFs in depth with shape of ``(stadatar.ev_num, YAxisRange.size)``, ``stadatar.ev_num`` is the number of RFs in current station.</span>
+<span class="sd">        ``YAxisRange.size`` is the size of depth axis.</span>
+<span class="sd">    </span>
+<span class="sd">    x_s: 2-D numpy.ndarray, float</span>
+<span class="sd">        Horizontal distance between station and S-wave conversion points with shape of  ``(stadatar.ev_num, YAxisRange.size)``</span>
+<span class="sd">    x_p: 2-D numpy.ndarray, float</span>
+<span class="sd">        Horizontal distance between station and P-wave conversion points with shape of  ``(stadatar.ev_num, YAxisRange.size)``</span>
+
+<span class="sd">    otherwise, two more variables will be returned</span>
+
+<span class="sd">    raylength_s: 2-D numpy.ndarray, float</span>
+<span class="sd">    </span>
+<span class="sd">    raylength_p: 2-D numpy.ndarray, float   </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x_s</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">radius_s</span><span class="p">(</span><span class="n">prayp</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+    <span class="n">x_p</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">radius_s</span><span class="p">(</span><span class="n">prayp</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_raylen</span><span class="p">:</span>
+        <span class="n">raylength_s</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">raylength</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+        <span class="n">raylength_p</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">raylength</span><span class="p">(</span><span class="n">prayp</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">phase</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">tps</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">tpds</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">prayp</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">phase</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">tps</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">tpppds</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">prayp</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">phase</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">tps</span> <span class="o">=</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">tpspds</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Phase must be in 1 for Ps, 2 for PpPs, 3 for PsPs+PpSs&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">elevation</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x_s</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">,</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">x_s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="p">)</span>
+        <span class="n">x_p</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">,</span> <span class="n">x_p</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">x_p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="p">)</span>
+        <span class="n">tps</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">,</span> <span class="n">tps</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">tps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_raylen</span><span class="p">:</span>
+            <span class="n">raylength_s</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="p">)</span>
+            <span class="n">raylength_p</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">,</span> <span class="n">raylength_p</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">raylength_p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))(</span><span class="n">dep_mod</span><span class="o">.</span><span class="n">depths</span><span class="p">)</span>         
+    <span class="k">if</span> <span class="n">is_raylen</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">tps</span><span class="p">,</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">x_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">,</span> <span class="n">raylength_p</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">tps</span><span class="p">,</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">x_p</span></div>
+
+
+<div class="viewcode-block" id="psrf_1D_raytracing"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.psrf_1D_raytracing">[docs]</a><span class="k">def</span> <span class="nf">psrf_1D_raytracing</span><span class="p">(</span><span class="n">stadatar</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="p">,</span> <span class="n">velmod</span><span class="o">=</span><span class="s1">&#39;iasp91&#39;</span><span class="p">,</span> <span class="n">srayp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">dep_mod</span> <span class="o">=</span> <span class="n">DepModel</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">,</span> <span class="n">velmod</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stel</span><span class="p">)</span>
+
+    <span class="c1"># x_s = np.zeros([stadatar.ev_num, YAxisRange.shape[0]])</span>
+    <span class="n">raylength_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplat_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplon_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="c1"># x_p = np.zeros([stadatar.ev_num, YAxisRange.shape[0]])</span>
+    <span class="n">raylength_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplat_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplon_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">tps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">if</span> <span class="n">srayp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+            <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">x_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">raylength_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xps_tps_map</span><span class="p">(</span>
+                <span class="n">dep_mod</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">is_raylen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)</span>
+            <span class="n">pplat_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pplon_s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">bazi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rad2deg</span><span class="p">(</span><span class="n">x_s</span><span class="p">))</span>
+            <span class="n">pplat_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pplon_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">bazi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rad2deg</span><span class="p">(</span><span class="n">x_p</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">npyio</span><span class="o">.</span><span class="n">NpzFile</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">srayp</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;Ps rayp lib file not found&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rayp_lib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">srayp</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rayp_lib</span> <span class="o">=</span> <span class="n">srayp</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+            <span class="n">rayp</span> <span class="o">=</span> <span class="n">get_psrayp</span><span class="p">(</span><span class="n">rayp_lib</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">evdp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dep_mod</span><span class="o">.</span><span class="n">depths_elev</span><span class="p">)</span>
+            <span class="n">rayp</span> <span class="o">=</span> <span class="n">skm2srad</span><span class="p">(</span><span class="n">sdeg2skm</span><span class="p">(</span><span class="n">rayp</span><span class="p">))</span>
+            <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">x_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">raylength_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xps_tps_map</span><span class="p">(</span><span class="n">dep_mod</span><span class="p">,</span> <span class="n">rayp</span><span class="p">,</span> 
+                                        <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">is_raylen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)</span>
+            <span class="n">x_s</span> <span class="o">=</span> <span class="n">_imag2nan</span><span class="p">(</span><span class="n">x_s</span><span class="p">)</span>
+            <span class="n">x_p</span> <span class="o">=</span> <span class="n">_imag2nan</span><span class="p">(</span><span class="n">x_p</span><span class="p">)</span>
+            <span class="n">pplat_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pplon_s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">bazi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rad2deg</span><span class="p">(</span><span class="n">x_s</span><span class="p">))</span>
+            <span class="n">pplat_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pplon_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">bazi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rad2deg</span><span class="p">(</span><span class="n">x_p</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;srayp should be path to Ps rayp lib&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">,</span> <span class="n">pplon_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">,</span> <span class="n">raylength_p</span><span class="p">,</span> <span class="n">tps</span></div>
+
+
+<div class="viewcode-block" id="psrf_3D_raytracing"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.psrf_3D_raytracing">[docs]</a><span class="k">def</span> <span class="nf">psrf_3D_raytracing</span><span class="p">(</span><span class="n">stadatar</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="p">,</span> <span class="n">mod3d</span><span class="p">,</span> <span class="n">srayp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Back ray trace the S wavs with a assumed ray parameter of P.</span>
+
+<span class="sd">    :param stadatar: The data class including PRFs and more parameters</span>
+<span class="sd">    :type stadatar: object RFStation</span>
+<span class="sd">    :param YAxisRange: The depth array with the same intervals</span>
+<span class="sd">    :type YAxisRange: numpy.ndarray</span>
+<span class="sd">    :param mod3d:  The 3D velocity model with fields of ``dep``, ``lat``,</span>
+<span class="sd">                    ``lon``, ``vp`` and ``vs``.</span>
+<span class="sd">    :type mod3d: &#39;Mod3DPerturbation&#39; object</span>
+<span class="sd">    :param elevation: Elevation of this station relative to sea level</span>
+<span class="sd">    :type elevation: float</span>
+<span class="sd">    :return: pplat_s, pplon_s, pplat_p, pplon_p, tps</span>
+<span class="sd">    :type: numpy.ndarray * 5</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sphere</span><span class="p">:</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="mf">6371.0</span> <span class="o">-</span> <span class="n">YAxisRange</span> <span class="o">+</span> <span class="n">elevation</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="mf">6371.0</span> <span class="o">+</span> <span class="n">elevation</span>
+    <span class="n">dep_range</span> <span class="o">=</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">YAxisRange</span> <span class="o">-=</span> <span class="n">elevation</span>
+    <span class="n">ddepth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">))</span>
+    <span class="n">pplat_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplon_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplat_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">pplon_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">x_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">x_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">tps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">YAxisRange</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">rayps</span> <span class="o">=</span> <span class="n">srad2skm</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">npyio</span><span class="o">.</span><span class="n">NpzFile</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">srayp</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">srayp</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;Ps rayp lib file not found&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rayp_lib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">srayp</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rayp_lib</span> <span class="o">=</span> <span class="n">srayp</span>
+    <span class="k">elif</span> <span class="n">srayp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;srayp should be path to Ps rayp lib&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">srayp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">srayps</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">srayps</span> <span class="o">=</span> <span class="n">get_psrayp</span><span class="p">(</span><span class="n">rayp_lib</span><span class="p">,</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">dis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                <span class="n">stadatar</span><span class="o">.</span><span class="n">evdp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">YAxisRange</span><span class="p">)</span>
+            <span class="n">srayps</span> <span class="o">=</span> <span class="n">skm2srad</span><span class="p">(</span><span class="n">sdeg2skm</span><span class="p">(</span><span class="n">srayps</span><span class="p">))</span>
+        <span class="n">pplat_s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">pplat_p</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span>
+        <span class="n">pplon_s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">pplon_p</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span>
+        <span class="n">x_s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">x_p</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">vs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">)</span>
+        <span class="n">vp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">dep</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">vs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpn</span><span class="p">((</span><span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;dep&#39;</span><span class="p">],</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]),</span>
+                            <span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;vs&#39;</span><span class="p">],</span> <span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">pplat_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">pplon_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]),</span>
+                            <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">vp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">interpn</span><span class="p">((</span><span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;dep&#39;</span><span class="p">],</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]),</span>
+                            <span class="n">mod3d</span><span class="o">.</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;vp&#39;</span><span class="p">],</span> <span class="p">(</span><span class="n">dep</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">pplon_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]),</span>
+                            <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">x_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">ddepth</span><span class="o">*</span><span class="n">tand</span><span class="p">(</span><span class="n">asind</span><span class="p">(</span><span class="n">vs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">rayps</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">+</span> <span class="n">x_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="n">x_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">ddepth</span><span class="o">*</span><span class="n">tand</span><span class="p">(</span><span class="n">asind</span><span class="p">(</span><span class="n">vp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">rayps</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">+</span> <span class="n">x_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="n">pplat_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">pplon_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span>
+                                                           <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span>
+                                                           <span class="n">stadatar</span><span class="o">.</span><span class="n">bazi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                                           <span class="n">km2deg</span><span class="p">(</span><span class="n">x_s</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="n">pplat_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">pplon_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">latlon_from</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">stla</span><span class="p">,</span>
+                                                           <span class="n">stadatar</span><span class="o">.</span><span class="n">stlo</span><span class="p">,</span>
+                                                           <span class="n">stadatar</span><span class="o">.</span><span class="n">bazi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                                           <span class="n">km2deg</span><span class="p">(</span><span class="n">x_p</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">tps_corr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">R</span> <span class="o">/</span> <span class="n">vs</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">srayps</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">R</span> <span class="o">/</span> <span class="n">vp</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">stadatar</span><span class="o">.</span><span class="n">rayp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+                            <span class="o">*</span> <span class="p">(</span><span class="n">ddepth</span> <span class="o">/</span> <span class="n">R</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">elevation</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">tps</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">YAxisRange</span><span class="p">,</span> <span class="n">tps_corr</span><span class="p">)(</span><span class="n">dep_range</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">,</span> <span class="n">pplon_p</span><span class="p">,</span> <span class="n">tps</span></div>
+
+
+<div class="viewcode-block" id="interp_depth_model"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.interp_depth_model">[docs]</a><span class="k">def</span> <span class="nf">interp_depth_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">new_dep</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Interpolate Vp and Vs from 3D velocity with a specified depth range.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mod3d : :meth:`np.lib.npyio.NpzFile`</span>
+<span class="sd">        3D velocity loaded from a ``.npz`` file</span>
+<span class="sd">    lat : float</span>
+<span class="sd">        Latitude of position in 3D velocity model</span>
+<span class="sd">    lon : float</span>
+<span class="sd">        Longitude of position in 3D velocity model</span>
+<span class="sd">    new_dep : :meth:`np.ndarray`</span>
+<span class="sd">        1D array of depths in km</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Vp : :meth:`np.ndarray`</span>
+<span class="sd">        Vp in ``new_dep``</span>
+<span class="sd">    Vs : :meth:`np.ndarray`</span>
+<span class="sd">        Vs in ``new_dep``</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#  model = np.load(modpath)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="p">[[</span><span class="n">depth</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">]</span> <span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">new_dep</span><span class="p">]</span>
+    <span class="n">vp</span> <span class="o">=</span> <span class="n">interpn</span><span class="p">((</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;dep&#39;</span><span class="p">],</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]),</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;vp&#39;</span><span class="p">],</span> <span class="n">points</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">vs</span> <span class="o">=</span> <span class="n">interpn</span><span class="p">((</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;dep&#39;</span><span class="p">],</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]),</span> <span class="n">model</span><span class="p">[</span><span class="s1">&#39;vs&#39;</span><span class="p">],</span> <span class="n">points</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vp</span><span class="p">,</span> <span class="n">vs</span></div>
+
+
+<div class="viewcode-block" id="psrf_3D_migration"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.psrf_3D_migration">[docs]</a><span class="k">def</span> <span class="nf">psrf_3D_migration</span><span class="p">(</span><span class="n">pplat_s</span><span class="p">,</span> <span class="n">pplon_s</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">,</span> <span class="n">pplon_p</span><span class="p">,</span> <span class="n">raylength_s</span><span class="p">,</span> <span class="n">raylength_p</span><span class="p">,</span> <span class="n">Tpds</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">mod3d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; 3D time difference correction with specified ray path and 3D velocity model. </span>
+<span class="sd">        The input parameters can be generated with :meth:`psrf_1D_raytracing`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pplat_s : :meth:`np.ndarray`</span>
+<span class="sd">        2D array of latitude of S-wave in ``dep_range``, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    pplon_s : :meth:`np.ndarray`</span>
+<span class="sd">        2D array of longitude of S-wave in ``dep_range``, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    pplat_p : :meth:`np.ndarray`</span>
+<span class="sd">        2D array of latitude of P-wave in ``dep_range``, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    pplon_p : :meth:`np.ndarray`</span>
+<span class="sd">        2D array of longitude of P-wave in ``dep_range``, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    raylength_s : :meth:`np.ndarray`</span>
+<span class="sd">        2D array of ray path length of S-wave in ``dep_range``, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    raylength_p : :meth:`np.ndarray`</span>
+<span class="sd">        2D array of ray path length of P-wave in ``dep_range``, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    Tpds : :meth:`np.ndarray`</span>
+<span class="sd">        1D array of time difference in ``dep_range`` (``dep_range.size``)</span>
+<span class="sd">    dep_range : :meth:`np.ndarray`</span>
+<span class="sd">        1D array of depths in km, (``dep_range.size``)</span>
+<span class="sd">    mod3d : :meth:`np.lib.npyio.NpzFile`</span>
+<span class="sd">        3D velocity loaded from a ``.npz`` file</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :meth:`np.ndarray`</span>
+<span class="sd">        Corrected time difference in dep_range</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ev_num</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">raylength_p</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">timecorrections</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">raylength_p</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ev_num</span><span class="p">):</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dep_range</span><span class="p">,</span> <span class="n">pplat_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pplon_p</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">dvp</span> <span class="o">=</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">interpdvp</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dep_range</span><span class="p">,</span> <span class="n">pplat_s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pplon_s</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">dvs</span> <span class="o">=</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">interpdvs</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+        <span class="n">dlp</span> <span class="o">=</span> <span class="n">raylength_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">dls</span> <span class="o">=</span> <span class="n">raylength_s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">tmpds</span> <span class="o">=</span> <span class="p">(</span><span class="n">dls</span> <span class="o">/</span> <span class="p">(</span><span class="n">mod3d</span><span class="o">.</span><span class="n">cvs</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dvs</span><span class="p">))</span> <span class="o">-</span> <span class="n">dls</span> <span class="o">/</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">cvs</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">dlp</span> <span class="o">/</span> <span class="p">(</span><span class="n">mod3d</span><span class="o">.</span><span class="n">cvp</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dvp</span><span class="p">))</span> <span class="o">-</span> <span class="n">dlp</span> <span class="o">/</span> <span class="n">mod3d</span><span class="o">.</span><span class="n">cvp</span><span class="p">)</span>
+        <span class="n">tmpds</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">tmpds</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">timecorrections</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">tmpds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Tpds</span> <span class="o">+</span> <span class="n">timecorrections</span></div>
+
+
+<div class="viewcode-block" id="time2depth"><a class="viewcode-back" href="../../seispy.html#seispy.rfcorrect.time2depth">[docs]</a><span class="k">def</span> <span class="nf">time2depth</span><span class="p">(</span><span class="n">stadatar</span><span class="p">,</span> <span class="n">dep_range</span><span class="p">,</span> <span class="n">Tpds</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Interpolate RF amplitude with specified time difference and depth range</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stadatar : :meth:`RFStation` </span>
+<span class="sd">        Data class of :meth:`RFStation` </span>
+<span class="sd">    dep_range : :meth:`np.ndarray`</span>
+<span class="sd">        1D array of depths in km, (``dep_range.size``)</span>
+<span class="sd">    Tpds : :meth:`np.ndarray`</span>
+<span class="sd">        1D array of time difference in ``dep_range`` (``dep_range.size``)</span>
+<span class="sd">    normalize : str, optional</span>
+<span class="sd">        Normlization option, ``&#39;sinlge&#39;`` and ``&#39;average&#39;`` are available , by default &#39;single&#39;</span>
+<span class="sd">        See :meth:`RFStation.normalize` in detail.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    PS_RFdepth: :meth:`np.ndarray`</span>
+<span class="sd">        2D array of RFs in depth, (:meth:`RFStation.ev_num`, ``dep_range.size``)</span>
+<span class="sd">    end_index: :meth:`np.ndarray`</span>
+<span class="sd">        1D array of the last digit of effective depth (:meth:`RFStation.ev_num`)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">normalize</span><span class="p">:</span>
+        <span class="n">stadatar</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">normalize</span><span class="p">)</span>
+    <span class="n">PS_RFdepth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">,</span> <span class="n">dep_range</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">EndIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">ev_num</span><span class="p">):</span>
+        <span class="n">TempTpds</span> <span class="o">=</span> <span class="n">Tpds</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">StopIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">TempTpds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">StopIndex</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">EndIndex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep_range</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="c1"># DepthAxis = interp1d(TempTpds, dep_range, bounds_error=False)(stadatar.time_axis)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">EndIndex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">StopIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="c1"># DepthAxis = interp1d(TempTpds[0:StopIndex], dep_range[0: StopIndex], bounds_error=False)(stadatar.time_axis)</span>
+
+        <span class="n">PS_RFTempAmps</span> <span class="o">=</span> <span class="n">stadatar</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;data</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">comp</span><span class="o">.</span><span class="n">lower</span><span class="p">())][</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">ValueIndices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">dep_range</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">EndIndex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">])))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">ValueIndices</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ValueIndices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">PS_RFTempAmps</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">PS_RFAmps</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">stadatar</span><span class="o">.</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">PS_RFTempAmps</span><span class="p">,</span> <span class="n">bounds_error</span><span class="o">=</span><span class="kc">False</span><span class="p">)(</span><span class="n">TempTpds</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">EndIndex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">PS_RFdepth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">PS_RFAmps</span>
+    <span class="k">return</span> <span class="n">PS_RFdepth</span><span class="p">,</span> <span class="n">EndIndex</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">rfsta</span> <span class="o">=</span> <span class="n">SACStation</span><span class="p">(</span><span class="s1">&#39;/Users/xumijian/Codes/seispy-example/ex-ccp/RFresult/ZX.212/ZX.212finallist.dat&#39;</span><span class="p">)</span>
+    <span class="n">rfsta</span><span class="o">.</span><span class="n">jointani</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+    <span class="n">rfsta</span><span class="o">.</span><span class="n">ani</span><span class="o">.</span><span class="n">plot_polar</span><span class="p">()</span>
+
+</pre></div>
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

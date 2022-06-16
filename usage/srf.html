@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Calculate S wave Receiver Functions (SRF) for single station &#8212; seispy latest documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="seispy.xumijian.me/usage/srf.html" />
+    <link rel="shortcut icon" href="../_static/seispy_100.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Visual check PRFs with an user interface" href="pickrf.html" />
+    <link rel="prev" title="Calculate PRFs for single station" href="rf-sta.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/seispy-long.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/seispy-long.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../installation.html">
+  Installation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../notes/index.html">
+  Configurations
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../modules.html">
+  Module Index
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/xumi1993/seispy" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PRF_Process.html">
+   Calculate a P-wave Receiver Function (PRF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rf-sta.html">
+   Calculate PRFs for single station
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Calculate S wave Receiver Functions (SRF) for single station
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pickrf.html">
+   Visual check PRFs with an user interface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ccp.html">
+   Stack PRFs with Common Conversion points (CCP) method
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#materials">
+   Materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-in-command-line">
+   Run in command line
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gui-for-visual-checking-s-wave">
+     GUI for visual checking S wave
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-checked-events-to-a-local-file">
+     Save checked events to a local file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visual-checking-srfs">
+   Visual checking SRFs
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="calculate-s-wave-receiver-functions-srf-for-single-station">
+<h1>Calculate S wave Receiver Functions (SRF) for single station<a class="headerlink" href="#calculate-s-wave-receiver-functions-srf-for-single-station" title="Permalink to this headline">#</a></h1>
+<p>Version after 1.2.13 has involved functions for SRF calculation. The workflow is similar to PRF calculation.</p>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">#</a></h2>
+<p>Users should prepare following materials.</p>
+<ul class="simple">
+<li><p>SAC files of teleseismic events including S wave. Refer to <a class="reference internal" href="../notes/rf_cfg.html"><span class="doc">RF calculation</span></a>.</p></li>
+<li><p>A configure file with the same content with that of PRF. Refer to <a class="reference internal" href="rf-sta.html"><span class="doc">Calculate PRFs for single station</span></a>.</p></li>
+</ul>
+</section>
+<section id="run-in-command-line">
+<h2>Run in command line<a class="headerlink" href="#run-in-command-line" title="Permalink to this headline">#</a></h2>
+<p>Similar to the workflow for PRFs, we have provided a command <code class="docutils literal notranslate"><span class="pre">srf</span></code> for quickly calculating SRFs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">srf</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">r</span> <span class="n">N</span><span class="o">|</span><span class="n">E</span><span class="o">|</span><span class="n">NE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">BAZ</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">w</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="n">cfg_file</span>
+
+<span class="n">Calculating</span> <span class="n">RFs</span> <span class="k">for</span> <span class="n">single</span> <span class="n">station</span>
+
+<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="n">cfg_file</span>    <span class="n">Path</span> <span class="n">to</span> <span class="n">RF</span> <span class="n">configure</span> <span class="n">file</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>  <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">-</span><span class="n">l</span>          <span class="n">use</span> <span class="n">local</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="n">false</span>
+<span class="o">-</span><span class="n">r</span> <span class="n">N</span><span class="o">|</span><span class="n">E</span><span class="o">|</span><span class="n">NE</span>   <span class="n">Reverse</span> <span class="n">components</span><span class="p">:</span> <span class="n">N</span><span class="p">,</span> <span class="n">E</span> <span class="ow">or</span> <span class="n">NE</span>
+<span class="o">-</span><span class="n">s</span>          <span class="n">Switch</span> <span class="n">the</span> <span class="n">East</span> <span class="ow">and</span> <span class="n">North</span> <span class="n">components</span>
+<span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">BAZ</span><span class="p">]</span>    <span class="n">Correct</span> <span class="n">back</span><span class="o">-</span><span class="n">azimuth</span><span class="o">.</span> <span class="n">If</span> <span class="s2">&quot;baz&quot;</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">corr_baz</span> <span class="o">=</span> <span class="n">raw_baz</span> <span class="o">+</span> <span class="n">baz</span><span class="o">.</span> <span class="n">If</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">argument</span><span class="p">,</span> <span class="n">the</span> <span class="n">back</span><span class="o">-</span><span class="n">azimuth</span> <span class="n">will</span> <span class="n">be</span> <span class="n">corrected</span> <span class="k">with</span>
+            <span class="n">minimal</span> <span class="n">energy</span> <span class="n">of</span> <span class="n">T</span> <span class="n">component</span><span class="o">.</span> <span class="n">The</span> <span class="n">searching</span> <span class="nb">range</span> <span class="ow">is</span> <span class="n">raw_baz</span> <span class="o">+/-</span> <span class="mi">90</span>
+<span class="o">-</span><span class="n">w</span>          <span class="n">Write</span> <span class="n">project</span> <span class="n">to</span> <span class="n">localfile</span>
+<span class="o">-</span><span class="n">p</span>          <span class="n">Wether</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">manually</span> <span class="n">pick</span> <span class="n">arrival</span> <span class="n">time</span> <span class="ow">and</span> <span class="n">waveforms</span> <span class="n">arround</span> <span class="n">S</span> <span class="n">phase</span> <span class="k">with</span> <span class="n">a</span> <span class="n">GUI</span><span class="o">.</span>
+<span class="o">-</span><span class="n">i</span>          <span class="n">Wether</span> <span class="n">grid</span> <span class="n">search</span> <span class="n">incidence</span> <span class="n">angle</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">TRZ</span></code> and <code class="docutils literal notranslate"><span class="pre">LQT</span></code> are available for SRF calculation. the Z or L component of RF is deconvolved by R or Q component.</p>
+</div>
+<section id="gui-for-visual-checking-s-wave">
+<h3>GUI for visual checking S wave<a class="headerlink" href="#gui-for-visual-checking-s-wave" title="Permalink to this headline">#</a></h3>
+<p>Compared with <code class="docutils literal notranslate"><span class="pre">prf</span></code>, <code class="docutils literal notranslate"><span class="pre">srf</span></code> has a new option of <code class="docutils literal notranslate"><span class="pre">-p</span></code> for visual checking seismic waveforms and picking S phase arrival with a GUI:</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/srfui.png" src="../_images/srfui.png" />
+<figcaption>
+<p><span class="caption-text">GUI for checking SRFs. Black lines denote manually picked arrival time. Red lines denote theoretical arrival time.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>This GUI is open after arrival time calculation and rotation. The seismic waveforms in 3 components are cut around theoretical S wave arrival time (the red line). A pre-picking is preformed with a STA/LTA method in T component (the black line).</p></li>
+<li><p>If the current event has a low quality, users can mark the event to “poor” via button <code class="docutils literal notranslate"><span class="pre">mark</span> <span class="pre">to</span> <span class="pre">poor</span></code> or hotkey <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p></li>
+<li><p>Directly click is used to manually pick S arrival time. The pre-picking line will move to where you click on.</p></li>
+</ul>
+</section>
+<section id="save-checked-events-to-a-local-file">
+<h3>Save checked events to a local file<a class="headerlink" href="#save-checked-events-to-a-local-file" title="Permalink to this headline">#</a></h3>
+<p>Specified <code class="docutils literal notranslate"><span class="pre">-w</span></code> allow users to save events, parameters and picked S arrival time into a local <code class="docutils literal notranslate"><span class="pre">pkl</span></code> file. For re-calculation please load the file in Python script with:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seispy.rf</span> <span class="kn">import</span> <span class="n">RF</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RF</span><span class="o">.</span><span class="n">loadpjt</span><span class="p">(</span><span class="s1">&#39;path/to/xxx.pkl&#39;</span><span class="p">)</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">detrend</span><span class="p">()</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">filter</span><span class="p">()</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">rotate</span><span class="p">()</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">trim</span><span class="p">()</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">deconv</span><span class="p">()</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">saverf</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="visual-checking-srfs">
+<h2>Visual checking SRFs<a class="headerlink" href="#visual-checking-srfs" title="Permalink to this headline">#</a></h2>
+<p>After calculation, the same step of visual checking as <code class="docutils literal notranslate"><span class="pre">prf</span></code> can be preformed via <code class="docutils literal notranslate"><span class="pre">pickrf</span></code> command. See <a class="reference internal" href="pickrf.html"><span class="doc">Visual check PRFs with an user interface</span></a> in detail.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this scheme, files of <code class="docutils literal notranslate"><span class="pre">*_L.sac</span></code> in <code class="docutils literal notranslate"><span class="pre">rfpath</span></code> will be searched in prior, when <code class="docutils literal notranslate"><span class="pre">comp</span> <span class="pre">=</span> <span class="pre">LQT</span></code> is set in configure file. If <code class="docutils literal notranslate"><span class="pre">comp</span> <span class="pre">=</span> <span class="pre">TRZ</span></code>, files of <code class="docutils literal notranslate"><span class="pre">*_Z.sac</span></code> will be searched.</p>
+</div>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="rf-sta.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Calculate PRFs for single station</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="pickrf.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Visual check PRFs with an user interface</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020, Mijian Xu.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
